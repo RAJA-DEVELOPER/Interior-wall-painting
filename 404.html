@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Page Not Found — Evora Interiors</title>
+  <meta name="description"
+    content="The space you are looking for has been moved or redefined. Explore Evora Interiors' services, portfolio and colour collections." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css?v=2" />
+  <link rel="stylesheet" href="css/base.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <link rel="stylesheet" href="css/layout.css?v=2" />
+  <link rel="stylesheet" href="css/components.css?v=2" />
+  <style>
+    /* 404 Specific Responsive Styles */
+    .hero-404 {
+      min-height: 85svh;
+      display: flex;
+      align-items: center;
+      padding-top: calc(var(--nav-h) + 2rem);
+      padding-bottom: clamp(3rem, 6vw, 6rem);
+      background: radial-gradient(circle at 80% 20%, rgba(184, 57, 38, 0.1) 0%, transparent 60%),
+        radial-gradient(circle at 10% 80%, rgba(130, 98, 38, 0.08) 0%, transparent 50%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-404-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .num-404 {
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 16vw, 15rem);
+      line-height: 0.85;
+      color: var(--accent);
+      letter-spacing: -0.04em;
+      margin-bottom: var(--space-md);
+      position: relative;
+      display: inline-block;
+    }
+
+    .num-404::after {
+      content: '404';
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      color: var(--border-strong);
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .search-404-box {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: var(--space-2xl);
+      max-width: 480px;
+    }
+
+    .search-404-input {
+      flex: 1;
+      padding: 14px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-full);
+      color: var(--text-primary);
+      font-size: 0.9375rem;
+    }
+
+    /* § 2 Discovery Portals */
+    .portals-section {
+      padding-block: var(--section-py);
+      background: var(--bg-alt);
+    }
+
+    .portal-card {
+      background: var(--surface);
+      border-radius: var(--r-xl);
+      padding: var(--space-2xl);
+      border: 1px solid var(--border-strong);
+      transition: all var(--dur-base) var(--ease-out);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .portal-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    /* § 3 Interactive Swatch Explorer */
+    .swatch-interactive-section {
+      padding-block: var(--section-py);
+    }
+
+    .swatch-display-box {
+      background: var(--surface);
+      border-radius: var(--r-xl);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      border: 1px solid var(--border-strong);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+
+    .swatch-preview-large {
+      height: 280px;
+      border-radius: var(--r-lg);
+      background: #B83926;
+      transition: background var(--dur-base) var(--ease-out);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-xl);
+      color: #fff;
+    }
+
+    .swatch-preview-large h3,
+    .swatch-preview-large p {
+      color: inherit;
+    }
+
+    .swatch-btn-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+
+    .swatch-picker-btn {
+      padding: var(--space-md);
+      border-radius: var(--r-md);
+      background: var(--bg-alt);
+      border: 2px solid var(--border-strong);
+      cursor: pointer;
+      text-align: left;
+      transition: all var(--dur-fast);
+      color: var(--text-primary);
+    }
+
+    .swatch-picker-btn.active,
+    .swatch-picker-btn:hover {
+      border-color: var(--accent);
+      background: var(--surface);
+    }
+
+    .swatch-color-pill {
+      height: 36px;
+      border-radius: var(--r-sm);
+      margin-bottom: 8px;
+    }
+
+    /* § 4 Spotlight Project */
+    .spotlight-section {
+      background: var(--charcoal);
+      color: #F7F3EC;
+      padding-block: var(--section-py);
+    }
+
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    /* § 5 Concierge Request */
+    .concierge-box {
+      background: linear-gradient(135deg, var(--bg-alt) 0%, var(--surface-2) 100%);
+      border-radius: var(--r-xl);
+      border: 1px solid var(--border-strong);
+      padding: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    .concierge-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+
+    /* § 6 Navigation Accordion */
+    .faq-404-section {
+      padding-block: var(--section-py);
+    }
+
+    @media (max-width: 992px) {
+      .hero-404-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .swatch-display-box {
+        grid-template-columns: 1fr;
+      }
+
+      .spotlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .concierge-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .swatch-btn-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .search-404-box {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Evora Interiors Home">
+        <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+          <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+          <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+          <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+        </svg>
+        <span class="nav-logo-text">
+          <span class="nav-logo-mark">Evora</span>
+          <span class="nav-logo-sub">Interiors Studio</span>
+        </span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home2.html">Home 2</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
+            viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg></button>
+        <button class="icon-btn" data-toggle-dir data-dir-icon aria-label="Toggle RTL">RTL</button>
+        <a href="contact.html#quote" class="nav-btn">Free Quote</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="home2.html">Home 2</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Journal</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <!-- § 1 — ARCHITECTURAL 404 HERO -->
+    <section class="hero-404" aria-label="Page not found hero">
+      <div class="container hero-404-grid">
+        <div class="reveal-left">
+          <span class="section-label">Spatial Disconnect</span>
+          <div class="num-404">404</div>
+          <h1 class="t-heading" style="margin-bottom: var(--space-md); max-width: 18ch;">This Space Remains Unpainted &
+            Undefined</h1>
+          <p class="t-lead" style="max-width: 44ch; margin-bottom: var(--space-xl);">
+            The page or architectural blueprint you are seeking may have been renamed, redesigned or archived into our
+            historical portfolio.
+          </p>
+          <div class="flex gap-md" style="flex-wrap: wrap;">
+            <a href="index.html" class="btn btn-primary btn-lg">Return to Sanctuary</a>
+            <a href="services.html" class="btn btn-outline btn-lg">Explore Services</a>
+          </div>
+
+          <form class="search-404-box" onsubmit="event.preventDefault(); window.location.href='sitemap.html';">
+            <input type="text" class="search-404-input" placeholder="Search painting, wallpaper, plaster..."
+              aria-label="Search site" />
+            <button type="submit" class="btn btn-accent">Search</button>
+          </form>
+        </div>
+
+        <div class="reveal-right">
+          <div class="card" style="border-radius: var(--r-xl); overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=85&auto=format&fit=crop"
+              alt="Minimalist architectural interior with warm terracotta tones" class="ratio-img"
+              style="aspect-ratio: 4/5;" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 2 — DISCOVERY PORTALS -->
+    <section class="portals-section" aria-labelledby="portals-title">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: clamp(2rem, 4vw, 4rem);">
+          <span class="section-label">Curated Paths</span>
+          <h2 id="portals-title" class="t-title" style="margin-top: var(--space-sm);">Where Would You Like to Go?</h2>
+        </div>
+
+        <div class="grid grid-4">
+          <div class="portal-card reveal delay-1">
+            <div>
+              <span class="badge badge-accent" style="margin-bottom: var(--space-md);">Finishes</span>
+              <h3 class="t-subheading" style="margin-bottom: var(--space-sm);">Interior Painting</h3>
+              <p class="t-sm" style="color: var(--text-secondary); margin-bottom: var(--space-lg);">Master-level surface
+                preparation and low-VOC paints from heritage British makers.</p>
+            </div>
+            <a href="services.html#painting" class="btn-arrow">View Service <span class="arrow"><svg viewBox="0 0 24 24"
+                  width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg></span></a>
+          </div>
+
+          <div class="portal-card reveal delay-2">
+            <div>
+              <span class="badge badge-sage" style="margin-bottom: var(--space-md);">Craft</span>
+              <h3 class="t-subheading" style="margin-bottom: var(--space-sm);">Wallpaper Studio</h3>
+              <p class="t-sm" style="color: var(--text-secondary); margin-bottom: var(--space-lg);">Seamless hanging of
+                grasscloth, silk, murals and botanical papers.</p>
+            </div>
+            <a href="services.html#wallpaper" class="btn-arrow">View Service <span class="arrow"><svg
+                  viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg></span></a>
+          </div>
+
+          <div class="portal-card reveal delay-3">
+            <div>
+              <span class="badge badge-brass" style="margin-bottom: var(--space-md);">Artisan</span>
+              <h3 class="t-subheading" style="margin-bottom: var(--space-sm);">Venetian & Lime</h3>
+              <p class="t-sm" style="color: var(--text-secondary); margin-bottom: var(--space-lg);">Mineral limewash and
+                hand-burnished Venetian plaster textures.</p>
+            </div>
+            <a href="services.html#texture" class="btn-arrow">View Service <span class="arrow"><svg viewBox="0 0 24 24"
+                  width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg></span></a>
+          </div>
+
+          <div class="portal-card reveal delay-4">
+            <div>
+              <span class="badge badge-dark" style="margin-bottom: var(--space-md);">Editorial</span>
+              <h3 class="t-subheading" style="margin-bottom: var(--space-sm);">Design Journal</h3>
+              <p class="t-sm" style="color: var(--text-secondary); margin-bottom: var(--space-lg);">Inspiration, colour
+                forecasting, and technical craftsmanship guides.</p>
+            </div>
+            <a href="blog.html" class="btn-arrow">Read Articles <span class="arrow"><svg viewBox="0 0 24 24" width="16"
+                  height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 3 — INTERACTIVE PALETTE EXPLORER -->
+    <section class="swatch-interactive-section" aria-labelledby="swatch-title">
+      <div class="container">
+        <div class="swatch-display-box reveal">
+          <div>
+            <span class="section-label">Interactive Palette</span>
+            <h2 id="swatch-title" class="t-heading" style="margin-block: var(--space-sm) var(--space-md);">Test Our
+              Curated Hues While You Browse</h2>
+            <p class="t-body" style="margin-bottom: var(--space-xl);">
+              Click on any signature tone below to preview how our tactile pigments interact with light.
+            </p>
+            <div class="swatch-btn-grid" id="swatchPicker">
+              <button type="button" class="swatch-picker-btn active" data-color="#B83926" data-name="Brick Terracotta"
+                data-code="#B83926" data-vibe="Warm, grounded and clear enough to stand out in dining & living salons.">
+                <div class="swatch-color-pill" style="background: #B83926;"></div>
+                <div class="t-xs" style="font-weight: 700;">Terracotta</div>
+              </button>
+
+              <button type="button" class="swatch-picker-btn" data-color="#242321" data-name="Charcoal Ink"
+                data-code="#242321" data-vibe="Deep, enveloping and velvet-like for studies and nocturnal boudoirs.">
+                <div class="swatch-color-pill" style="background: #242321;"></div>
+                <div class="t-xs" style="font-weight: 700;">Charcoal Ink</div>
+              </button>
+
+              <button type="button" class="swatch-picker-btn" data-color="#B79B68" data-name="Antique Brass"
+                data-code="#B79B68" data-vibe="Lustrous, reflective and architectural accent tone.">
+                <div class="swatch-color-pill" style="background: #B79B68;"></div>
+                <div class="t-xs" style="font-weight: 700;">Antique Brass</div>
+              </button>
+
+              <button type="button" class="swatch-picker-btn" data-color="#9AA58F" data-name="Dusty Sage"
+                data-code="#9AA58F" data-vibe="Serene botanical mineral tone for restorative bedrooms.">
+                <div class="swatch-color-pill" style="background: #9AA58F;"></div>
+                <div class="t-xs" style="font-weight: 700;">Dusty Sage</div>
+              </button>
+
+              <button type="button" class="swatch-picker-btn" data-color="#C9BDB0" data-name="Soft Taupe"
+                data-code="#C9BDB0" data-vibe="Subtle architectural neutrality with warm limestone undertones.">
+                <div class="swatch-color-pill" style="background: #C9BDB0;"></div>
+                <div class="t-xs" style="font-weight: 700;">Soft Taupe</div>
+              </button>
+
+              <button type="button" class="swatch-picker-btn" data-color="#F3EEE6" data-name="Warm Linen"
+                data-code="#F3EEE6" data-vibe="Our quintessential foundation neutral with diffused daylight clarity.">
+                <div class="swatch-color-pill" style="background: #EDE7DD; border: 1px solid var(--border);"></div>
+                <div class="t-xs" style="font-weight: 700;">Warm Linen</div>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div class="swatch-preview-large" id="largeSwatchPreview">
+              <div>
+                <span class="badge badge-dark" id="swatchCodeBadge" style="margin-bottom: 6px;">#B83926</span>
+                <h3 id="swatchNameHeader" style="font-family: var(--font-display); font-size: 1.8rem;">Brick Terracotta
+                </h3>
+                <p id="swatchVibeText" style="font-size: 0.875rem; opacity: 0.9; max-width: 32ch; margin-top: 4px;">
+                  Warm, grounded and intimate for dining & living salons.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 4 — SPOTLIGHT RESTORATION -->
+    <section class="spotlight-section" aria-labelledby="spotlight-title">
+      <div class="container spotlight-grid">
+        <div class="reveal-left">
+          <span class="section-label">Recent Transformation</span>
+          <h2 id="spotlight-title" class="t-title"
+            style="color: #F7F3EC; margin-block: var(--space-sm) var(--space-lg);">The Kensington Garden Residence</h2>
+          <p style="color: rgba(247,243,236,0.9); line-height: 1.75; margin-bottom: var(--space-xl);">
+            A bespoke three-story interior restoration pairing hand-trowelled Venetian plaster in the atrium with
+            botanical de Gournay wallpaper in the private study.
+          </p>
+          <div class="flex gap-lg">
+            <a href="about.html#projects" class="btn btn-accent">View Case Study</a>
+            <a href="contact.html#quote" class="btn btn-outline"
+              style="color: #F7F3EC; border-color: rgba(247,243,236,0.5);">Book Site Visit</a>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <div class="card" style="border-radius: var(--r-xl); overflow: hidden; border-color: rgba(255,255,255,0.1);">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=900&q=85&auto=format&fit=crop"
+              alt="Master suite with bespoke wallpaper and moody charcoal tones" class="ratio-img"
+              style="aspect-ratio: 16/10;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 5 — CONCIERGE DIRECT ASSISTANCE -->
+    <section class="section-py" aria-labelledby="concierge-title">
+      <div class="container">
+        <div class="concierge-box reveal">
+          <div class="concierge-grid">
+            <div>
+              <span class="section-label">Direct Concierge</span>
+              <h2 id="concierge-title" class="t-heading" style="margin-block: var(--space-sm) var(--space-md);">Cannot
+                Locate Your Desired Interior Specification?</h2>
+              <p class="t-body" style="color: var(--text-secondary); max-width: 44ch;">
+                Our studio lead and senior colorists are available to direct your project requirements immediately or
+                provide bespoke color sample packages.
+              </p>
+            </div>
+            <div class="flex flex-col gap-md">
+              <a href="tel:+442071234567" class="btn btn-primary btn-lg" style="justify-content: center;">Call Studio:
+                +44 207 123 4567</a>
+              <a href="contact.html#quote" class="btn btn-outline btn-lg" style="justify-content: center;">Send Direct
+                Project Brief</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 6 — COMMON NAVIGATION QUESTIONS -->
+    <section class="faq-404-section" aria-labelledby="faq-404-title">
+      <div class="container" style="max-width: 900px;">
+        <div class="text-center reveal" style="margin-bottom: var(--space-2xl);">
+          <span class="section-label">Assistance</span>
+          <h2 id="faq-404-title" class="t-heading" style="margin-top: var(--space-sm);">Quick Navigation Inquiries</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question">Looking to calculate the scope of your painting project?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Visit our <a href="services.html"
+                  style="color:var(--accent); text-decoration:underline;">Services & Pricing Guide</a> to review room
+                packages or submit a quote request with your room dimensions.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Seeking physical samples of wallpapers & textures?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We bring curated sample folios of Cole & Son, Farrow & Ball, Little Greene,
+                and custom plaster swatches during your complimentary in-home site visit.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Where is the complete index of the website?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Explore our dedicated <a href="sitemap.html"
+                  style="color:var(--accent); text-decoration:underline;">Directory & Sitemap</a> for direct access to
+                all twelve core sections and editorial journals.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+              <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+              <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+              <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+            </svg>
+            <span class="nav-logo-text">
+              <span class="nav-logo-mark">Evora</span>
+              <span class="nav-logo-sub">Interiors Studio</span>
+            </span>
+          </a>
+          <p class="footer-tagline">Transforming London homes with bespoke painting, premium wallpaper and artisan
+            finishes since 2009.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a>
+            <a href="#" class="social-link" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="currentColor">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z">
+                </path>
+              </svg></a>
+            <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="currentColor">
+                <path
+                  d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 23.953 4.57z">
+                </path>
+              </svg></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2.5"></path>
+                <path d="M2 21h4V8H2z"></path>
+                <path d="M4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
+              </svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="services.html#painting">Interior Painting</a>
+          <a href="services.html#wallpaper">Wallpaper Installation</a>
+          <a href="services.html#feature">Feature Walls</a>
+          <a href="services.html#texture">Texture Finishes</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>Studio</h5>
+          <a href="index.html">Home</a>
+          <a href="home2.html">Home 2</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Journal</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>Get in Touch</h5>
+          <a href="tel:+442071234567">+44 207 123 4567</a>
+          <a href="mailto:hello@evorainteriors.com">hello@evorainteriors.com</a>
+          <a href="contact.html#quote" style="margin-top:var(--space-md)"><svg viewBox="0 0 24 24" width="16"
+              height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg> Free Quote</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Evora Interiors Studio. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
+      aria-hidden="true">
+      <path d="M12 19V5" />
+      <path d="M5 12l7-7 7 7" />
+    </svg></button>
+
+  <script src="js/theme.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Interactive Palette Explorer
+    const preview = document.getElementById('largeSwatchPreview');
+    const badge = document.getElementById('swatchCodeBadge');
+    const header = document.getElementById('swatchNameHeader');
+    const vibe = document.getElementById('swatchVibeText');
+    const btns = document.querySelectorAll('.swatch-picker-btn');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const color = btn.dataset.color;
+        const name = btn.dataset.name;
+        const code = btn.dataset.code;
+        const desc = btn.dataset.vibe;
+
+        preview.style.background = color;
+        badge.textContent = code;
+        header.textContent = name;
+        vibe.textContent = desc;
+
+        // adjust text color for light shades
+        if (color === '#F3EEE6' || color === '#C9BDB0') {
+          preview.style.color = '#242321';
+          badge.className = 'badge badge-accent';
+        } else {
+          preview.style.color = '#FFFFFF';
+          badge.className = 'badge badge-dark';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

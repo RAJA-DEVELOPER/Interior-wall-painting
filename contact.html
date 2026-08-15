@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Contact — Evora Interiors | Book a Free Site Visit & Get a Quote</title>
+  <meta name="description"
+    content="Contact Evora Interiors to book a free, no-obligation site visit and colour consultation. Request a quote, call us or visit our West London studio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css?v=2" />
+  <link rel="stylesheet" href="css/base.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <link rel="stylesheet" href="css/layout.css?v=2" />
+  <link rel="stylesheet" href="css/components.css?v=2" />
+  <style>
+    /* § 1 Contact Hero — split with floating card */
+    .contact-hero {
+      padding-top: calc(var(--nav-h) + clamp(3rem, 6vw, 6rem));
+      padding-bottom: 0;
+      overflow: hidden;
+    }
+
+    .contact-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: end;
+    }
+
+    .contact-hero-img-wrap {
+      position: relative;
+      border-radius: var(--r-xl) var(--r-xl) 0 0;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+
+    .contact-hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contact-hero-floater {
+      position: absolute;
+      bottom: var(--space-xl);
+      left: var(--space-xl);
+      right: var(--space-xl);
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      box-shadow: var(--shadow-xl);
+      backdrop-filter: blur(16px);
+      border-radius: var(--r-lg);
+      padding: var(--space-lg) var(--space-xl);
+      display: flex;
+      gap: var(--space-xl);
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .floater-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .floater-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .floater-val {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* § 2 Quote Form */
+    .quote-section {
+      padding-block: var(--section-py);
+      background: var(--bg-alt);
+    }
+
+    .quote-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .quote-info {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+
+    .contact-info-item {
+      display: flex;
+      gap: var(--space-lg);
+      align-items: flex-start;
+    }
+
+    .contact-info-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--text-primary);
+      color: var(--bg);
+      border-radius: var(--r-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .contact-info-val {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .contact-info-val a {
+      color: var(--text-primary);
+      transition: color var(--dur-fast);
+    }
+
+    .contact-info-val a:hover {
+      color: var(--accent);
+    }
+
+    .quote-card {
+      background: var(--surface);
+      border-radius: var(--r-xl);
+      padding: var(--space-3xl);
+      border: 1px solid var(--border-strong);
+    }
+
+    .quote-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+
+    .quote-form-full {
+      grid-column: 1 / -1;
+    }
+
+    /* § 3 Map / Location Visual */
+    .map-section {
+      padding-block: var(--section-py);
+    }
+
+    .map-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .map-visual {
+      background: var(--charcoal);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .map-visual-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+    }
+
+    .map-pin {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .map-pin-dot {
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 0 0 8px rgba(184, 57, 38, 0.35);
+    }
+
+    .map-pin-label {
+      background: var(--surface);
+      color: var(--text-primary);
+      border: 1px solid var(--border-strong);
+      padding: 6px 14px;
+      border-radius: var(--r-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .hours-item {
+      padding: var(--space-lg);
+      background: var(--bg-alt);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-md);
+    }
+
+    .hours-day {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .hours-time {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 4px;
+    }
+
+    /* § 4 Quick Contact Cards */
+    .quick-contact {
+      background: var(--charcoal);
+      padding-block: clamp(3rem, 5vw, 5rem);
+    }
+
+    .quick-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--col-gap);
+    }
+
+    .quick-card {
+      background: rgba(247, 243, 236, 0.06);
+      border: 1px solid rgba(247, 243, 236, 0.18);
+      border-radius: var(--r-xl);
+      padding: var(--space-2xl);
+      text-align: center;
+      transition: all var(--dur-base);
+    }
+
+    .quick-card:hover {
+      background: rgba(247, 243, 236, 0.1);
+      border-color: var(--accent);
+    }
+
+    .quick-card-icon {
+      font-size: 2rem;
+      margin-bottom: var(--space-lg);
+    }
+
+    .quick-card-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: #F7F3EC;
+      margin-bottom: var(--space-sm);
+    }
+
+    .quick-card-desc {
+      font-size: 0.875rem;
+      color: rgba(247, 243, 236, 0.85);
+      margin-bottom: var(--space-xl);
+      line-height: 1.65;
+    }
+
+    .quick-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--accent);
+      transition: gap var(--dur-base);
+    }
+
+    .quick-card-link:hover {
+      gap: 14px;
+    }
+
+    /* § 5 Testimonial Highlights */
+    .contact-testimonials {
+      padding-block: var(--section-py);
+      background: var(--bg-alt);
+    }
+
+    .contact-testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--col-gap);
+      margin-top: clamp(2rem, 4vw, 4rem);
+    }
+
+    /* § 6 FAQ */
+    .contact-faq {
+      padding-block: var(--section-py);
+    }
+
+    .contact-faq-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+    }
+
+    /* Responsive */
+    @media (max-width:1024px) {
+      .contact-hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-hero-img-wrap {
+        aspect-ratio: 16/9;
+        border-radius: var(--r-xl);
+      }
+
+      .quote-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-card {
+        min-width: 0;
+      }
+
+      .quote-info {
+        position: static;
+      }
+
+      .map-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-faq-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width:768px) {
+      .quote-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-form-grid > * {
+        min-width: 0;
+      }
+
+      .quote-form-full {
+        grid-column: auto;
+      }
+
+      .quote-card {
+        padding: var(--space-xl);
+      }
+
+      .quote-card .btn {
+        white-space: normal;
+      }
+
+      .hours-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width:480px) {
+      .quote-card {
+        padding: var(--space-lg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Evora Interiors Home"><svg class="nav-logo-icon"
+          viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+          <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+          <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+          <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+        </svg><span class="nav-logo-text"><span class="nav-logo-mark">Evora</span><span class="nav-logo-sub">Interiors
+            Studio</span></span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home2.html">Home 2</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
+            viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg></button>
+        <button class="icon-btn" data-toggle-dir data-dir-icon aria-label="Toggle RTL">RTL</button>
+        <a href="contact.html#quote" class="nav-btn">Free Quote</a>
+        <button class="hamburger" aria-label="Open menu"
+          aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation"><a href="index.html">Home</a><a
+      href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a
+      href="blog.html">Journal</a><a href="contact.html" class="active">Contact</a>
+  </div>
+
+  <main>
+    <!-- § 1 Contact Hero -->
+    <section class="page-hero" aria-label="Contact hero">
+      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1800&q=85&auto=format&fit=crop"
+        alt="Evora studio — consultation and interior design space" class="page-hero-bg" loading="eager"
+        fetchpriority="high" />
+      <div class="page-hero-overlay"></div>
+      <div class="container page-hero-content">
+        <div class="page-hero-badge reveal">
+          <span class="hero-pulse"></span>
+          <span>Studio Consultation · Book a Free Site Visit</span>
+        </div>
+        <h1 class="page-hero-title reveal delay-1">Let's Talk About Your Space</h1>
+        <p class="page-hero-desc reveal delay-2">Every extraordinary project begins with a conversation. Whether you're
+          planning a full townhouse transformation or seeking bespoke colour guidance, our master decorators are here to
+          assist.</p>
+        <div class="page-hero-actions reveal delay-3">
+          <a href="#quote" class="btn btn-accent">Request Free Quote</a>
+          <a href="tel:+442071234567" class="btn btn-outline"
+            style="border-color:rgba(255,255,255,0.4);color:#FFFFFF">Call +44 207 123 4567</a>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:1.75rem;flex-wrap:wrap" class="reveal delay-4">
+          <span class="glass-pill" style="font-size:0.75rem"><svg viewBox="0 0 24 24" width="15" height="15" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              style="vertical-align:-2px;margin-right:6px" aria-hidden="true">
+              <circle cx="12" cy="13" r="8" />
+              <path d="M12 9v4l2.5 2.5" />
+              <path d="M9 2h6" />
+              <path d="M12 2v4" />
+            </svg> Response under 24hrs</span>
+          <span class="glass-pill" style="font-size:0.75rem"><svg viewBox="0 0 24 24" width="15" height="15" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              style="vertical-align:-2px;margin-right:6px" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg> Free Site Visits</span>
+          <span class="glass-pill" style="font-size:0.75rem"><svg viewBox="0 0 24 24" width="15" height="15" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              style="vertical-align:-2px;margin-right:6px" aria-hidden="true">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+              <rect x="8" y="2" width="8" height="4" rx="1" />
+            </svg> Itemised Fixed Quotes</span>
+        </div>
+      </div>
+      <div class="page-hero-watermark" aria-hidden="true">STUDIO</div>
+    </section>
+
+    <!-- § 2 Quote Form -->
+    <section class="quote-section" id="quote" aria-labelledby="quote-heading">
+      <div class="container quote-layout">
+        <div class="quote-info reveal-left">
+          <span class="t-label" style="display:block;margin-bottom:var(--space-md)">Request a Quote</span>
+          <h2 id="quote-heading" class="t-heading" style="max-width:18ch;margin-bottom:var(--space-xl)">Start Your Free
+            Site Visit</h2>
+          <p class="t-lead" style="max-width:38ch;margin-bottom:0">Fill in the form and we'll arrange a free,
+            no-obligation site visit and colour consultation at a time that suits you.</p>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg></div>
+              <div>
+                <div class="contact-info-label">Phone</div>
+                <div class="contact-info-val"><a href="tel:+442071234567">+44 207 123 4567</a></div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg></div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <div class="contact-info-val"><a href="mailto:hello@evorainteriors.com">hello@evorainteriors.com</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg></div>
+              <div>
+                <div class="contact-info-label">Studio</div>
+                <div class="contact-info-val">14 Portobello Studios<br>London W11 2DX</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-card reveal-right">
+          <form data-form id="contact-form" novalidate>
+            <div class="form-fields">
+              <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:var(--space-xl)">Tell Us About
+                Your Project</h3>
+              <div class="quote-form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="c-fname">First Name *</label>
+                  <input id="c-fname" class="form-input" type="text" placeholder="Sophie" data-validate="required" />
+                  <span class="form-error-msg"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="c-lname">Last Name *</label>
+                  <input id="c-lname" class="form-input" type="text" placeholder="Richardson"
+                    data-validate="required" />
+                  <span class="form-error-msg"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="c-email">Email Address *</label>
+                  <input id="c-email" class="form-input" type="email" placeholder="sophie@example.com"
+                    data-validate="required|email" />
+                  <span class="form-error-msg"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="c-phone">Phone Number</label>
+                  <input id="c-phone" class="form-input" type="tel" placeholder="+44 7700 900000"
+                    data-validate="phone" />
+                  <span class="form-error-msg"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="c-service">Service Required *</label>
+                  <select id="c-service" class="form-select" data-validate="required">
+                    <option value="">Select a service…</option>
+                    <option>Interior Painting</option>
+                    <option>Wallpaper Installation</option>
+                    <option>Feature Wall</option>
+                    <option>Venetian / Lime Plaster</option>
+                    <option>Texture Finish</option>
+                    <option>Colour Consultation</option>
+                    <option>Full Home Transformation</option>
+                  </select>
+                  <span class="form-error-msg"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="c-budget">Approximate Budget</label>
+                  <select id="c-budget" class="form-select">
+                    <option value="">Select a range…</option>
+                    <option>Under £1,000</option>
+                    <option>£1,000 – £3,000</option>
+                    <option>£3,000 – £6,000</option>
+                    <option>£6,000 – £12,000</option>
+                    <option>£12,000+</option>
+                  </select>
+                </div>
+                <div class="form-group quote-form-full">
+                  <label class="form-label" for="c-postcode">Your Postcode</label>
+                  <input id="c-postcode" class="form-input" type="text" placeholder="W1A 1AA" />
+                </div>
+                <div class="form-group quote-form-full">
+                  <label class="form-label" for="c-message">Project Description *</label>
+                  <textarea id="c-message" class="form-textarea"
+                    placeholder="Tell us about the rooms, your vision, any specific finishes you have in mind, and your ideal timeline…"
+                    data-validate="required|minlen:30"></textarea>
+                  <span class="form-error-msg"></span>
+                </div>
+                <div class="quote-form-full">
+                  <button type="submit" class="btn btn-primary"
+                    style="width:100%;justify-content:center;padding:16px">Submit Request — We'll Reply Within 24 Hours
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                      <path d="M5 12h14" />
+                      <path d="M12 5l7 7-7 7" />
+                    </svg></button>
+                  <p
+                    style="font-size:0.75rem;font-weight:600;color:var(--text-secondary);text-align:center;margin-top:var(--space-md)">
+                    By submitting this form you agree to our <a href="privacy.html"
+                      style="color:var(--accent);font-weight:700">Privacy Policy</a>. We never share your data.</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-success">
+              <div
+                style="width:64px;height:64px;background:rgba(184,111,97,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent)">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <h3 style="font-family:var(--font-display);font-size:1.8rem">Thank You, We'll Be in Touch!</h3>
+              <p style="max-width:40ch;text-align:center">Your request has been received. A member of our team will
+                contact you within 24 hours to arrange your free site visit.</p>
+              <a href="index.html" class="btn btn-primary">Return Home</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 3 Map & Hours -->
+    <section class="map-section" aria-labelledby="map-heading">
+      <div class="container map-layout">
+        <div class="reveal-left">
+          <span class="t-label" style="display:block;margin-bottom:var(--space-xl)">Find Us</span>
+          <h2 id="map-heading" class="t-heading" style="max-width:18ch;margin-bottom:var(--space-xl)">Our West London
+            Studio</h2>
+          <p class="t-lead" style="max-width:38ch;margin-bottom:var(--space-xl)">We're based in the heart of Notting
+            Hill, close to Ladbroke Grove tube station. Visits by appointment only.</p>
+          <address
+            style="font-style:normal;font-size:1rem;line-height:1.8;color:var(--text-secondary);margin-bottom:var(--space-2xl)">
+            14 Portobello Studios<br>
+            Portobello Road<br>
+            London W11 2DX<br>
+            United Kingdom
+          </address>
+          <h3
+            style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:var(--space-md)">
+            Opening Hours</h3>
+          <div class="hours-grid">
+            <div class="hours-item">
+              <div class="hours-day">Mon – Fri</div>
+              <div class="hours-time">08:00 – 18:00</div>
+            </div>
+            <div class="hours-item">
+              <div class="hours-day">Saturday</div>
+              <div class="hours-time">09:00 – 15:00</div>
+            </div>
+            <div class="hours-item">
+              <div class="hours-day">Sunday</div>
+              <div class="hours-time">By Appointment</div>
+            </div>
+            <div class="hours-item">
+              <div class="hours-day">Bank Holidays</div>
+              <div class="hours-time">Closed</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-visual reveal-right">
+          <iframe
+            src="https://www.google.com/maps?q=14+Portobello+Studios,+Portobello+Road,+London+W11+2DX&output=embed"
+            title="Evora Interiors Studio location map" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            style="width:100%;height:100%;border:0;display:block;filter:grayscale(0.15) contrast(1.05)"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 4 Quick Contact Options -->
+    <section class="quick-contact" aria-label="Quick contact options">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:clamp(2rem,4vw,4rem)">
+          <span class="t-label" style="color:var(--terracotta);display:block;margin-bottom:var(--space-md)">Other Ways
+            to Reach Us</span>
+          <h2 class="t-heading" style="color:var(--linen);max-width:20ch;margin-inline:auto">Prefer a Different Channel?
+          </h2>
+        </div>
+        <div class="quick-contact-grid">
+          <div class="quick-card reveal delay-1">
+            <div class="quick-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></div>
+            <div class="quick-card-title">Call Us</div>
+            <div class="quick-card-desc">Speak directly with a member of our team. No call centres — a real craftsperson
+              answers.</div>
+            <a href="tel:+442071234567" class="quick-card-link">+44 207 123 4567 <svg viewBox="0 0 24 24" width="16"
+                height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></a>
+          </div>
+          <div class="quick-card reveal delay-2">
+            <div class="quick-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg></div>
+            <div class="quick-card-title">Email Us</div>
+            <div class="quick-card-desc">For detailed enquiries, project specifications or wallpaper sourcing — email is
+              the best way.</div>
+            <a href="mailto:hello@evorainteriors.com" class="quick-card-link">hello@evorainteriors.com <svg
+                viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></a>
+          </div>
+          <div class="quick-card reveal delay-3">
+            <div class="quick-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <path d="M9 22V12h6v10" />
+              </svg></div>
+            <div class="quick-card-title">Book a Visit</div>
+            <div class="quick-card-desc">We come to you. A free, no-obligation site visit, colour consultation and
+              written quote.</div>
+            <a href="#quote" class="quick-card-link">Request a Visit <svg viewBox="0 0 24 24" width="16" height="16"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 5 Contact Testimonials -->
+    <section class="contact-testimonials" aria-labelledby="ctestimonials-heading">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:0">
+          <span class="t-label reveal" style="display:block;margin-bottom:var(--space-md)">What Our Clients Say</span>
+          <h2 id="ctestimonials-heading" class="t-heading reveal delay-1" style="max-width:22ch;margin-inline:auto">
+            You're in Excellent Hands</h2>
+        </div>
+        <div class="contact-testimonials-grid">
+          <div class="testimonial-card reveal delay-1">
+            <div class="testimonial-stars"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"
+                stroke="currentColor" stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="testimonial-text">"From the first phone call to the final day of work, the Evora team were
+              professional, communicative and extraordinarily skilled. I've already recommended them to four friends."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&q=80&auto=format&fit=crop&crop=face"
+                alt="James M." class="testimonial-avatar" loading="lazy" />
+              <div>
+                <div class="testimonial-name">James Marchetti</div>
+                <div class="testimonial-role">Interior Architect, Mayfair</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal delay-2">
+            <div class="testimonial-stars"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"
+                stroke="currentColor" stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="testimonial-text">"The response to my initial enquiry was so fast and thorough. The quote was
+              clear, itemised and exactly what was delivered. No surprises — just an extraordinary result."</p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&q=80&auto=format&fit=crop&crop=face"
+                alt="Amara T." class="testimonial-avatar" loading="lazy" />
+              <div>
+                <div class="testimonial-name">Amara Osei-Tutu</div>
+                <div class="testimonial-role">Homeowner, Notting Hill</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 6 Contact FAQ -->
+    <section class="contact-faq" aria-labelledby="cfaq-heading">
+      <div class="container contact-faq-layout">
+        <div>
+          <span class="t-label reveal" style="display:block;margin-bottom:var(--space-md)">Before You Get in
+            Touch</span>
+          <h2 id="cfaq-heading" class="t-heading reveal delay-1" style="max-width:18ch;margin-bottom:var(--space-2xl)">
+            Frequently Asked Contact Questions</h2>
+          <p class="t-lead reveal delay-2" style="max-width:36ch">Still not sure? Here are the most common questions we
+            receive before people reach out.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">How quickly do you respond to enquiries?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We respond to all enquiries within 24 hours, Monday to Saturday. For urgent
+                requests, please call us directly on +44 207 123 4567.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is the site visit truly free?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Absolutely. Our initial site visit and colour consultation are completely
+                free and carry no obligation to proceed. We believe in earning your trust before you commit.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Do you serve areas outside London?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We primarily serve Greater London and the Home Counties. For projects in the
+                South East, please get in touch and we'll discuss feasibility and any additional travel considerations.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What information do you need for a quote?<span
+                class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">The more you can share the better — room dimensions, ceiling heights, the
+                number of rooms, your preferred finish and any reference images. Don't worry if you don't know — that's
+                what the site visit is for.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="nav-logo"><svg class="nav-logo-icon" viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+              <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+              <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+              <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+            </svg><span class="nav-logo-text"><span class="nav-logo-mark">Evora</span><span
+                class="nav-logo-sub">Interiors Studio</span></span></a>
+          <p class="footer-tagline">Transforming London homes with bespoke painting, premium wallpaper and artisan
+            finishes since 2009.</p>
+          <div class="footer-socials"><a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"
+                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a><a href="#" class="social-link" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="currentColor">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z">
+                </path>
+              </svg></a><a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="currentColor">
+                <path
+                  d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 23.953 4.57z">
+                </path>
+              </svg></a><a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2.5"></path>
+                <path d="M2 21h4V8H2z"></path>
+                <path d="M4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
+              </svg></a></div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5><a href="services.html#painting">Interior Painting</a><a
+            href="services.html#wallpaper">Wallpaper Installation</a><a href="services.html#feature">Feature Walls</a><a
+            href="services.html#texture">Texture Finishes</a><a href="services.html#colour">Colour Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h5>Studio</h5><a href="index.html">Home</a><a href="home2.html">Home 2</a><a
+            href="services.html">Services</a><a href="about.html">About</a><a href="blog.html">Journal</a><a
+            href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get in Touch</h5><a href="tel:+442071234567">+44 207 123 4567</a><a
+            href="mailto:hello@evorainteriors.com">hello@evorainteriors.com</a><a href="#">14 Portobello
+            Studios<br>London W11 2DX</a><a href="contact.html#quote" style="margin-top:var(--space-md)"><svg
+              viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg> Free Quote</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Evora Interiors Studio. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a
+            href="sitemap.html">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
+      aria-hidden="true">
+      <path d="M12 19V5" />
+      <path d="M5 12l7-7 7 7" />
+    </svg></button>
+  <script src="js/theme.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/before-after.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Home 2 — Evora Interiors | Interior Painting & Wallpaper</title>
+  <meta name="description"
+    content="Discover Evora's alternative home experience — featuring project gallery, colour palette collections, wallpaper showcases and a direct quote form." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css?v=2" />
+  <link rel="stylesheet" href="css/base.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <link rel="stylesheet" href="css/layout.css?v=2" />
+  <link rel="stylesheet" href="css/components.css?v=2" />
+  <style>
+    /* HOME 2 — Unique Sections */
+
+    /* § 1 Fullscreen Background Hero — Premium Editorial */
+    .h2-hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding-block: calc(var(--nav-h) + 2rem) clamp(3.5rem, 7vw, 7rem);
+      background-image: url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=1920&q=85&auto=format&fit=crop');
+      background-color: var(--charcoal);
+      background-size: cover;
+      background-position: center 38%;
+      overflow: hidden;
+    }
+
+    .h2-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+          rgba(20, 19, 17, 0.94) 0%,
+          rgba(20, 19, 17, 0.78) 45%,
+          rgba(20, 19, 17, 0.25) 80%,
+          rgba(20, 19, 17, 0.05) 100%);
+      pointer-events: none;
+    }
+
+    .h2-hero::after {
+      content: '';
+      position: absolute;
+      top: -12%;
+      right: -14%;
+      width: 50%;
+      height: 55%;
+      background: radial-gradient(circle, rgba(184, 111, 97, 0.16) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .h2-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: var(--container-px);
+      display: grid;
+      grid-template-columns: 1.4fr 0.75fr;
+      align-items: center;
+      gap: clamp(2rem, 4vw, 4.5rem);
+    }
+
+    .h2-hero-content {
+      min-width: 0;
+    }
+
+    .h2-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      align-self: flex-start;
+      padding: 9px 18px;
+      border-radius: var(--r-full);
+      border: 1px solid rgba(247, 243, 236, 0.22);
+      background: rgba(247, 243, 236, 0.05);
+      backdrop-filter: blur(8px);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: var(--space-2xl);
+    }
+
+    .h2-hero-eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      animation: pulse-dot 2.4s var(--ease-in-out) infinite;
+    }
+
+    @keyframes pulse-dot {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 154, 136, 0.45);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 154, 136, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 154, 136, 0);
+      }
+    }
+
+    .h2-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5.5vw, 6rem);
+      line-height: 0.97;
+      color: #F7F3EC;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .h2-hero-title .accent-word {
+      font-style: italic;
+      color: var(--terracotta);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .h2-hero-title .accent-word::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0.05em;
+      height: 0.06em;
+      background: linear-gradient(90deg, var(--terracotta), rgba(255, 154, 136, 0));
+      border-radius: var(--r-full);
+      transform-origin: left;
+      animation: underline-grow 1.1s var(--ease-out) 0.7s backwards;
+    }
+
+    @keyframes underline-grow {
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    .h2-hero-copy {
+      color: rgba(247, 243, 236, 0.85);
+      max-width: 40ch;
+      margin-bottom: var(--space-2xl);
+      line-height: 1.75;
+      font-size: 1.05rem;
+    }
+
+    .h2-hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .hero-cta-primary {
+      padding-right: 10px;
+    }
+
+    .btn-icon-inner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      margin-left: 14px;
+      border-radius: var(--r-full);
+      background: rgba(20, 19, 17, 0.20);
+      color: #fff;
+      font-size: 1rem;
+      transition: transform var(--dur-base) var(--ease-out), background var(--dur-base);
+    }
+
+    [data-theme="dark"] .btn-icon-inner {
+      color: #161513;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-accent:hover .btn-icon-inner {
+      transform: translate(3px, -2px) scale(1.06);
+    }
+
+    .btn-glass-dark {
+      background: rgba(247, 243, 236, 0.06);
+      border: 1px solid rgba(247, 243, 236, 0.35);
+      color: #F7F3EC;
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-glass-dark:hover {
+      background: #F7F3EC;
+      color: var(--charcoal);
+      border-color: #F7F3EC;
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: var(--space-2xl);
+      left: var(--container-px);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.6875rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgba(247, 243, 236, 0.8);
+    }
+
+    [dir="rtl"] .hero-scroll-indicator {
+      left: auto;
+      right: var(--container-px);
+    }
+
+    .hero-scroll-line {
+      width: 48px;
+      height: 1px;
+      background: rgba(247, 243, 236, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-scroll-line::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: var(--terracotta);
+      animation: scroll-line 2.2s var(--ease-in-out) infinite;
+    }
+
+    @keyframes scroll-line {
+      0% {
+        transform: translateX(-120%);
+      }
+
+      60%,
+      100% {
+        transform: translateX(240%);
+      }
+    }
+
+    /* Right — single cohesive glass card */
+    .h2-hero-aside {
+      min-width: 0;
+    }
+
+    .h2-hero-glass {
+      position: relative;
+      border-radius: var(--r-xl);
+      background: rgba(20, 19, 17, 0.78);
+      border: 1px solid rgba(247, 243, 236, 0.22);
+      box-shadow: var(--shadow-xl);
+      backdrop-filter: blur(18px);
+      padding: var(--space-2xl);
+    }
+
+    [data-theme="dark"] .h2-hero-glass {
+      background: rgba(12, 12, 11, 0.84);
+    }
+
+    .h2-hero-glass::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 45%);
+      pointer-events: none;
+    }
+
+    .h2-float-stars {
+      color: var(--on-dark-brass);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+    }
+
+    .h2-float-num {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: #F7F3EC;
+      line-height: 1;
+    }
+
+    .h2-float-sub {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(247, 243, 236, 0.82);
+      margin-top: 3px;
+    }
+
+    .h2-hero-glass-divider {
+      height: 1px;
+      background: rgba(247, 243, 236, 0.16);
+      margin-block: var(--space-lg);
+    }
+
+    .h2-hero-rows {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    .h2-hero-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-lg);
+    }
+
+    .h2-card-mini-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: rgba(247, 243, 236, 0.82);
+      margin-bottom: 4px;
+    }
+
+    .h2-card-mini-val {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #F7F3EC;
+    }
+
+    /* § 2 Staggered Project Grid */
+    .projects-grid-section {
+      padding-block: var(--section-py);
+    }
+
+    .projects-masonry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: var(--space-md);
+    }
+
+    .proj-item {
+      overflow: hidden;
+      border-radius: var(--r-lg);
+      position: relative;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+    }
+
+    .proj-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--dur-slower) var(--ease-out);
+    }
+
+    .proj-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .proj-item-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(20, 19, 17, 0.72);
+      background-image: linear-gradient(to top, rgba(20, 19, 17, 0.92) 0%, rgba(20, 19, 17, 0.42) 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity var(--dur-base);
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-lg);
+    }
+
+    .proj-item:hover .proj-item-overlay {
+      opacity: 1;
+    }
+
+    .proj-item-label {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    /* § 3 Colour Palette Collections */
+    .palette-section {
+      background: var(--bg-alt);
+      padding-block: var(--section-py);
+    }
+
+    .palette-header-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--col-gap);
+      align-items: end;
+      margin-bottom: clamp(2rem, 4vw, 4rem);
+    }
+
+    .palette-collections {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--col-gap);
+      margin-top: clamp(2rem, 4vw, 4rem);
+    }
+
+    /* § 4 Wallpaper Showcase – slider */
+    .wallpaper-showcase {
+      padding-block: var(--section-py);
+    }
+
+    .wallpaper-slider {
+      --per-view: 3;
+      --slide-gap: var(--space-md);
+      position: relative;
+    }
+
+    .wallpaper-slider-viewport {
+      overflow: hidden;
+      padding-inline: var(--container-px);
+    }
+
+    .wallpaper-slider-track {
+      display: flex;
+      gap: var(--slide-gap);
+      width: 100%;
+      transition: transform var(--dur-slower) var(--ease-in-out);
+      will-change: transform;
+    }
+
+    .wallpaper-card {
+      width: calc((100% - (var(--per-view) - 1) * var(--slide-gap)) / var(--per-view));
+      flex-shrink: 0;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base);
+    }
+
+    .wallpaper-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .wallpaper-slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+
+    .wallpaper-slider-controls .slider-arrow {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: var(--surface);
+      backdrop-filter: none;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all var(--dur-base);
+    }
+
+    .wallpaper-slider-controls .slider-arrow:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+
+    .wallpaper-slider-dots {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .wallpaper-slider-dots .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: var(--r-full);
+      background: var(--border-strong);
+      cursor: pointer;
+      border: none;
+      padding: 0;
+      transition: all var(--dur-base);
+    }
+
+    .wallpaper-slider-dots .slider-dot.active {
+      background: var(--accent);
+      width: 24px;
+    }
+
+    .wallpaper-card-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+
+    .wallpaper-card-info {
+      padding: var(--space-lg);
+    }
+
+    .wallpaper-card-brand {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .wallpaper-card-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--text-primary);
+    }
+
+    /* § 5 FAQ + inline form */
+    .faq-form-section {
+      background: var(--charcoal);
+      padding-block: var(--section-py);
+    }
+
+    .faq-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+    }
+
+    .faq-form-section .faq-question {
+      color: #F7F3EC;
+    }
+
+    .faq-form-section .faq-item {
+      border-color: rgba(247, 243, 236, 0.18);
+    }
+
+    .faq-form-section .faq-answer-inner {
+      color: rgba(247, 243, 236, 0.88);
+    }
+
+    .faq-form-section .faq-icon {
+      border-color: rgba(247, 243, 236, 0.35);
+      color: #F7F3EC;
+    }
+
+    .inline-quote-card {
+      background: var(--surface);
+      border-radius: var(--r-xl);
+      border: 1px solid var(--border-strong);
+      padding: var(--space-3xl);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+
+    /* § 6 Brands / Trust Bar */
+    .brands-section {
+      padding-block: clamp(3rem, 5vw, 5rem);
+      border-top: 1px solid var(--border-strong);
+    }
+
+    .brands-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(2rem, 5vw, 5rem);
+      flex-wrap: wrap;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.5vw, 1.3rem);
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: -0.01em;
+      transition: color var(--dur-fast);
+      cursor: default;
+      font-style: italic;
+    }
+
+    .brand-name:hover {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .h2-hero {
+        align-items: flex-start;
+        padding-block: calc(var(--nav-h) + 3rem) clamp(2.5rem, 6vw, 4rem);
+      }
+
+      .h2-hero::before {
+        background: linear-gradient(180deg,
+            rgba(20, 19, 17, 0.82) 0%,
+            rgba(20, 19, 17, 0.90) 55%,
+            rgba(20, 19, 17, 0.97) 100%);
+      }
+
+      .hero-scroll-indicator {
+        display: none;
+      }
+
+      .h2-hero-inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+      }
+
+      .h2-hero-aside {
+        width: 100%;
+      }
+
+      .h2-hero-glass {
+        border-radius: var(--r-lg);
+      }
+
+      .projects-masonry {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .palette-collections {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wallpaper-slider {
+        --per-view: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .projects-masonry {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .palette-header-grid {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .wallpaper-slider {
+        --per-view: 1;
+      }
+
+      .wallpaper-slider-controls {
+        gap: var(--space-md);
+      }
+
+      .h2-hero-glass {
+        padding: var(--space-xl);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Evora Interiors Home">
+        <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+          <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+          <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+          <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+        </svg>
+        <span class="nav-logo-text">
+          <span class="nav-logo-mark">Evora</span>
+          <span class="nav-logo-sub">Interiors Studio</span>
+        </span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home2.html" class="active">Home 2</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
+            viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg></button>
+        <button class="icon-btn" data-toggle-dir data-dir-icon aria-label="Toggle RTL">RTL</button>
+        <a href="contact.html#quote" class="nav-btn">Free Quote</a>
+        <button class="hamburger" aria-label="Open menu"
+          aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a><a href="home2.html" class="active">Home 2</a><a href="about.html">About</a><a
+      href="services.html">Services</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <!-- § 1 Split Fullscreen Hero -->
+    <section class="h2-hero" aria-label="Hero">
+      <div class="h2-hero-inner">
+        <div class="h2-hero-content">
+          <span class="h2-hero-eyebrow reveal"><span class="dot"></span>London's Premier Painting Studio</span>
+          <h1 class="h2-hero-title reveal delay-1">The Art of the <span class="accent-word">Painted</span> Interior</h1>
+          <p class="h2-hero-copy reveal delay-2">
+            Every wall tells a story. We write it in colour, texture and light — with a craft refined over fifteen
+            years.
+          </p>
+          <div class="h2-hero-ctas reveal delay-3">
+            <a href="contact.html#quote" class="btn btn-accent btn-lg hero-cta-primary">Get a Quote <span
+                class="btn-icon-inner"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
+                  aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg></span></a>
+            <a href="about.html" class="btn btn-glass-dark btn-lg">Our Story</a>
+          </div>
+        </div>
+        <div class="h2-hero-aside reveal delay-2">
+          <div class="h2-hero-glass">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-md)">
+              <div>
+                <div class="h2-float-num">5.0</div>
+                <div class="h2-float-sub">Client Rating</div>
+              </div>
+              <span class="h2-float-stars" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"
+                  fill="currentColor" stroke="currentColor" stroke-width="1" style="vertical-align:-1px"
+                  aria-hidden="true">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                  stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                  stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                  stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                  stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg></span>
+            </div>
+            <div class="h2-hero-glass-divider"></div>
+            <div class="h2-hero-rows">
+              <div class="h2-hero-row">
+                <div>
+                  <div class="h2-card-mini-label">Current Project</div>
+                  <div class="h2-card-mini-val">Belgravia Townhouse</div>
+                </div>
+                <span style="color:var(--sage);font-size:0.875rem;font-weight:700" aria-hidden="true"><svg
+                    viewBox="0 0 8 8" width="8" height="8" fill="currentColor" aria-hidden="true">
+                    <circle cx="4" cy="4" r="3.5" />
+                  </svg></span>
+              </div>
+              <div class="h2-hero-row">
+                <div>
+                  <div class="h2-card-mini-label">Finish</div>
+                  <div class="h2-card-mini-val">Limewash + Silk</div>
+                </div>
+                <span style="color:var(--brass);font-size:0.875rem;font-weight:700" aria-hidden="true"><svg
+                    viewBox="0 0 8 8" width="8" height="8" fill="currentColor" aria-hidden="true">
+                    <circle cx="4" cy="4" r="3.5" />
+                  </svg></span>
+              </div>
+            </div>
+            <a href="about.html#projects" class="btn btn-primary btn-sm" style="width:100%">View All Projects</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator" aria-hidden="true"><span class="hero-scroll-line"></span>Scroll</div>
+    </section>
+
+    <!-- § 2 Staggered Project Gallery -->
+    <section class="projects-grid-section" aria-labelledby="projects-h2">
+      <div class="container">
+        <div
+          style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-xl);margin-bottom:clamp(2rem,4vw,4rem);flex-wrap:wrap">
+          <div>
+            <span class="t-label reveal">Selected Projects</span>
+            <h2 id="projects-h2" class="t-title reveal delay-1" style="margin-top:var(--space-md);max-width:20ch">A
+              Portfolio of Transformed Spaces</h2>
+          </div>
+          <a href="about.html#projects" class="btn-arrow reveal">Full Portfolio <span class="arrow"><svg
+                viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span></a>
+        </div>
+        <div class="projects-masonry">
+          <div class="proj-item proj-a reveal"
+            data-lightbox="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1707340726616-a7dab99ef27c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW50ZXJpb3IlMjB3YWxsJTIwcGFpbnRpbmd8ZW58MHx8MHx8fDA%3D"
+              alt="Terracotta living room feature wall with architectural mouldings" loading="lazy" />
+            <div class="proj-item-overlay"><span class="proj-item-label">Terracotta Living Room</span></div>
+          </div>
+          <div class="proj-item proj-b reveal delay-1"
+            data-lightbox="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80&auto=format&fit=crop"
+              alt="Dark moody bedroom with bespoke wallpaper feature wall" loading="lazy" />
+            <div class="proj-item-overlay"><span class="proj-item-label">Midnight Bedroom</span></div>
+          </div>
+          <div class="proj-item proj-c reveal delay-2"
+            data-lightbox="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1600508774764-4ce704363d66?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aW50ZXJpb3IlMjB3YWxsJTIwcGFpbnRpbmd8ZW58MHx8MHx8fDA%3D"
+              alt="Sage green dining room with textured accent wall and brass fixtures" loading="lazy" />
+            <div class="proj-item-overlay"><span class="proj-item-label">Sage Dining Room</span></div>
+          </div>
+          <div class="proj-item proj-d reveal delay-1"
+            data-lightbox="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1200&q=85">
+            <img src="https://plus.unsplash.com/premium_photo-1706152482918-b3fb39dbd4b4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW50ZXJpb3IlMjB3YWxsJTIwcGFpbnRpbmd8ZW58MHx8MHx8fDA%3D"
+              alt="Moody study with geometric textured walls in charcoal" loading="lazy" />
+            <div class="proj-item-overlay"><span class="proj-item-label">Charcoal Study</span></div>
+          </div>
+          <div class="proj-item proj-e reveal delay-2"
+            data-lightbox="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1572097000793-d77caa6399b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50aW5nfGVufDB8fDB8fHww"
+              alt="Venetian plaster walls in warm terracotta kitchen" loading="lazy" />
+            <div class="proj-item-overlay"><span class="proj-item-label">Venetian Kitchen</span></div>
+          </div>
+          <div class="proj-item proj-f reveal delay-3"
+            data-lightbox="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=85">
+            <img src="https://images.unsplash.com/photo-1678182450286-ab978d312f07?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50aW5nfGVufDB8fDB8fHww"
+              alt="Neutral warm linen painted open plan space with elegant detail" loading="lazy" />
+            <div class="proj-item-overlay"><span class="proj-item-label">Linen Open Plan</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 3 Colour Palette Collections -->
+    <section class="palette-section" aria-labelledby="palette-heading">
+      <div class="container">
+        <div class="palette-header-grid">
+          <div>
+            <span class="t-label reveal">Colour Guide</span>
+            <h2 id="palette-heading" class="t-title reveal delay-1" style="margin-top:var(--space-md);max-width:18ch">
+              Our Curated Palette Collections</h2>
+          </div>
+          <p class="t-lead reveal" style="max-width:40ch">Curated tonal stories for every interior mood — from serene
+            neutrals to dramatic darks and warm earths.</p>
+        </div>
+        <div class="palette-collections">
+          <div class="palette-card reveal delay-1">
+            <div class="palette-strips">
+              <div class="palette-strip" style="background:#F3EEE6"></div>
+              <div class="palette-strip" style="background:#C9BDB0"></div>
+              <div class="palette-strip" style="background:#B79B68"></div>
+              <div class="palette-strip" style="background:#9AA58F"></div>
+              <div class="palette-strip" style="background:#B83926"></div>
+            </div>
+            <div class="palette-info">
+              <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:4px">Warm Editorial</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--text-secondary)">Linen, Taupe, Brass, Sage &
+                Terracotta — our signature collection.</p>
+            </div>
+          </div>
+          <div class="palette-card reveal delay-2">
+            <div class="palette-strips">
+              <div class="palette-strip" style="background:#1A1917"></div>
+              <div class="palette-strip" style="background:#2D2B29"></div>
+              <div class="palette-strip" style="background:#4A4745"></div>
+              <div class="palette-strip" style="background:#7A756F"></div>
+              <div class="palette-strip" style="background:#B5AFA9"></div>
+            </div>
+            <div class="palette-info">
+              <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:4px">Nocturnal</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--text-secondary)">Ink-deep charcoals and smoky
+                greys for dramatic, moody interiors.</p>
+            </div>
+          </div>
+          <div class="palette-card reveal delay-3">
+            <div class="palette-strips">
+              <div class="palette-strip" style="background:#E8EDE4"></div>
+              <div class="palette-strip" style="background:#C8D5C0"></div>
+              <div class="palette-strip" style="background:#9AA58F"></div>
+              <div class="palette-strip" style="background:#6B7E62"></div>
+              <div class="palette-strip" style="background:#4A5C42"></div>
+            </div>
+            <div class="palette-info">
+              <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:4px">Botanical</h3>
+              <p style="font-size:0.8125rem;font-weight:600;color:var(--text-secondary)">Living greens and sage tones
+                that bring nature's calm indoors.</p>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:var(--space-2xl)">
+          <a href="services.html#colour" class="btn btn-outline">Explore Full Palette Guide</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 4 Wallpaper Showcase — Horizontal Scroll -->
+    <section class="wallpaper-showcase" aria-labelledby="wallpaper-heading">
+      <div class="container" style="margin-bottom:clamp(1.5rem,3vw,3rem)">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:var(--space-xl)">
+          <div>
+            <span class="t-label reveal">Wallpaper Collections</span>
+            <h2 id="wallpaper-heading" class="t-title reveal delay-1" style="margin-top:var(--space-md);max-width:20ch">
+              World's Finest Wallpapers, Expertly Hung</h2>
+          </div>
+          <a href="services.html#wallpaper" class="btn-arrow reveal">View All <span class="arrow"><svg
+                viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span></a>
+        </div>
+      </div>
+      <div class="wallpaper-slider" role="region" aria-label="Wallpaper collections carousel">
+        <div class="wallpaper-slider-viewport">
+          <div class="wallpaper-slider-track">
+            <div class="wallpaper-card">
+              <img src="https://images.unsplash.com/photo-1757843331266-8c8dd39ba726?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50aW5nfGVufDB8fDB8fHww"
+                alt="Botanical floral wallpaper in blush and sage" class="wallpaper-card-img" loading="lazy" />
+              <div class="wallpaper-card-info">
+                <div class="wallpaper-card-brand">Cole & Son</div>
+                <div class="wallpaper-card-name">Botanical Collection</div>
+              </div>
+            </div>
+            <div class="wallpaper-card">
+              <img src="https://images.unsplash.com/photo-1766443573430-dc78414f1095?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50aW5nfGVufDB8fDB8fHww"
+                alt="Geometric Art Deco wallpaper in gold and charcoal" class="wallpaper-card-img" loading="lazy" />
+              <div class="wallpaper-card-info">
+                <div class="wallpaper-card-brand">Graham & Brown</div>
+                <div class="wallpaper-card-name">Art Deco Revival</div>
+              </div>
+            </div>
+            <div class="wallpaper-card">
+              <img src="https://images.unsplash.com/photo-1773270196886-58a9def31840?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50aW5nfGVufDB8fDB8fHww"
+                alt="Woven grasscloth texture wallcovering in warm sand" class="wallpaper-card-img" loading="lazy" />
+              <div class="wallpaper-card-info">
+                <div class="wallpaper-card-brand">Designers Guild</div>
+                <div class="wallpaper-card-name">Natural Weave</div>
+              </div>
+            </div>
+            <div class="wallpaper-card">
+              <img src="https://plus.unsplash.com/premium_photo-1676057875512-945438ae6132?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50aW5nfGVufDB8fDB8fHww"
+                alt="Abstract ink wash wallpaper in deep teal and grey" class="wallpaper-card-img" loading="lazy" />
+              <div class="wallpaper-card-info">
+                <div class="wallpaper-card-brand">Zoffany</div>
+                <div class="wallpaper-card-name">Ink Abstract</div>
+              </div>
+            </div>
+            <div class="wallpaper-card">
+              <img src="https://images.unsplash.com/photo-1652734853828-24f9c9dceb94?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50aW5nfGVufDB8fDB8fHww"
+                alt="Chinoiserie hand-painted style wallpaper with birds and blossoms" class="wallpaper-card-img"
+                loading="lazy" />
+              <div class="wallpaper-card-info">
+                <div class="wallpaper-card-brand">de Gournay</div>
+                <div class="wallpaper-card-name">Chinoiserie Garden</div>
+              </div>
+            </div>
+            <div class="wallpaper-card">
+              <img src="https://images.unsplash.com/photo-1781449165668-4ff309209a7d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50aW5nfGVufDB8fDB8fHww"
+                alt="Terracotta geometric tile pattern wallpaper" class="wallpaper-card-img" loading="lazy" />
+              <div class="wallpaper-card-info">
+                <div class="wallpaper-card-brand">Little Greene</div>
+                <div class="wallpaper-card-name">Archive Geometric</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wallpaper-slider-controls">
+          <button type="button" class="slider-arrow prev" aria-label="Previous wallpapers"><svg viewBox="0 0 24 24"
+              width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6" />
+            </svg></button>
+          <div class="wallpaper-slider-dots" role="tablist" aria-label="Choose wallpaper slide"></div>
+          <button type="button" class="slider-arrow next" aria-label="Next wallpapers"><svg viewBox="0 0 24 24"
+              width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 6l6 6-6 6" />
+            </svg></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 5 FAQ + Quote Form -->
+    <section class="faq-form-section" aria-labelledby="faq-h2-heading">
+      <div class="container faq-form-grid">
+
+        <div>
+          <span class="t-label" style="color:var(--terracotta)">Common Questions</span>
+          <h2 id="faq-h2-heading" class="t-heading"
+            style="color:var(--linen);margin-top:var(--space-md);margin-bottom:var(--space-2xl);max-width:20ch">
+            Everything You Need to Know</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question">Do you offer a free colour consultation?</button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Yes — every project begins with a complimentary in-home colour
+                  consultation, where our specialist will assess your light, existing furniture and your vision to
+                  create a bespoke palette.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">How long does a typical project take?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">A single room typically takes 2–3 days. A full apartment 5–10 days. We
+                  always provide a precise timeline at quote stage and stick to it.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">What paint brands do you use?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">We work exclusively with premium brands including Farrow & Ball, Little
+                  Greene, Zoffany, Edward Bulmer and Lick. We can also match any colour from any brand.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Do you provide a guarantee on your work?<span
+                  class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">All Evora projects come with a 2-year craftsmanship guarantee. If anything
+                  doesn't look perfect, we'll return and fix it — at no cost to you.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Can you work around our schedule?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Absolutely. We offer flexible scheduling including evenings and weekends
+                  for smaller jobs, and we can sequence larger projects to minimise disruption to your daily life.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="inline-quote-card reveal-right">
+          <h3 class="t-heading" style="margin-bottom:var(--space-md)">Request a Quote</h3>
+          <p class="t-sm" style="margin-bottom:var(--space-2xl)">Fill in the details below and we'll get back to you
+            within 24 hours with a tailored quote.</p>
+          <form data-form id="h2-quote-form" novalidate>
+            <div class="form-fields" style="display:flex;flex-direction:column;gap:var(--space-md)">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="h2-name">First Name</label>
+                  <input id="h2-name" class="form-input" type="text" placeholder="Amara" data-validate="required" />
+                  <span class="form-error-msg"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="h2-lname">Last Name</label>
+                  <input id="h2-lname" class="form-input" type="text" placeholder="Osei" data-validate="required" />
+                  <span class="form-error-msg"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="h2-email">Email Address</label>
+                <input id="h2-email" class="form-input" type="email" placeholder="you@example.com"
+                  data-validate="required|email" />
+                <span class="form-error-msg"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="h2-service">Service Required</label>
+                <select id="h2-service" class="form-select" data-validate="required">
+                  <option value="">Select a service…</option>
+                  <option>Interior Painting</option>
+                  <option>Wallpaper Installation</option>
+                  <option>Feature Wall</option>
+                  <option>Texture Finish</option>
+                  <option>Full Home Transformation</option>
+                </select>
+                <span class="form-error-msg"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="h2-msg">Tell Us About Your Project</label>
+                <textarea id="h2-msg" class="form-textarea" placeholder="Describe your space, vision and any questions…"
+                  data-validate="required|minlen:20" style="min-height:110px"></textarea>
+                <span class="form-error-msg"></span>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%">Send Request <svg viewBox="0 0 24 24"
+                  width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg></button>
+            </div>
+            <div class="form-success">
+              <div style="font-size:2rem"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <h4>Thank You!</h4>
+              <p>We'll be in touch within 24 hours.</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- § 6 Trusted Brands -->
+    <section class="brands-section" aria-label="Partner brands">
+      <div class="container">
+        <p class="t-label text-center reveal" style="margin-bottom:var(--space-2xl)">Paint & Wallpaper Partners</p>
+        <div class="brands-grid">
+          <span class="brand-name reveal delay-1">Farrow & Ball</span>
+          <span class="brand-name reveal delay-2">Little Greene</span>
+          <span class="brand-name reveal delay-3">Cole & Son</span>
+          <span class="brand-name reveal delay-4">Zoffany</span>
+          <span class="brand-name reveal delay-5">Designers Guild</span>
+          <span class="brand-name reveal delay-6">de Gournay</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><svg class="nav-logo-icon" viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+              <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+              <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+              <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+            </svg><span class="nav-logo-text"><span class="nav-logo-mark">Evora</span><span
+                class="nav-logo-sub">Interiors Studio</span></span></a>
+          <p class="footer-tagline">Transforming London homes with bespoke painting, premium wallpaper and artisan
+            finishes since 2009.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a>
+            <a href="#" class="social-link" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="currentColor">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z">
+                </path>
+              </svg></a>
+            <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="currentColor">
+                <path
+                  d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 23.953 4.57z">
+                </path>
+              </svg></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2.5"></path>
+                <path d="M2 21h4V8H2z"></path>
+                <path d="M4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5><a href="services.html#painting">Interior Painting</a><a
+            href="services.html#wallpaper">Wallpaper Installation</a><a href="services.html#feature">Feature Walls</a><a
+            href="services.html#texture">Texture Finishes</a><a href="services.html#colour">Colour Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h5>Studio</h5><a href="index.html">Home</a><a href="home2.html">Home 2</a><a
+            href="services.html">Services</a><a href="about.html">About</a><a href="blog.html">Journal</a><a
+            href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get in Touch</h5><a href="tel:+442071234567">+44 207 123 4567</a><a
+            href="mailto:hello@evorainteriors.com">hello@evorainteriors.com</a><a href="#">14 Portobello
+            Studios<br>London W11 2DX</a><a href="contact.html#quote" style="margin-top:var(--space-md)"><svg
+              viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg> Free Quote</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Evora Interiors Studio. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a
+            href="sitemap.html">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
+      aria-hidden="true">
+      <path d="M12 19V5" />
+      <path d="M5 12l7-7 7 7" />
+    </svg></button>
+
+  <script src="js/theme.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/before-after.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Drag-to-scroll wallpaper strip
+    const wall = document.querySelector('.wallpaper-scroll-wrap');
+    if (wall) {
+      let isDown = false, startX, scrollLeft;
+      wall.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - wall.offsetLeft; scrollLeft = wall.scrollLeft; });
+      wall.addEventListener('mouseleave', () => isDown = false);
+      wall.addEventListener('mouseup', () => isDown = false);
+      wall.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); const x = e.pageX - wall.offsetLeft; wall.scrollLeft = scrollLeft - (x - startX); });
+    }
+  </script>
+</body>
+
+</html>

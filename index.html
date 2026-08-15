@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Evora Interiors — Luxury Interior Painting & Wallpaper Installation</title>
+  <meta name="description"
+    content="Evora Interiors transforms living spaces with bespoke interior painting, premium wallpaper installation, feature walls and artisan texture finishes. Serving discerning homeowners across the city." />
+  <meta name="keywords"
+    content="interior painting, wallpaper installation, feature walls, texture finishes, luxury interior design" />
+  <meta property="og:title" content="Evora Interiors — Luxury Interior Painting & Wallpaper" />
+  <meta property="og:description"
+    content="Transforming spaces with bespoke paintwork and curated wallpaper installations." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://evorainteriors.com/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css?v=2" />
+  <link rel="stylesheet" href="css/base.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <link rel="stylesheet" href="css/layout.css?v=2" />
+  <link rel="stylesheet" href="css/components.css?v=2" />
+
+  <style>
+    /* ================================================
+       HOME PAGE — Unique Section Styles
+       ================================================ */
+
+    /* § 1  HERO SLIDER */
+    .home-hero {
+      height: 100svh;
+      min-height: 600px;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--charcoal);
+    }
+
+    .slide-inner {
+      height: 100svh;
+      min-height: 600px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(4rem, 8vw, 7rem);
+    }
+
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg,
+          rgba(36, 35, 33, 0.15) 0%,
+          rgba(36, 35, 33, 0.65) 100%);
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .slide-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(247, 243, 236, 0.95);
+      margin-bottom: var(--space-lg);
+    }
+
+    .slide-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .slide-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 7.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: #fff;
+      max-width: 14ch;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .slide-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xl);
+      flex-wrap: wrap;
+    }
+
+    .slide-scroll {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .slide-scroll-line {
+      width: 40px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    /* § 2  MARQUEE RIBBON */
+    .marquee-section {
+      background: var(--charcoal);
+      padding-block: 20px;
+      overflow: hidden;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding-right: 32px;
+      color: rgba(247, 243, 236, 0.9);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .marquee-item span {
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    /* § 3  EDITORIAL INTRO */
+    .editorial-intro {
+      padding-block: var(--section-py);
+    }
+
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: clamp(3rem, 6vw, 7rem);
+      align-items: center;
+    }
+
+    .editorial-left .t-label {
+      margin-bottom: var(--space-xl);
+    }
+
+    .editorial-heading {
+      font-size: clamp(2.4rem, 5vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .editorial-heading em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .editorial-right {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xl);
+    }
+
+    .editorial-img-wrap {
+      position: relative;
+    }
+
+    .editorial-img-main {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--r-xl);
+    }
+
+    .editorial-img-badge {
+      position: absolute;
+      bottom: var(--space-xl);
+      left: var(--space-xl);
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-lg);
+      padding: var(--space-lg) var(--space-xl);
+      box-shadow: var(--shadow-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .badge-stat {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .badge-label {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      max-width: 12ch;
+    }
+
+    .editorial-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--col-gap);
+    }
+
+    /* § 4  SERVICES SHOWCASE */
+    .services-showcase {
+      background: var(--bg-alt);
+      padding-block: var(--section-py);
+    }
+
+    .services-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: var(--space-xl);
+      margin-bottom: clamp(2.5rem, 5vw, 5rem);
+      flex-wrap: wrap;
+    }
+
+    .services-grid-home {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--col-gap);
+    }
+
+    .services-grid-home .service-card-img {
+      aspect-ratio: 4/3;
+    }
+
+    .service-card-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .service-card-head .t-subheading {
+      margin-bottom: 0;
+    }
+
+    .service-index {
+      font-family: var(--font-display);
+      font-size: 0.8125rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .services-grid-home .service-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .services-grid-home .service-card-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .services-grid-home .btn-arrow {
+      margin-top: auto;
+      padding-top: var(--space-xl);
+    }
+
+    /* § 5  BEFORE/AFTER SHOWCASE */
+    .ba-section {
+      padding-block: var(--section-py);
+    }
+
+    .ba-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .ba-wrapper {
+      aspect-ratio: 4/5;
+      position: relative;
+    }
+
+    .ba-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ba-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xl);
+    }
+
+    .ba-project-meta {
+      display: flex;
+      gap: var(--space-xl);
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--border-strong);
+    }
+
+    .ba-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .ba-meta-key {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .ba-meta-val {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* § 6  TESTIMONIALS */
+    .testimonials-section {
+      background: var(--charcoal);
+      padding-block: var(--section-py);
+      color: #F7F3EC;
+    }
+
+    .testimonials-section .t-label {
+      color: var(--accent);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--col-gap);
+      margin-top: clamp(2rem, 4vw, 4rem);
+    }
+
+    .testimonials-section .testimonial-card {
+      background: rgba(247, 243, 236, 0.06);
+      border: 1px solid rgba(247, 243, 236, 0.18);
+    }
+
+    .testimonials-section .testimonial-text {
+      color: rgba(247, 243, 236, 0.9);
+    }
+
+    .testimonials-section .testimonial-name {
+      color: #F7F3EC;
+    }
+
+    .testimonials-section .faq-question {
+      color: #F7F3EC;
+    }
+
+    /* § 7  PROCESS TIMELINE */
+    .process-section {
+      padding-block: var(--section-py);
+    }
+
+    .process-header {
+      max-width: 720px;
+      margin-inline: auto;
+      text-align: center;
+      margin-bottom: clamp(3rem, 5vw, 5rem);
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: var(--border-strong);
+    }
+
+    .timeline-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xl);
+      text-align: center;
+      padding-inline: var(--space-md);
+    }
+
+    .timeline-dot {
+      width: 72px;
+      height: 72px;
+      border-radius: var(--r-full);
+      background: var(--surface);
+      border: 2px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      flex-shrink: 0;
+      z-index: 1;
+      transition: all var(--dur-base);
+    }
+
+    .timeline-step:hover .timeline-dot {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+
+    [data-theme="dark"] .timeline-step:hover .timeline-dot {
+      color: #161513;
+    }
+
+    .timeline-step h4 {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+    }
+
+    .timeline-step p {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+
+    /* § 8  CTA BAND */
+    .cta-band {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border-strong);
+      border-bottom: 1px solid var(--border-strong);
+      padding-block: clamp(3rem, 6vw, 6rem);
+    }
+
+    .cta-band-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2xl);
+      flex-wrap: wrap;
+    }
+
+    .cta-band-text h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-band-text p {
+      max-width: 42ch;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .services-grid-home {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-timeline {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-2xl);
+      }
+
+      .process-timeline::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .editorial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-img-badge {
+        left: var(--space-md);
+        bottom: var(--space-md);
+      }
+
+      .editorial-stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .services-grid-home {
+        grid-template-columns: 1fr;
+      }
+
+      .ba-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .ba-wrapper {
+        aspect-ratio: 4/3;
+      }
+
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-band-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .slide-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .editorial-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .ba-project-meta {
+        flex-direction: column;
+        gap: var(--space-md);
+      }
+
+      .editorial-img-badge {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-top: var(--space-md);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar hero-overlay-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Evora Interiors Home">
+        <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+          <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+          <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+          <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+        </svg>
+        <span class="nav-logo-text">
+          <span class="nav-logo-mark">Evora</span>
+          <span class="nav-logo-sub">Interiors Studio</span>
+        </span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="home2.html">Home 2</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
+            viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg></button>
+        <button class="icon-btn" data-toggle-dir data-dir-icon aria-label="Toggle RTL">RTL</button>
+        <a href="contact.html#quote" class="nav-btn">Free Quote</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html" class="active">Home</a>
+    <a href="home2.html">Home 2</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Journal</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <!-- ═══════════════════════════════════════════
+         § 1 — HERO SLIDER
+         ═══════════════════════════════════════════ -->
+    <section class="home-hero hero-overlay-nav" aria-label="Hero">
+      <div class="hero-slider" aria-roledescription="carousel">
+
+        <div class="slider-track">
+
+          <!-- Slide 1: Warm Terracotta Living Room -->
+          <div class="slide" aria-roledescription="slide" aria-label="1 of 3">
+            <div class="slide-inner">
+              <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1600&q=85&auto=format&fit=crop"
+                alt="Warm terracotta painted living room with architectural details" class="slide-bg" loading="eager"
+                fetchpriority="high" />
+              <div class="slide-overlay"></div>
+              <div class="container slide-content">
+                <p class="slide-eyebrow">Interior Painting Studio</p>
+                <h1 class="slide-title">Where Colour Becomes Character</h1>
+                <div class="slide-actions">
+                  <a href="services.html" class="btn btn-accent btn-lg">Explore Services</a>
+                  <a href="contact.html#quote" class="btn btn-outline btn-lg"
+                    style="color:#FFFFFF;border-color:rgba(255,255,255,0.7);background:rgba(20,19,17,0.3);backdrop-filter:blur(4px)">Free
+                    Site Visit</a>
+                  <span class="slide-scroll">
+                    <span class="slide-scroll-line"></span>Scroll to Discover
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Dark Moody Bedroom -->
+          <div class="slide" aria-roledescription="slide" aria-label="2 of 3">
+            <div class="slide-inner">
+              <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&q=85&auto=format&fit=crop"
+                alt="Moody dark painted bedroom with luxury wallpaper feature wall" class="slide-bg" loading="lazy" />
+              <div class="slide-overlay"></div>
+              <div class="container slide-content">
+                <p class="slide-eyebrow">Wallpaper Installation</p>
+                <h1 class="slide-title">Curated Walls, Crafted Stories</h1>
+                <div class="slide-actions">
+                  <a href="services.html#wallpaper" class="btn btn-accent btn-lg">View Wallpapers</a>
+                  <a href="about.html" class="btn btn-outline btn-lg"
+                    style="color:#FFFFFF;border-color:rgba(255,255,255,0.7);background:rgba(20,19,17,0.3);backdrop-filter:blur(4px)">Our
+                    Craft</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Sage Green Dining -->
+          <div class="slide" aria-roledescription="slide" aria-label="3 of 3">
+            <div class="slide-inner">
+              <img src="https://images.unsplash.com/photo-1711906439107-9c4f08e8c526?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50fGVufDB8fDB8fHww"
+                alt="Sage green painted dining room with textured accent wall" class="slide-bg" loading="lazy" />
+              <div class="slide-overlay"></div>
+              <div class="container slide-content">
+                <p class="slide-eyebrow">Texture & Finish</p>
+                <h1 class="slide-title">Texture That Speaks in Silence</h1>
+                <div class="slide-actions">
+                  <a href="services.html#texture" class="btn btn-accent btn-lg">Texture Gallery</a>
+                  <a href="contact.html" class="btn btn-outline btn-lg"
+                    style="color:#FFFFFF;border-color:rgba(255,255,255,0.7);background:rgba(20,19,17,0.3);backdrop-filter:blur(4px)">Book
+                    Consultation</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /slider-track -->
+
+        <!-- Slider controls -->
+        <div class="slider-arrows" aria-label="Slider navigation">
+          <button class="slider-arrow prev" aria-label="Previous slide">&#8592;</button>
+          <button class="slider-arrow next" aria-label="Next slide">&#8594;</button>
+        </div>
+
+        <div class="slider-nav" role="tablist" aria-label="Slides">
+          <button class="slider-dot active" role="tab" aria-label="Go to slide 1"></button>
+          <button class="slider-dot" role="tab" aria-label="Go to slide 2"></button>
+          <button class="slider-dot" role="tab" aria-label="Go to slide 3"></button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         § 2 — MARQUEE RIBBON
+         ═══════════════════════════════════════════ -->
+    <div class="marquee-section" aria-hidden="true">
+      <div style="overflow:hidden">
+        <div class="marquee-track">
+          <div class="marquee-item">Interior Painting <span><svg viewBox="0 0 24 24" width="14" height="14"
+                fill="currentColor" aria-hidden="true">
+                <path d="M12 3l2.1 6.9L21 12l-6.9 2.1L12 21l-2.1-6.9L3 12l6.9-2.1L12 3z" />
+              </svg></span></div>
+          <div class="marquee-item">Wallpaper Installation <span><svg viewBox="0 0 24 24" width="14" height="14"
+                fill="currentColor" aria-hidden="true">
+                <path d="M12 3l2.1 6.9L21 12l-6.9 2.1L12 21l-2.1-6.9L3 12l6.9-2.1L12 3z" />
+              </svg></span></div>
+          <div class="marquee-item">Feature Walls <span><svg viewBox="0 0 24 24" width="14" height="14"
+                fill="currentColor" aria-hidden="true">
+                <path d="M12 3l2.1 6.9L21 12l-6.9 2.1L12 21l-2.1-6.9L3 12l6.9-2.1L12 3z" />
+              </svg></span></div>
+          <div class="marquee-item">Venetian Plaster <span><svg viewBox="0 0 24 24" width="14" height="14"
+                fill="currentColor" aria-hidden="true">
+                <path d="M12 3l2.1 6.9L21 12l-6.9 2.1L12 21l-2.1-6.9L3 12l6.9-2.1L12 3z" />
+              </svg></span></div>
+          <div class="marquee-item">Colour Consulting <span><svg viewBox="0 0 24 24" width="14" height="14"
+                fill="currentColor" aria-hidden="true">
+                <path d="M12 3l2.1 6.9L21 12l-6.9 2.1L12 21l-2.1-6.9L3 12l6.9-2.1L12 3z" />
+              </svg></span></div>
+          <div class="marquee-item">Texture Finishes <span><svg viewBox="0 0 24 24" width="14" height="14"
+                fill="currentColor" aria-hidden="true">
+                <path d="M12 3l2.1 6.9L21 12l-6.9 2.1L12 21l-2.1-6.9L3 12l6.9-2.1L12 3z" />
+              </svg></span></div>
+          <div class="marquee-item">Limewash Paint <span><svg viewBox="0 0 24 24" width="14" height="14"
+                fill="currentColor" aria-hidden="true">
+                <path d="M12 3l2.1 6.9L21 12l-6.9 2.1L12 21l-2.1-6.9L3 12l6.9-2.1L12 3z" />
+              </svg></span></div>
+          <div class="marquee-item">Ombre Walls <span><svg viewBox="0 0 24 24" width="14" height="14"
+                fill="currentColor" aria-hidden="true">
+                <path d="M12 3l2.1 6.9L21 12l-6.9 2.1L12 21l-2.1-6.9L3 12l6.9-2.1L12 3z" />
+              </svg></span></div>
+          <div class="marquee-item">Geometric Murals <span><svg viewBox="0 0 24 24" width="14" height="14"
+                fill="currentColor" aria-hidden="true">
+                <path d="M12 3l2.1 6.9L21 12l-6.9 2.1L12 21l-2.1-6.9L3 12l6.9-2.1L12 3z" />
+              </svg></span></div>
+          <div class="marquee-item">Luxury Brands <span><svg viewBox="0 0 24 24" width="14" height="14"
+                fill="currentColor" aria-hidden="true">
+                <path d="M12 3l2.1 6.9L21 12l-6.9 2.1L12 21l-2.1-6.9L3 12l6.9-2.1L12 3z" />
+              </svg></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         § 3 — EDITORIAL INTRO
+         ═══════════════════════════════════════════ -->
+    <section class="editorial-intro" aria-labelledby="intro-heading">
+      <div class="container editorial-grid">
+
+        <div class="editorial-left">
+          <span class="t-label reveal">About Evora</span>
+          <h2 id="intro-heading" class="editorial-heading reveal delay-1">
+            We paint the <em>emotion</em> of a space, not just its walls.
+          </h2>
+          <p class="t-lead reveal delay-2" style="margin-bottom:var(--space-2xl);max-width:44ch">
+            Evora Interiors is a boutique studio of master craftspeople dedicated to the art of applied colour and
+            surface. We approach every home as a unique canvas — layering tone, texture and intention.
+          </p>
+          <div class="flex gap-lg reveal delay-3" style="flex-wrap:wrap">
+            <a href="about.html" class="btn btn-primary">Our Philosophy</a>
+            <a href="services.html" class="btn btn-primary">All Services</a>
+          </div>
+        </div>
+
+        <div class="editorial-right">
+          <div class="editorial-img-wrap img-zoom reveal-scale">
+            <img src="https://images.unsplash.com/photo-1587534012737-1fd8a84b519e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50fGVufDB8fDB8fHww"
+              alt="Artisan painter applying warm linen paint to an elegant living room wall" class="editorial-img-main"
+              loading="lazy" />
+            <div class="editorial-img-badge">
+              <div class="badge-stat">15+</div>
+              <div class="badge-label">Years of Artisan Craft</div>
+            </div>
+          </div>
+
+          <div class="editorial-stats">
+            <div class="stat-block reveal delay-1">
+              <div class="stat-number"><span data-counter data-target="850" data-suffix="+">0</span></div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-block reveal delay-2">
+              <div class="stat-number"><span data-counter data-target="98" data-suffix="%">0</span></div>
+              <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-block reveal delay-3">
+              <div class="stat-number"><span data-counter data-target="12" data-suffix="">0</span></div>
+              <div class="stat-label">Expert Craftspeople</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         § 4 — SERVICES SHOWCASE
+         ═══════════════════════════════════════════ -->
+    <section class="services-showcase" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="services-header">
+          <div>
+            <span class="t-label reveal">What We Do</span>
+            <h2 id="services-heading" class="t-title reveal delay-1" style="max-width:18ch;margin-top:var(--space-md)">
+              Our Suite of Artisan Services</h2>
+          </div>
+          <a href="services.html" class="btn btn-primary reveal">View All Services <span class="arrow"><svg
+                viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span></a>
+        </div>
+
+        <div class="services-grid-home">
+          <!-- Service 01 -->
+          <div class="service-card reveal">
+            <div class="overflow-h">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=900&q=80&auto=format&fit=crop"
+                alt="Premium interior painting with warm neutral tones in open plan living space"
+                class="service-card-img" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path
+                    d="M12 2a10 10 0 0 0 0 20c1.1 0 2-.9 2-2v-.5c0-.4.3-.8.7-.9.4-.1.7-.4.7-.9V17a2 2 0 0 1 2-2h1.5A3.6 3.6 0 0 0 22 11.5 10 10 0 0 0 12 2z" />
+                  <circle cx="7.5" cy="10.5" r="1.2" fill="currentColor" stroke="none" />
+                  <circle cx="12" cy="7.5" r="1.2" fill="currentColor" stroke="none" />
+                  <circle cx="16.5" cy="10.5" r="1.2" fill="currentColor" stroke="none" />
+                </svg></div>
+              <div class="service-card-head">
+                <h3 class="t-subheading">Interior Painting</h3>
+                <span class="service-index">01</span>
+              </div>
+              <p class="t-sm">From a single accent wall to a complete whole-home transformation — our painters achieve
+                flawless, lasting finishes using premium, low-VOC paints.</p>
+              <a href="services.html#painting" class="btn-arrow">Learn More <span class="arrow"><svg viewBox="0 0 24 24"
+                    width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                    <path d="M5 12h14" />
+                    <path d="M12 5l7 7-7 7" />
+                  </svg></span></a>
+            </div>
+          </div>
+
+          <!-- Service 02 -->
+          <div class="service-card reveal delay-1">
+            <div class="overflow-h">
+              <img src="https://plus.unsplash.com/premium_photo-1661373265357-d147baea7548?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50fGVufDB8fDB8fHww"
+                alt="Botanical patterned wallpaper installation in a contemporary bedroom" class="service-card-img"
+                loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
+                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                </svg></div>
+              <div class="service-card-head">
+                <h3 class="t-subheading">Wallpaper Installation</h3>
+                <span class="service-index">02</span>
+              </div>
+              <p class="t-sm">Precision hanging of the world's finest wallpapers — from Graham &amp; Brown to Cole &amp;
+                Son and Designers Guild.</p>
+              <a href="services.html#wallpaper" class="btn-arrow">Learn More <span class="arrow"><svg
+                    viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                    <path d="M5 12h14" />
+                    <path d="M12 5l7 7-7 7" />
+                  </svg></span></a>
+            </div>
+          </div>
+
+          <!-- Service 03 -->
+          <div class="service-card reveal delay-2">
+            <div class="overflow-h">
+              <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80&auto=format&fit=crop"
+                alt="Dramatic dark feature wall with geometric texture in modern study" class="service-card-img"
+                loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                  stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 2l10 10-10 10L2 12z" />
+                </svg></div>
+              <div class="service-card-head">
+                <h3 class="t-subheading">Feature Walls &amp; Murals</h3>
+                <span class="service-index">03</span>
+              </div>
+              <p class="t-sm">A single transformative wall — painted, textured or wallpapered — that anchors the entire
+                room's identity.</p>
+              <a href="services.html#feature" class="btn-arrow">Learn More <span class="arrow"><svg viewBox="0 0 24 24"
+                    width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                    <path d="M5 12h14" />
+                    <path d="M12 5l7 7-7 7" />
+                  </svg></span></a>
+            </div>
+          </div>
+
+          <!-- Service 04 -->
+          <div class="service-card reveal delay-3">
+            <div class="overflow-h">
+              <img src="https://plus.unsplash.com/premium_photo-1661887261892-1929564076a5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fGludGVyaW9yJTIwd2FsbCUyMHBhaW50fGVufDB8fDB8fHww"
+                alt="Venetian plaster texture finish on a warm terracotta dining room wall" class="service-card-img"
+                loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <rect x="3" y="3" width="7" height="7" rx="1" />
+                  <rect x="14" y="3" width="7" height="7" rx="1" />
+                  <rect x="3" y="14" width="7" height="7" rx="1" />
+                  <rect x="14" y="14" width="7" height="7" rx="1" />
+                </svg></div>
+              <div class="service-card-head">
+                <h3 class="t-subheading">Texture Finishes</h3>
+                <span class="service-index">04</span>
+              </div>
+              <p class="t-sm">Venetian plaster, limewash, micro-cement, clay paint and ombre — artisan finishes with
+                extraordinary depth.</p>
+              <a href="services.html#texture" class="btn-arrow">Learn More <span class="arrow"><svg viewBox="0 0 24 24"
+                    width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                    <path d="M5 12h14" />
+                    <path d="M12 5l7 7-7 7" />
+                  </svg></span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         § 5 — BEFORE / AFTER SHOWCASE
+         ═══════════════════════════════════════════ -->
+    <section class="ba-section" aria-labelledby="ba-heading">
+      <div class="container ba-layout">
+
+        <div class="ba-wrapper reveal-left">
+          <div class="ba-container">
+            <div class="ba-before">
+              <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80&auto=format&fit=crop"
+                alt="Before: plain white walls in a dated living room" loading="lazy" />
+            </div>
+            <div class="ba-clip" style="width:50%">
+              <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80&auto=format&fit=crop"
+                alt="After: sophisticated terracotta feature wall transformation" loading="lazy" />
+            </div>
+            <div class="ba-handle" style="left:50%"></div>
+            <span class="ba-label before">Before</span>
+            <span class="ba-label after">After</span>
+          </div>
+        </div>
+
+        <div class="ba-info reveal-right">
+          <div>
+            <span class="t-label">Project Showcase</span>
+            <h2 id="ba-heading" class="t-title" style="margin-top:var(--space-md);max-width:16ch">Drag to Reveal the
+              Transformation</h2>
+          </div>
+          <p class="t-lead" style="max-width:40ch">
+            A Victorian terrace in Kensington — completely reimagined. Charcoal Ink half-panelling, Warm Linen walls and
+            a custom Terracotta plaster feature arch.
+          </p>
+          <div class="ba-project-meta">
+            <div class="ba-meta-item">
+              <span class="ba-meta-key">Location</span>
+              <span class="ba-meta-val">Kensington, London</span>
+            </div>
+            <div class="ba-meta-item">
+              <span class="ba-meta-key">Duration</span>
+              <span class="ba-meta-val">8 Days</span>
+            </div>
+            <div class="ba-meta-item">
+              <span class="ba-meta-key">Finish</span>
+              <span class="ba-meta-val">Venetian Plaster + Paint</span>
+            </div>
+          </div>
+          <a href="about.html#projects" class="btn btn-primary">View Full Portfolio</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         § 6 — PROCESS TIMELINE
+         ═══════════════════════════════════════════ -->
+    <section class="process-section" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="process-header">
+          <div>
+            <span class="t-label reveal">How It Works</span>
+            <h2 id="process-heading" class="t-title reveal delay-1"
+              style="margin-top:var(--space-md);max-width:20ch;margin-inline:auto">A Seamless Journey from Vision to
+              Reality</h2>
+          </div>
+        </div>
+
+        <div class="process-timeline">
+          <div class="timeline-step reveal delay-1">
+            <div class="timeline-dot">01</div>
+            <div>
+              <h4>Free Site Visit</h4>
+              <p>We visit your home, assess the space and listen to your vision — no obligation.</p>
+            </div>
+          </div>
+          <div class="timeline-step reveal delay-2">
+            <div class="timeline-dot">02</div>
+            <div>
+              <h4>Colour Consultation</h4>
+              <p>Our colour specialist creates a bespoke palette tailored to your light, furniture and lifestyle.</p>
+            </div>
+          </div>
+          <div class="timeline-step reveal delay-3">
+            <div class="timeline-dot">03</div>
+            <div>
+              <h4>Meticulous Preparation</h4>
+              <p>We protect your home thoroughly before a single brush stroke is applied.</p>
+            </div>
+          </div>
+          <div class="timeline-step reveal delay-4">
+            <div class="timeline-dot">04</div>
+            <div>
+              <h4>The Reveal</h4>
+              <p>Step back and discover your transformed space — then enjoy our two-year guarantee.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         § 7 — TESTIMONIALS (dark band)
+         ═══════════════════════════════════════════ -->
+    <section class="testimonials-section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom:0">
+          <span class="t-label">Client Stories</span>
+          <h2 id="testimonials-heading" class="t-title"
+            style="color:var(--linen);margin-top:var(--space-md);max-width:22ch;margin-inline:auto">
+            Trusted by Discerning Homeowners
+          </h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal delay-1">
+            <div class="testimonial-stars"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"
+                stroke="currentColor" stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="testimonial-text">"Evora didn't just paint our home — they completely transformed how we feel in
+              it. The attention to detail was extraordinary. Our dining room's Venetian plaster wall is simply
+              breathtaking."</p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&q=80&auto=format&fit=crop&crop=face"
+                alt="Sophie R." class="testimonial-avatar" loading="lazy" />
+              <div>
+                <div class="testimonial-name">Sophie Richardson</div>
+                <div class="testimonial-role">Homeowner, Chelsea</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal delay-2">
+            <div class="testimonial-stars"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"
+                stroke="currentColor" stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="testimonial-text">"The wallpaper installation in our master bedroom was perfection — every seam
+              invisible, every pattern matched flawlessly. A level of craft I've never seen before."</p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&q=80&auto=format&fit=crop&crop=face"
+                alt="James M." class="testimonial-avatar" loading="lazy" />
+              <div>
+                <div class="testimonial-name">James Marchetti</div>
+                <div class="testimonial-role">Interior Architect, Mayfair</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal delay-3">
+            <div class="testimonial-stars"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"
+                stroke="currentColor" stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="testimonial-text">"From the colour consultation to the final day, the entire experience was
+              effortless. They treated our home with such care. The limewash finish is exactly what we dreamed of."</p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&q=80&auto=format&fit=crop&crop=face"
+                alt="Amara T." class="testimonial-avatar" loading="lazy" />
+              <div>
+                <div class="testimonial-name">Amara Osei-Tutu</div>
+                <div class="testimonial-role">Homeowner, Notting Hill</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         § 8 — CTA BAND
+         ═══════════════════════════════════════════ -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="container cta-band-inner">
+        <div class="cta-band-text reveal-left">
+          <h2>Ready to Transform Your Space?</h2>
+          <p>Book a complimentary site visit and colour consultation. No pressure, no obligation — just a conversation
+            about your vision.</p>
+        </div>
+        <div class="flex gap-lg reveal-right" style="flex-wrap:wrap">
+          <a href="contact.html#quote" class="btn btn-primary btn-lg">Request Free Quote</a>
+          <a href="contact.html" class="btn btn-outline btn-lg">Schedule a Visit</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+              <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+              <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+              <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+            </svg>
+            <span class="nav-logo-text">
+              <span class="nav-logo-mark">Evora</span>
+              <span class="nav-logo-sub">Interiors Studio</span>
+            </span>
+          </a>
+          <p class="footer-tagline">Transforming London homes with bespoke painting, premium wallpaper and artisan
+            finishes since 2009.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a>
+            <a href="#" class="social-link" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="currentColor">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z">
+                </path>
+              </svg></a>
+            <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="currentColor">
+                <path
+                  d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 23.953 4.57z">
+                </path>
+              </svg></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2.5"></path>
+                <path d="M2 21h4V8H2z"></path>
+                <path d="M4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
+              </svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="services.html#painting">Interior Painting</a>
+          <a href="services.html#wallpaper">Wallpaper Installation</a>
+          <a href="services.html#feature">Feature Walls</a>
+          <a href="services.html#texture">Texture Finishes</a>
+          <a href="services.html#colour">Colour Consulting</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>Studio</h5>
+          <a href="index.html">Home</a>
+          <a href="home2.html">Home 2</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Journal</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>Get in Touch</h5>
+          <a href="tel:+442071234567">+44 207 123 4567</a>
+          <a href="mailto:hello@evorainteriors.com">hello@evorainteriors.com</a>
+          <a href="#">14 Portobello Studios<br>London W11 2DX</a>
+          <a href="contact.html#quote" style="margin-top:var(--space-md)"><svg viewBox="0 0 24 24" width="16"
+              height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg> Free Quote</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Evora Interiors Studio. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
+      aria-hidden="true">
+      <path d="M12 19V5" />
+      <path d="M5 12l7-7 7 7" />
+    </svg></button>
+
+  <!-- Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/before-after.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Sitemap — Evora Interiors</title>
+  <meta name="description"
+    content="Complete sitemap of the Evora Interiors website — find every page, service, blog article and resource." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css?v=2" />
+  <link rel="stylesheet" href="css/base.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <link rel="stylesheet" href="css/layout.css?v=2" />
+  <link rel="stylesheet" href="css/components.css?v=2" />
+  <style>
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      padding-block: var(--section-py);
+    }
+
+    .sitemap-category h2 {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-lg);
+      padding-bottom: var(--space-sm);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .sitemap-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-strong);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      transition: all var(--dur-fast);
+    }
+
+    .sitemap-link:hover {
+      color: var(--accent);
+      padding-left: 6px;
+    }
+
+    [dir="rtl"] .sitemap-link:hover {
+      padding-left: 0;
+      padding-right: 6px;
+    }
+
+    .sitemap-link:last-child {
+      border-bottom: none;
+    }
+
+    .sitemap-link-icon {
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .sitemap-link-tag {
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: var(--r-full);
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+    }
+
+    @media(max-width:1024px) {
+      .sitemap-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:480px) {
+      .sitemap-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Evora Interiors Home">
+        <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+          <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+          <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+          <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+        </svg>
+        <span class="nav-logo-text">
+          <span class="nav-logo-mark">Evora</span>
+          <span class="nav-logo-sub">Interiors Studio</span>
+        </span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home2.html">Home 2</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
+            viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg></button>
+        <button class="icon-btn" data-toggle-dir data-dir-icon aria-label="Toggle RTL">RTL</button>
+        <a href="contact.html#quote" class="nav-btn">Free Quote</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="home2.html">Home 2</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Journal</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <section class="page-hero" aria-label="Page hero">
+      <div class="container page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span
+            class="breadcrumb-sep">›</span><span>Sitemap</span></nav>
+        <span class="page-hero-label t-label">Navigation</span>
+        <h1>Sitemap</h1>
+        <p class="t-lead" style="max-width:44ch;margin-top:var(--space-md)">A complete map of the Evora Interiors
+          website. Find every page, service and resource in one place.</p>
+      </div>
+    </section>
+
+    <section aria-label="Sitemap links">
+      <div class="container sitemap-grid">
+
+        <div class="sitemap-category reveal delay-1">
+          <h2>Main Pages</h2>
+          <a href="index.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24" width="16"
+                height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Home <span class="sitemap-link-tag">Main</span></a>
+          <a href="home2.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24" width="16"
+                height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Home 2</a>
+          <a href="about.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24" width="16"
+                height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>About Us</a>
+          <a href="contact.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Contact <span class="sitemap-link-tag">CTA</span></a>
+          <a href="contact.html#quote" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Request a Quote</a>
+          <a href="blog.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24" width="16"
+                height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Journal / Blog</a>
+          <a href="blog-details.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Blog Article</a>
+        </div>
+
+        <div class="sitemap-category reveal delay-2">
+          <h2>Services</h2>
+          <a href="services.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>All Services</a>
+          <a href="services.html#painting" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Interior Painting</a>
+          <a href="services.html#wallpaper" class="sitemap-link"><span class="sitemap-link-icon"><svg
+                viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Wallpaper Installation</a>
+          <a href="services.html#feature" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Feature Walls & Murals</a>
+          <a href="services.html#texture" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Texture Finishes</a>
+          <a href="services.html#colour" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Colour Consulting</a>
+          <a href="home2.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24" width="16"
+                height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Wallpaper Collections</a>
+        </div>
+
+        <div class="sitemap-category reveal delay-3">
+          <h2>About the Studio</h2>
+          <a href="about.html#philosophy" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Our Philosophy</a>
+          <a href="about.html#team" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Our Team</a>
+          <a href="about.html#projects" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Project Portfolio</a>
+          <a href="home2.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24" width="16"
+                height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Colour Palettes</a>
+          <a href="index.html#process" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Our Process</a>
+          <a href="contact.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Book a Site Visit</a>
+        </div>
+
+        <div class="sitemap-category reveal delay-4">
+          <h2>Journal Topics</h2>
+          <a href="blog-details.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Venetian Plaster Guide</a>
+          <a href="blog-details.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>2025 Colour Trends</a>
+          <a href="blog-details.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>How to Hang Wallpaper</a>
+          <a href="blog-details.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Going Dark — A Guide</a>
+          <a href="blog-details.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Limewash Paint Guide</a>
+          <a href="blog-details.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Before & After Projects</a>
+          <a href="blog.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24" width="16"
+                height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>All Articles</a>
+        </div>
+
+        <div class="sitemap-category reveal delay-1">
+          <h2>Legal</h2>
+          <a href="privacy.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Privacy Policy</a>
+          <a href="terms.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24" width="16"
+                height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Terms & Conditions</a>
+          <a href="sitemap.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Sitemap</a>
+          <a href="404.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24" width="16"
+                height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>404 Page</a>
+          <a href="maintenance.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Maintenance Page</a>
+        </div>
+
+        <div class="sitemap-category reveal delay-2">
+          <h2>Contact Us</h2>
+          <a href="tel:+442071234567" class="sitemap-link"> <span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></span>+44 207 123 4567</a>
+          <a href="mailto:hello@evorainteriors.com" class="sitemap-link"> <span class="sitemap-link-icon"><svg
+                viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg></span>hello@evorainteriors.com</a>
+          <a href="contact.html#quote" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Request a Free Quote</a>
+          <a href="contact.html" class="sitemap-link"><span class="sitemap-link-icon"><svg viewBox="0 0 24 24"
+                width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg></span>Visit Our Studio</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background:var(--charcoal);padding-block:clamp(3rem,5vw,5rem)" aria-label="CTA">
+      <div class="container" style="text-align:center">
+        <span class="t-label" style="color:var(--accent);display:block;margin-bottom:var(--space-lg)">Can't Find What
+          You Need?</span>
+        <h2 class="t-heading" style="color:#F7F3EC;max-width:20ch;margin-inline:auto;margin-bottom:var(--space-xl)">
+          We're Always Happy to Help</h2>
+        <a href="contact.html" class="btn btn-accent btn-lg">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><svg class="nav-logo-icon" viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+              <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+              <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+              <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+            </svg><span class="nav-logo-text"><span class="nav-logo-mark">Evora</span><span
+                class="nav-logo-sub">Interiors Studio</span></span></a>
+          <p class="footer-tagline">Transforming London homes with bespoke painting, premium wallpaper and artisan
+            finishes since 2009.</p>
+          <div class="footer-socials"><a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"
+                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a><a href="#" class="social-link" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="currentColor">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z">
+                </path>
+              </svg></a><a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="currentColor">
+                <path
+                  d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 23.953 4.57z">
+                </path>
+              </svg></a><a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2.5"></path>
+                <path d="M2 21h4V8H2z"></path>
+                <path d="M4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
+              </svg></a></div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5><a href="services.html#painting">Interior Painting</a><a
+            href="services.html#wallpaper">Wallpaper Installation</a><a href="services.html#feature">Feature Walls</a><a
+            href="services.html#texture">Texture Finishes</a><a href="services.html#colour">Colour Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h5>Studio</h5><a href="index.html">Home</a><a href="home2.html">Home 2</a><a
+            href="services.html">Services</a><a href="about.html">About</a><a href="blog.html">Journal</a><a
+            href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get in Touch</h5><a href="tel:+442071234567">+44 207 123 4567</a><a
+            href="mailto:hello@evorainteriors.com">hello@evorainteriors.com</a><a href="#">14 Portobello
+            Studios<br>London W11 2DX</a><a href="contact.html#quote" style="margin-top:var(--space-md)"><svg
+              viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg> Free Quote</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Evora Interiors Studio. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a
+            href="sitemap.html">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
+      aria-hidden="true">
+      <path d="M12 19V5" />
+      <path d="M5 12l7-7 7 7" />
+    </svg></button>
+  <script src="js/theme.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

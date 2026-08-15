@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>About — Evora Interiors | Our Story, Team & Philosophy</title>
+  <meta name="description"
+    content="Discover the story behind Evora Interiors — 15 years of bespoke craftsmanship, a team of 12 master painters, and a philosophy rooted in the art of applied colour." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css?v=2" />
+  <link rel="stylesheet" href="css/base.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <link rel="stylesheet" href="css/layout.css?v=2" />
+  <link rel="stylesheet" href="css/components.css?v=2" />
+  <style>
+    /* § 1 Cinematic About Hero */
+    .about-hero {
+      height: 90svh;
+      min-height: 560px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .about-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .about-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(20, 19, 17, 0.88) 40%, rgba(20, 19, 17, 0.3) 100%);
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: var(--nav-h);
+      max-width: 56ch;
+    }
+
+    .about-hero-year {
+      font-size: 8rem;
+      font-family: var(--font-display);
+      color: rgba(247, 243, 236, 0.08);
+      position: absolute;
+      right: var(--container-px);
+      bottom: -1rem;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* § 2 Philosophy — alternating layout */
+    .philosophy-section {
+      padding-block: var(--section-py);
+    }
+
+    .philosophy-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 7rem);
+      align-items: center;
+      padding-block: clamp(2rem, 4vw, 4rem);
+      border-top: 1px solid var(--border-strong);
+    }
+
+    .philosophy-row:last-child {
+      border-bottom: 1px solid var(--border-strong);
+    }
+
+    .philosophy-row.reverse {}
+
+    .philosophy-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: var(--r-xl);
+    }
+
+    .philosophy-num {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      color: var(--border-strong);
+      line-height: 1;
+      margin-bottom: var(--space-md);
+    }
+
+    /* § 3 Team Grid */
+    .team-section {
+      background: var(--bg-alt);
+      padding-block: var(--section-py);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--col-gap);
+      margin-top: clamp(2rem, 4vw, 4rem);
+    }
+
+    .team-card {
+      text-align: center;
+    }
+
+    .team-img-wrap {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      margin-bottom: var(--space-lg);
+      aspect-ratio: 3/4;
+    }
+
+    .team-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--dur-slower) var(--ease-out);
+    }
+
+    .team-card:hover .team-img {
+      transform: scale(1.05);
+    }
+
+    .team-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .team-role {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    /* § 4 Stats Band */
+    .stats-band {
+      background: var(--charcoal);
+      padding-block: clamp(3rem, 6vw, 6rem);
+    }
+
+    .stats-band-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--col-gap);
+      text-align: center;
+    }
+
+    .stats-band .stat-number {
+      color: #F7F3EC;
+    }
+
+    .stats-band .stat-label {
+      color: rgba(247, 243, 236, 0.85);
+      font-weight: 600;
+    }
+
+    .stats-band-divider {
+      width: 1px;
+      background: rgba(247, 243, 236, 0.18);
+      height: auto;
+      align-self: stretch;
+    }
+
+    /* § 5 Awards & Recognition */
+    .awards-section {
+      padding-block: var(--section-py);
+    }
+
+    .awards-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--col-gap);
+      align-items: end;
+      margin-bottom: clamp(2rem, 4vw, 4rem);
+    }
+
+    .awards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .award-item {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
+      padding-block: var(--space-xl);
+      border-bottom: 1px solid var(--border-strong);
+      transition: padding-left var(--dur-base) var(--ease-out);
+    }
+
+    .award-item:hover {
+      padding-left: var(--space-md);
+    }
+
+    [dir="rtl"] .award-item:hover {
+      padding-left: 0;
+      padding-right: var(--space-md);
+    }
+
+    .award-year {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .award-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--text-primary);
+    }
+
+    .award-org {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-align: end;
+    }
+
+    /* § 6 Project Gallery Mosaic */
+    .project-mosaic {
+      background: var(--bg-alt);
+      padding-block: var(--section-py);
+    }
+
+    .mosaic-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: var(--space-md);
+      aspect-ratio: 3/2;
+    }
+
+    .mosaic-item {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .mosaic-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--dur-slower) var(--ease-out);
+    }
+
+    .mosaic-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .mosaic-tall {
+      grid-row: 1 / 3;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-band-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .mosaic-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        aspect-ratio: auto;
+      }
+
+      .mosaic-tall {
+        grid-row: auto;
+      }
+
+      .mosaic-item {
+        aspect-ratio: 4/3;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .philosophy-row {
+        grid-template-columns: 1fr;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-band-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .awards-header {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        align-items: start;
+      }
+
+      .award-item {
+        grid-template-columns: auto 1fr;
+        gap: var(--space-xs) var(--space-lg);
+        align-items: baseline;
+        padding-block: var(--space-lg);
+      }
+
+      .award-year {
+        grid-row: 1 / 3;
+        align-self: start;
+      }
+
+      .award-org {
+        grid-column: 2;
+        text-align: start;
+      }
+
+      .mosaic-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Evora Interiors Home"><svg class="nav-logo-icon"
+          viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+          <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+          <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+          <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+        </svg><span class="nav-logo-text"><span class="nav-logo-mark">Evora</span><span class="nav-logo-sub">Interiors
+            Studio</span></span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home2.html">Home 2</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
+            viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg></button>
+        <button class="icon-btn" data-toggle-dir data-dir-icon aria-label="Toggle RTL">RTL</button>
+        <a href="contact.html#quote" class="nav-btn">Free Quote</a>
+        <button class="hamburger" aria-label="Open menu"
+          aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation"><a href="index.html">Home</a><a
+      href="home2.html">Home 2</a><a href="about.html" class="active">About</a><a href="services.html">Services</a><a
+      href="blog.html">Journal</a><a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <!-- § 1 About Hero -->
+    <section class="page-hero" aria-label="About Evora hero">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=85&auto=format&fit=crop"
+        alt="Evora artisan team preparing a beautifully lit period room for painting" class="page-hero-bg"
+        loading="eager" fetchpriority="high" />
+      <div class="page-hero-overlay"></div>
+      <div class="container page-hero-content">
+        <div class="page-hero-badge reveal">
+          <span class="hero-pulse"></span>
+          <span>Our Story · Est. 2009</span>
+        </div>
+        <h1 class="page-hero-title reveal delay-1">Fifteen Years of Painting with Purpose</h1>
+        <p class="page-hero-desc reveal delay-2">Evora began in 2009 as an artisan studio in West London. Today we are a
+          collective of 12 master craftspeople, united by an obsession with surface, colour and the invisible craft that
+          transforms living spaces into timeless homes.</p>
+        <div class="page-hero-actions reveal delay-3">
+          <a href="#philosophy" class="btn btn-accent">Read Our Philosophy</a>
+          <a href="#team" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:#FFFFFF">Meet the
+            Craftsmen <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg></a>
+        </div>
+      </div>
+      <div class="page-hero-watermark" aria-hidden="true">2009</div>
+    </section>
+
+    <!-- § 2 Philosophy -->
+    <section class="philosophy-section" id="philosophy" aria-labelledby="philosophy-heading">
+      <div class="container">
+        <span class="t-label reveal" style="margin-bottom:var(--space-xl);display:block">Philosophy</span>
+        <h2 id="philosophy-heading" class="t-title reveal delay-1"
+          style="max-width:22ch;margin-bottom:clamp(2rem,5vw,5rem)">Three Principles That Guide Every Brushstroke</h2>
+
+        <div class="philosophy-row reveal">
+          <div class="overflow-h"><img
+              src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80&auto=format&fit=crop"
+              alt="Craftsperson carefully mixing custom paint colour in studio" class="philosophy-img" loading="lazy" />
+          </div>
+          <div>
+            <div class="philosophy-num">01</div>
+            <h3 class="t-subheading" style="margin-bottom:var(--space-md)">Colour as Emotion</h3>
+            <p class="t-lead" style="margin-bottom:var(--space-xl)">We believe colour is the single most powerful design
+              tool in any interior. The right shade can enlarge a room, calm a mind or energise a morning. We treat
+              colour selection as a deeply considered, personal process — never prescriptive.</p><a
+              href="services.html#colour" class="btn-arrow">Colour Consulting <span class="arrow"><svg
+                  viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg></span></a>
+          </div>
+        </div>
+        <div class="philosophy-row reveal">
+          <div style="order:2" class="overflow-h"><img
+              src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80&auto=format&fit=crop"
+              alt="Master craftsperson applying wallpaper with precision and care" class="philosophy-img"
+              loading="lazy" /></div>
+          <div style="order:1">
+            <div class="philosophy-num">02</div>
+            <h3 class="t-subheading" style="margin-bottom:var(--space-md)">Craft Without Compromise</h3>
+            <p class="t-lead" style="margin-bottom:var(--space-xl)">Every Evora painter has completed a minimum
+              five-year formal apprenticeship. We prepare surfaces properly, use only premium materials and never rush.
+              The result is a finish that outlasts trends and withstands time.</p><a href="services.html"
+              class="btn-arrow">Our Services <span class="arrow"><svg viewBox="0 0 24 24" width="16" height="16"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  style="vertical-align:-2px" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg></span></a>
+          </div>
+        </div>
+        <div class="philosophy-row reveal">
+          <div class="overflow-h"><img
+              src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=800&q=80&auto=format&fit=crop"
+              alt="Beautifully finished room showing the artisan quality of Evora's work" class="philosophy-img"
+              loading="lazy" /></div>
+          <div>
+            <div class="philosophy-num">03</div>
+            <h3 class="t-subheading" style="margin-bottom:var(--space-md)">Care That Goes Beyond Paint</h3>
+            <p class="t-lead" style="margin-bottom:var(--space-xl)">We treat your home with the same respect we'd treat
+              our own. Every surface protected. Every piece of furniture moved with care. Every project left spotless —
+              and backed by a two-year guarantee.</p><a href="contact.html" class="btn-arrow">Get in Touch <span
+                class="arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
+                  aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 3 Team -->
+    <section class="team-section" id="team" aria-labelledby="team-heading">
+      <div class="container">
+        <div
+          style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:var(--space-xl);margin-bottom:clamp(2rem,4vw,4rem)">
+          <div><span class="t-label reveal">The Craftspeople</span>
+            <h2 id="team-heading" class="t-title reveal delay-1" style="margin-top:var(--space-md);max-width:18ch">The
+              Twelve Behind the Magic</h2>
+          </div>
+          <p class="t-lead reveal" style="max-width:36ch">Each member of the Evora team is a specialist — trained in
+            specific finishes, techniques and materials.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card reveal delay-1">
+            <div class="team-img-wrap"><img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&q=80&auto=format&fit=crop&crop=face"
+                alt="Marcus Reid, Founder & Master Painter" class="team-img" loading="lazy" /></div>
+            <div class="team-name">Marcus Reid</div>
+            <div class="team-role">Founder & Master Painter</div>
+          </div>
+          <div class="team-card reveal delay-2">
+            <div class="team-img-wrap"><img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&q=80&auto=format&fit=crop&crop=face"
+                alt="Isabelle Laurent, Head of Colour" class="team-img" loading="lazy" /></div>
+            <div class="team-name">Isabelle Laurent</div>
+            <div class="team-role">Head of Colour & Design</div>
+          </div>
+          <div class="team-card reveal delay-3">
+            <div class="team-img-wrap"><img
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&q=80&auto=format&fit=crop&crop=face"
+                alt="Dmitri Volkov, Venetian Plaster Specialist" class="team-img" loading="lazy" /></div>
+            <div class="team-name">Dmitri Volkov</div>
+            <div class="team-role">Venetian Plaster Specialist</div>
+          </div>
+          <div class="team-card reveal delay-4">
+            <div class="team-img-wrap"><img
+                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=500&q=80&auto=format&fit=crop&crop=face"
+                alt="Zara Obi, Wallpaper Installation Lead" class="team-img" loading="lazy" /></div>
+            <div class="team-name">Zara Obi</div>
+            <div class="team-role">Wallpaper Installation Lead</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 4 Stats -->
+    <section class="stats-band" aria-label="Key statistics">
+      <div class="container stats-band-grid">
+        <div class="stat-block reveal delay-1" style="align-items:center">
+          <div class="stat-number"><span data-counter data-target="850" data-suffix="+">0</span></div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-block reveal delay-2" style="align-items:center">
+          <div class="stat-number"><span data-counter data-target="15" data-suffix="">0</span></div>
+          <div class="stat-label">Years of Craft</div>
+        </div>
+        <div class="stat-block reveal delay-3" style="align-items:center">
+          <div class="stat-number"><span data-counter data-target="12" data-suffix="">0</span></div>
+          <div class="stat-label">Master Craftspeople</div>
+        </div>
+        <div class="stat-block reveal delay-4" style="align-items:center">
+          <div class="stat-number"><span data-counter data-target="98" data-suffix="%">0</span></div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 5 Awards -->
+    <section class="awards-section" aria-labelledby="awards-heading">
+      <div class="container">
+        <div class="awards-header">
+          <div><span class="t-label reveal">Recognition</span>
+            <h2 id="awards-heading" class="t-title reveal delay-1" style="margin-top:var(--space-md);max-width:18ch">
+              Awards & Industry Recognition</h2>
+          </div>
+          <p class="t-lead reveal" style="max-width:38ch">Our commitment to craft and client experience has been
+            acknowledged by leading organisations in the interior design and construction industry.</p>
+        </div>
+        <div class="awards-list">
+          <div class="award-item reveal"><span class="award-year">2024</span><span class="award-name">Best Specialist
+              Decorating Studio</span><span class="award-org">British Decorators Association</span></div>
+          <div class="award-item reveal"><span class="award-year">2023</span><span class="award-name">Houzz Best of
+              Service Award</span><span class="award-org">Houzz UK</span></div>
+          <div class="award-item reveal"><span class="award-year">2022</span><span class="award-name">London Interiors
+              Award — Craft Excellence</span><span class="award-org">London Design Festival</span></div>
+          <div class="award-item reveal"><span class="award-year">2021</span><span class="award-name">Platinum
+              Contractor Status</span><span class="award-org">Farrow & Ball Trade Network</span></div>
+          <div class="award-item reveal"><span class="award-year">2019</span><span class="award-name">Top Wallpaper
+              Installer of the Year</span><span class="award-org">UK Wallcovering Association</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 6 Project Mosaic -->
+    <section class="project-mosaic" id="projects" aria-labelledby="mosaic-heading">
+      <div class="container">
+        <div
+          style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:var(--space-xl);margin-bottom:clamp(2rem,4vw,4rem)">
+          <div><span class="t-label reveal">Portfolio</span>
+            <h2 id="mosaic-heading" class="t-title reveal delay-1" style="margin-top:var(--space-md);max-width:20ch">
+              Selected Projects from 2020–2025</h2>
+          </div>
+          <a href="contact.html" class="btn btn-outline reveal">Commission Your Project</a>
+        </div>
+        <div class="mosaic-grid">
+          <div class="mosaic-item mosaic-tall mosaic-item-1 reveal img-zoom"
+            data-lightbox="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=1200&q=85"><img
+              src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=800&q=80&auto=format&fit=crop"
+              alt="Grand painted hallway with deep navy and gold in Belgravia townhouse" loading="lazy" /></div>
+          <div class="mosaic-item mosaic-item-2 reveal delay-1 img-zoom"
+            data-lightbox="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=85"><img
+              src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80&auto=format&fit=crop"
+              alt="Terracotta painted alcoves with bespoke shelving in Chelsea home" loading="lazy" /></div>
+          <div class="mosaic-item mosaic-item-3 reveal delay-2 img-zoom"
+            data-lightbox="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200&q=85"><img
+              src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80&auto=format&fit=crop"
+              alt="Midnight blue master bedroom with botanical wallpaper" loading="lazy" /></div>
+          <div class="mosaic-item mosaic-item-4 reveal delay-3 img-zoom"
+            data-lightbox="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1200&q=85"><img
+              src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80&auto=format&fit=crop"
+              alt="Geometric feature wall in charcoal and brass in modern study" loading="lazy" /></div>
+          <div class="mosaic-item mosaic-item-5 reveal delay-4 img-zoom"
+            data-lightbox="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=85"><img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80&auto=format&fit=crop"
+              alt="Warm linen painted living room with limewash fireplace wall" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="nav-logo"><svg class="nav-logo-icon" viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+              <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+              <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+              <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+            </svg><span class="nav-logo-text"><span class="nav-logo-mark">Evora</span><span
+                class="nav-logo-sub">Interiors Studio</span></span></a>
+          <p class="footer-tagline">Transforming London homes with bespoke painting, premium wallpaper and artisan
+            finishes since 2009.</p>
+          <div class="footer-socials"><a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"
+                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a><a href="#" class="social-link" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="currentColor">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z">
+                </path>
+              </svg></a><a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="currentColor">
+                <path
+                  d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 23.953 4.57z">
+                </path>
+              </svg></a><a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2.5"></path>
+                <path d="M2 21h4V8H2z"></path>
+                <path d="M4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
+              </svg></a></div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5><a href="services.html#painting">Interior Painting</a><a
+            href="services.html#wallpaper">Wallpaper Installation</a><a href="services.html#feature">Feature Walls</a><a
+            href="services.html#texture">Texture Finishes</a><a href="services.html#colour">Colour Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h5>Studio</h5><a href="index.html">Home</a><a href="home2.html">Home 2</a><a
+            href="services.html">Services</a><a href="about.html">About</a><a href="blog.html">Journal</a><a
+            href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get in Touch</h5><a href="tel:+442071234567">+44 207 123 4567</a><a
+            href="mailto:hello@evorainteriors.com">hello@evorainteriors.com</a><a href="#">14 Portobello
+            Studios<br>London W11 2DX</a><a href="contact.html#quote" style="margin-top:var(--space-md)"><svg
+              viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg> Free Quote</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Evora Interiors Studio. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a
+            href="sitemap.html">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
+      aria-hidden="true">
+      <path d="M12 19V5" />
+      <path d="M5 12l7-7 7 7" />
+    </svg></button>
+  <script src="js/theme.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/before-after.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

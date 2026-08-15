@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Under Refinement — Evora Interiors</title>
+  <meta name="description"
+    content="Evora Interiors digital atelier is currently undergoing curated updates and portfolio additions. Direct consultations and ongoing client works continue uninterrupted." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css?v=2" />
+  <link rel="stylesheet" href="css/base.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <link rel="stylesheet" href="css/layout.css?v=2" />
+  <link rel="stylesheet" href="css/components.css?v=2" />
+  <style>
+    /* Maintenance Specific Styles */
+    .hero-maint {
+      min-height: 90svh;
+      display: flex;
+      align-items: center;
+      padding-top: calc(var(--nav-h) + 2rem);
+      padding-bottom: clamp(3rem, 6vw, 6rem);
+      background: radial-gradient(circle at 10% 20%, rgba(184, 57, 38, 0.1) 0%, transparent 60%),
+        radial-gradient(circle at 90% 80%, rgba(36, 35, 33, 0.06) 0%, transparent 50%);
+      position: relative;
+    }
+
+    .maint-countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      margin-block: var(--space-2xl);
+      max-width: 520px;
+    }
+
+    .countdown-unit {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-lg);
+      padding: var(--space-lg) var(--space-md);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .countdown-num {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .countdown-lbl {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* § 2 Sneak Peek Cards */
+    .preview-section {
+      background: var(--bg-alt);
+      padding-block: var(--section-py);
+    }
+
+    .preview-img-card {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+    }
+
+    /* § 3 VIP Access */
+    .vip-section {
+      padding-block: var(--section-py);
+      background: var(--charcoal);
+      color: #F7F3EC;
+    }
+
+    .vip-box {
+      max-width: 720px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    /* § 4 Live Concierge */
+    .concierge-maint-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    /* § 5 Accolades & Trust */
+    .maint-trust-section {
+      padding-block: var(--section-py);
+      background: var(--bg-alt);
+    }
+
+    /* § 6 Coordinates */
+    .coordinates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--col-gap);
+    }
+
+    @media (max-width: 992px) {
+      .concierge-maint-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .coordinates-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .maint-countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Evora Interiors Home">
+        <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+          <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+          <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+          <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+        </svg>
+        <span class="nav-logo-text">
+          <span class="nav-logo-mark">Evora</span>
+          <span class="nav-logo-sub">Interiors Studio</span>
+        </span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
+            viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg></button>
+        <button class="icon-btn" data-toggle-dir data-dir-icon aria-label="Toggle RTL">RTL</button>
+        <a href="tel:+442071234567" class="nav-btn">Call Studio</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- § 1 — ARCHITECTURAL REFINEMENT HERO -->
+    <section class="hero-maint" aria-label="Maintenance status hero">
+      <div class="container">
+        <div class="grid grid-2 items-center" style="gap: clamp(2rem, 5vw, 5rem);">
+          <div class="reveal-left">
+            <span class="section-label">Studio Curation</span>
+            <h1 class="t-hero" style="margin-block: var(--space-md); max-width: 15ch;">Refining Our Digital Atelier</h1>
+            <p class="t-lead" style="max-width: 44ch;">
+              We are currently curating our 2025/2026 interior portfolio, adding fifty new Venetian plaster
+              installations and luxury wallpaper collections.
+            </p>
+
+            <div class="maint-countdown-grid" aria-label="Relaunch countdown">
+              <div class="countdown-unit">
+                <div class="countdown-num" id="cdDays">04</div>
+                <div class="countdown-lbl">Days</div>
+              </div>
+              <div class="countdown-unit">
+                <div class="countdown-num" id="cdHours">18</div>
+                <div class="countdown-lbl">Hours</div>
+              </div>
+              <div class="countdown-unit">
+                <div class="countdown-num" id="cdMins">42</div>
+                <div class="countdown-lbl">Mins</div>
+              </div>
+              <div class="countdown-unit">
+                <div class="countdown-num" id="cdSecs">59</div>
+                <div class="countdown-lbl">Secs</div>
+              </div>
+            </div>
+
+            <div class="flex gap-md" style="flex-wrap: wrap;">
+              <a href="#vip" class="btn btn-accent btn-lg">Get Priority Access</a>
+              <a href="tel:+442071234567" class="btn btn-outline btn-lg">Call Directly</a>
+            </div>
+          </div>
+
+          <div class="reveal-right">
+            <div class="card" style="border-radius: var(--r-xl); overflow: hidden; position: relative;">
+              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=85&auto=format&fit=crop"
+                alt="Master craftsperson applying refined paint finish" class="ratio-img" style="aspect-ratio: 4/5;"
+                loading="eager" />
+              <div
+                style="position: absolute; bottom: var(--space-lg); left: var(--space-lg); right: var(--space-lg); background: var(--surface); border: 1px solid var(--border-strong); backdrop-filter: blur(10px); padding: var(--space-md) var(--space-lg); border-radius: var(--r-md); display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <div class="t-xs" style="font-weight: 700; color: var(--text-secondary); text-transform: uppercase;">
+                    Current Live Status</div>
+                  <div class="t-sm" style="font-weight: 700; color: var(--text-primary);">All On-Site Operations
+                    Uninterrupted</div>
+                </div>
+                <span class="badge badge-accent">Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 2 — BEHIND THE SCAFFOLDING: PREVIEW COLLECTIONS -->
+    <section class="preview-section" aria-labelledby="preview-title">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: clamp(2rem, 4vw, 4rem);">
+          <span class="section-label">Upcoming Portfolio</span>
+          <h2 id="preview-title" class="t-title" style="margin-top: var(--space-sm);">Preview What We Are Unveiling</h2>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="preview-img-card reveal delay-1">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop"
+              alt="Hand-burnished Venetian plaster in terracotta" class="ratio-img" style="aspect-ratio: 16/11;"
+              loading="lazy" />
+            <div style="padding: var(--space-xl);">
+              <span class="badge badge-brass" style="margin-bottom: var(--space-sm);">New Series</span>
+              <h3 class="t-subheading" style="margin-bottom: 6px;">The Roman Villa Collection</h3>
+              <p class="t-sm" style="color: var(--text-secondary);">Warm slaked lime and crushed Carrara marble finishes
+                calibrated for Victorian natural lighting.</p>
+            </div>
+          </div>
+
+          <div class="preview-img-card reveal delay-2">
+            <img src="https://images.unsplash.com/photo-1615529162924-f8605388461d?w=600&q=80&auto=format&fit=crop"
+              alt="Bespoke botanical wallpaper install" class="ratio-img" style="aspect-ratio: 16/11;" loading="lazy" />
+            <div style="padding: var(--space-xl);">
+              <span class="badge badge-sage" style="margin-bottom: var(--space-sm);">Wallpaper</span>
+              <h3 class="t-subheading" style="margin-bottom: 6px;">Archival Chinoiserie</h3>
+              <p class="t-sm" style="color: var(--text-secondary);">Hand-painted silk panels and intricate panoramic
+                murals by heritage Parisian and British ateliers.</p>
+            </div>
+          </div>
+
+          <div class="preview-img-card reveal delay-3">
+            <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80&auto=format&fit=crop"
+              alt="Midnight charcoal moody study room" class="ratio-img" style="aspect-ratio: 16/11;" loading="lazy" />
+            <div style="padding: var(--space-xl);">
+              <span class="badge badge-accent" style="margin-bottom: var(--space-sm);">Atmosphere</span>
+              <h3 class="t-subheading" style="margin-bottom: 6px;">Nocturnal Velvet Pigments</h3>
+              <p class="t-sm" style="color: var(--text-secondary);">Ultra-matte micro-ground mineral pigments that
+                swallow harsh glare and cocoon private library spaces.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 3 — VIP PRIORITY NOTIFICATION FORM -->
+    <section class="vip-section" id="vip" aria-labelledby="vip-title">
+      <div class="container">
+        <div class="vip-box reveal">
+          <span class="section-label" style="color: var(--terracotta);">VIP Privileges</span>
+          <h2 id="vip-title" class="t-title"
+            style="color: var(--linen); margin-block: var(--space-sm) var(--space-md);">Be First to Experience the
+            Relaunch</h2>
+          <p
+            style="color: rgba(243,238,230,0.7); margin-bottom: var(--space-2xl); font-size: 1.05rem; line-height: 1.75;">
+            Subscribers receive an invitation to our private digital showcase plus a complimentary 1-hour in-person
+            colour consultation voucher (£250 value).
+          </p>
+
+          <form data-form class="flex flex-col gap-md" style="max-width: 520px; margin-inline: auto;" novalidate>
+            <div class="form-fields flex gap-sm" style="flex-wrap: wrap;">
+              <input type="email" class="form-input" placeholder="Enter your email address"
+                data-validate="required|email"
+                style="flex: 1; min-width: 260px; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: #fff;" />
+              <button type="submit" class="btn btn-accent btn-lg" style="white-space: nowrap;">Join Guestlist <svg
+                  viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg></button>
+            </div>
+            <div class="form-success" style="color: var(--linen);">
+              <div style="font-size: 2rem;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <h4 style="color: #fff;">You Are On the Guestlist</h4>
+              <p style="color: rgba(255,255,255,0.7);">We will notify you the moment the full portfolio opens.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 4 — LIVE CONCIERGE & URGENT PROJECT DESK -->
+    <section class="section-py" aria-labelledby="concierge-maint-title">
+      <div class="container">
+        <div class="concierge-maint-grid">
+          <div class="reveal-left">
+            <span class="section-label">Active Bookings</span>
+            <h2 id="concierge-maint-title" class="t-title" style="margin-block: var(--space-sm) var(--space-md);">Urgent
+              Commission or Ongoing Residence?</h2>
+            <p class="t-lead" style="margin-bottom: var(--space-xl);">
+              While our web presentation is refined, our twelve master decorators are active across Kensington, Chelsea,
+              Notting Hill and Mayfair.
+            </p>
+            <div class="flex flex-col gap-md">
+              <div class="flex items-center gap-md">
+                <div
+                  style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-alt); display: flex; align-items: center; justify-content: center;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg></div>
+                <div>
+                  <div class="t-xs" style="font-weight: 700; color: var(--text-secondary);">Direct Phone Line</div>
+                  <a href="tel:+442071234567" class="t-body" style="font-weight: 600;">+44 207 123 4567</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-md">
+                <div
+                  style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-alt); display: flex; align-items: center; justify-content: center;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg></div>
+                <div>
+                  <div class="t-xs" style="font-weight: 700; color: var(--text-secondary);">Direct Studio Email</div>
+                  <a href="mailto:hello@evorainteriors.com" class="t-body"
+                    style="font-weight: 600;">hello@evorainteriors.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-right">
+            <div class="card"
+              style="padding: var(--space-2xl); border-radius: var(--r-xl); background: var(--surface);">
+              <h3 class="t-subheading" style="margin-bottom: var(--space-md);">Request an Expedited Callback</h3>
+              <form data-form novalidate>
+                <div class="form-fields flex flex-col gap-md">
+                  <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" placeholder="Lady Eleanor Vance" data-validate="required" />
+                    <span class="form-error-msg"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-input" placeholder="+44 7700 900123" data-validate="required|phone" />
+                    <span class="form-error-msg"></span>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">Request Same-Day Callback</button>
+                </div>
+                <div class="form-success">
+                  <h4>Callback Scheduled</h4>
+                  <p>Our studio coordinator will call you today.</p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 5 — TRUST & CLIENT ACCOLADES SPOTLIGHT -->
+    <section class="maint-trust-section" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: clamp(2rem, 4vw, 3.5rem);">
+          <span class="section-label">Proven Pedigree</span>
+          <h2 id="trust-title" class="t-heading" style="margin-top: var(--space-sm);">Recognised by London’s Leading
+            Architects</h2>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card reveal delay-1" style="padding: var(--space-xl); background: var(--surface);">
+            <div style="color: var(--brass); margin-bottom: var(--space-md);"><svg viewBox="0 0 24 24" width="14"
+                height="14" fill="currentColor" stroke="currentColor" stroke-width="1" style="vertical-align:-1px"
+                aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="t-sm" style="margin-bottom: var(--space-lg); line-height: 1.7;">"Evora executed 4,000 sq ft of
+              limewash and Cole & Son wallpapers with surgical precision. Unrivalled craft."</p>
+            <div class="t-xs" style="font-weight: 700;">Julian Sterling, Architect</div>
+          </div>
+          <div class="card reveal delay-2" style="padding: var(--space-xl); background: var(--surface);">
+            <div style="color: var(--brass); margin-bottom: var(--space-md);"><svg viewBox="0 0 24 24" width="14"
+                height="14" fill="currentColor" stroke="currentColor" stroke-width="1" style="vertical-align:-1px"
+                aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="t-sm" style="margin-bottom: var(--space-lg); line-height: 1.7;">"The only decorating studio in
+              London I trust with five-meter continuous wallpaper drops and delicate silk fabrics."</p>
+            <div class="t-xs" style="font-weight: 700;">Beatrice Thorne, Interior Designer</div>
+          </div>
+          <div class="card reveal delay-3" style="padding: var(--space-xl); background: var(--surface);">
+            <div style="color: var(--brass); margin-bottom: var(--space-md);"><svg viewBox="0 0 24 24" width="14"
+                height="14" fill="currentColor" stroke="currentColor" stroke-width="1" style="vertical-align:-1px"
+                aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="currentColor"
+                stroke-width="1" style="vertical-align:-1px" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="t-sm" style="margin-bottom: var(--space-lg); line-height: 1.7;">"Punctual, spotless clean-up each
+              evening, and a finish that looks even more luminous three years on."</p>
+            <div class="t-xs" style="font-weight: 700;">Marcus & Clara Pemberton</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 6 — DIRECT STUDIO COORDINATES -->
+    <section class="section-py" aria-labelledby="coord-title">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: clamp(2rem, 4vw, 4rem);">
+          <span class="section-label">Physical Presence</span>
+          <h2 id="coord-title" class="t-heading" style="margin-top: var(--space-sm);">Studio Coordinates & Working Hours
+          </h2>
+        </div>
+
+        <div class="coordinates-grid">
+          <div class="card reveal delay-1" style="padding: var(--space-2xl); text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: var(--space-md);"><svg viewBox="0 0 24 24" width="28"
+                height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg></div>
+            <h3 class="t-subheading" style="margin-bottom: 8px;">Physical Atelier</h3>
+            <p class="t-sm" style="color: var(--text-secondary);">14 Portobello Studios<br>Portobello Road, London W11
+              2DX</p>
+          </div>
+
+          <div class="card reveal delay-2" style="padding: var(--space-2xl); text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: var(--space-md);"><svg viewBox="0 0 24 24" width="28"
+                height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg></div>
+            <h3 class="t-subheading" style="margin-bottom: 8px;">Studio Hours</h3>
+            <p class="t-sm" style="color: var(--text-secondary);">Monday – Friday: 08:00 – 18:00<br>Saturday: 09:00 –
+              15:00</p>
+          </div>
+
+          <div class="card reveal delay-3" style="padding: var(--space-2xl); text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: var(--space-md);"><svg viewBox="0 0 24 24" width="28"
+                height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <path d="M12 18h.01" />
+              </svg></div>
+            <h3 class="t-subheading" style="margin-bottom: 8px;">Direct Socials</h3>
+            <p class="t-sm" style="color: var(--text-secondary);">Follow live story updates:<br><a href="#"
+                style="color: var(--accent); font-weight: 600;">@evora.interiors.studio</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2025 Evora Interiors Studio. All ongoing rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Live countdown timer logic
+    let totalSecs = 4 * 86400 + 18 * 3600 + 42 * 60 + 59;
+    const dEl = document.getElementById('cdDays');
+    const hEl = document.getElementById('cdHours');
+    const mEl = document.getElementById('cdMins');
+    const sEl = document.getElementById('cdSecs');
+
+    setInterval(() => {
+      if (totalSecs > 0) totalSecs--;
+      const d = Math.floor(totalSecs / 86400);
+      const h = Math.floor((totalSecs % 86400) / 3600);
+      const m = Math.floor((totalSecs % 3600) / 60);
+      const s = totalSecs % 60;
+      if (dEl) dEl.textContent = String(d).padStart(2, '0');
+      if (hEl) hEl.textContent = String(h).padStart(2, '0');
+      if (mEl) mEl.textContent = String(m).padStart(2, '0');
+      if (sEl) sEl.textContent = String(s).padStart(2, '0');
+    }, 1000);
+  </script>
+</body>
+
+</html>

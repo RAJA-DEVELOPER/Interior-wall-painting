@@ -1,0 +1,131 @@
+/* =============================================
+   DESIGN TOKENS — VARIABLES
+   ============================================= */
+
+:root {
+  /* Brand Colors */
+  --charcoal: #1C1B19;
+  --terracotta: #B83926;
+  --brass: #74541B;
+  --linen: #F3EEE6;
+  --sage: #375335;
+  --taupe: #7D7164;
+
+  /* Semantic (Light Mode) */
+  --bg: #F3EEE6;
+  --bg-alt: #EDE7DD;
+  --surface: #FFFFFF;
+  --surface-2: #F8F4EF;
+  --text-primary: #1C1B19;
+  --text-secondary: #3D3835;
+  --text-muted: #544D48;
+  --border: rgba(28, 27, 25, 0.18);
+  --border-strong: rgba(28, 27, 25, 0.36);
+  --accent: #B83926;
+  --accent-2: #74541B;
+  --accent-hover: #8F2B1F;
+  --focus-ring: rgba(184, 57, 38, 0.28);
+
+  /* Readable foregrounds for charcoal/image sections */
+  --on-dark: #F7F3EC;
+  --on-dark-secondary: #E6DED4;
+  --on-dark-muted: #CFC4B8;
+  --on-dark-accent: #FF9A88;
+  --on-dark-brass: #E6C989;
+  --on-dark-border: rgba(247, 243, 236, 0.36);
+
+  /* Overlay */
+  --overlay-dark: rgba(20, 19, 17, 0.75);
+  --overlay-light: rgba(243, 238, 230, 0.92);
+
+  /* Typography */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  /* Radius */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(36, 35, 33, 0.08), 0 1px 2px rgba(36, 35, 33, 0.06);
+  --shadow-md: 0 4px 16px rgba(36, 35, 33, 0.10), 0 2px 6px rgba(36, 35, 33, 0.06);
+  --shadow-lg: 0 12px 40px rgba(36, 35, 33, 0.15), 0 4px 12px rgba(36, 35, 33, 0.08);
+  --shadow-xl: 0 24px 64px rgba(36, 35, 33, 0.20);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 200ms;
+  --dur-base: 350ms;
+  --dur-slow: 600ms;
+  --dur-slower: 900ms;
+
+  /* Layout */
+  --nav-h: 80px;
+  --max-w: 1400px;
+  --col-gap: clamp(1rem, 3vw, 2rem);
+  --section-py: clamp(4rem, 8vw, 8rem);
+  --container-px: clamp(1.25rem, 5vw, 4rem);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --charcoal: #222220;
+  --bg: #161615;
+  --bg-alt: #1D1D1B;
+  --surface: #282826;
+  --surface-2: #20201E;
+  --text-primary: #F6F3EE;
+  --text-secondary: #D2CBC2;
+  --text-muted: #AFA89E;
+  --border: rgba(246, 243, 238, 0.15);
+  --border-strong: rgba(246, 243, 238, 0.34);
+  --accent: #FF9A88;
+  --accent-2: #DEBD82;
+  --accent-hover: #FFB2A4;
+  --focus-ring: rgba(255, 154, 136, 0.34);
+  --terracotta: #FF9A88;
+  --brass: #DEBD82;
+  --sage: #ADC2A2;
+  --on-dark: #F7F3EC;
+  --on-dark-secondary: #E6DED4;
+  --on-dark-muted: #CFC4B8;
+  --on-dark-accent: #FF9A88;
+  --on-dark-brass: #E6C989;
+  --on-dark-border: rgba(247, 243, 236, 0.38);
+  --overlay-dark: rgba(8, 8, 8, 0.88);
+  --overlay-light: rgba(22, 22, 20, 0.9);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.65);
+}
+
+/* Dark sections keep light text on the charcoal anchor — guaranteed. */
+[data-theme="dark"] .bg-charcoal,
+[data-theme="dark"] .footer,
+[data-theme="dark"] .page-hero,
+[data-theme="dark"] .testimonials-section,
+[data-theme="dark"] .faq-form-section {
+  background-color: var(--charcoal);
+  color: #F7F3EC;
+}
+
+/* RTL */
+[dir="rtl"] {
+  --dir: rtl;
+}

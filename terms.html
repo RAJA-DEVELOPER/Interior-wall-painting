@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Terms & Conditions — Evora Interiors</title>
+  <meta name="description"
+    content="Evora Interiors Terms and Conditions — service agreements, quotations, payments, liability and warranties." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css?v=2" />
+  <link rel="stylesheet" href="css/base.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <link rel="stylesheet" href="css/layout.css?v=2" />
+  <link rel="stylesheet" href="css/components.css?v=2" />
+  <style>
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: start;
+      padding-block: var(--section-py);
+    }
+
+    .legal-toc {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+    }
+
+    .legal-toc-link {
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-strong);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: all var(--dur-fast);
+    }
+
+    .legal-toc-link:hover {
+      color: var(--accent);
+      padding-left: 6px;
+    }
+
+    [dir="rtl"] .legal-toc-link:hover {
+      padding-left: 0;
+      padding-right: 6px;
+    }
+
+    .legal-toc-link:last-child {
+      border: none;
+    }
+
+    .legal-body h2 {
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-top: var(--space-3xl);
+      margin-bottom: var(--space-lg);
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--border-strong);
+    }
+
+    .legal-body h2:first-child {
+      border-top: none;
+      margin-top: 0;
+    }
+
+    .legal-body p {
+      margin-bottom: var(--space-lg);
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .legal-body ul {
+      list-style: disc;
+      padding-left: var(--space-xl);
+      margin-bottom: var(--space-lg);
+    }
+
+    .legal-body ul li {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-sm);
+    }
+
+    .legal-callout {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-lg);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+      color: var(--text-primary);
+    }
+
+    @media(max-width:768px) {
+      .legal-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .legal-toc {
+        position: static;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Evora Interiors Home">
+        <svg class="nav-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+          <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+          <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+          <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+        </svg>
+        <span class="nav-logo-text">
+          <span class="nav-logo-mark">Evora</span>
+          <span class="nav-logo-sub">Interiors Studio</span>
+        </span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home2.html">Home 2</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
+            viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg></button>
+        <button class="icon-btn" data-toggle-dir data-dir-icon aria-label="Toggle RTL">RTL</button>
+        <a href="contact.html#quote" class="nav-btn">Free Quote</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="home2.html">Home 2</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Journal</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <section class="page-hero" aria-label="Page hero">
+      <div class="container page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span
+            class="breadcrumb-sep">›</span><span>Terms & Conditions</span></nav>
+        <span class="page-hero-label t-label">Legal</span>
+        <h1>Terms & Conditions</h1>
+        <p style="color:var(--text-secondary);font-weight:600;font-size:0.875rem">Last updated: 1 August 2025 —
+          Applicable to all Evora Interiors projects</p>
+      </div>
+    </section>
+
+    <section aria-label="Terms and conditions content">
+      <div class="container legal-layout">
+        <nav class="legal-toc" aria-label="Table of contents">
+          <p
+            style="font-size:0.6875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-md)">
+            Contents</p>
+          <a href="#definitions" class="legal-toc-link">Definitions</a>
+          <a href="#quotations" class="legal-toc-link">Quotations</a>
+          <a href="#acceptance" class="legal-toc-link">Acceptance</a>
+          <a href="#payment" class="legal-toc-link">Payment Terms</a>
+          <a href="#our-obligations" class="legal-toc-link">Our Obligations</a>
+          <a href="#client-obligations" class="legal-toc-link">Client Obligations</a>
+          <a href="#liability" class="legal-toc-link">Liability</a>
+          <a href="#warranty" class="legal-toc-link">Warranty</a>
+          <a href="#cancellation" class="legal-toc-link">Cancellation</a>
+          <a href="#disputes" class="legal-toc-link">Disputes</a>
+          <a href="#governing-law" class="legal-toc-link">Governing Law</a>
+        </nav>
+
+        <div class="legal-body">
+          <div class="legal-callout">
+            These Terms and Conditions ("Terms") govern all services provided by Evora Interiors Studio Limited
+            ("Evora"). By accepting our quotation or commissioning our services, you agree to be bound by these Terms.
+          </div>
+
+          <h2 id="definitions">1. Definitions</h2>
+          <p>"Client" means the individual or entity commissioning services from Evora. "Project" means the agreed scope
+            of decorating, painting, wallpaper installation or related work as set out in the Quotation. "Quotation"
+            means the written estimate provided by Evora, including scope, price and timeline.</p>
+
+          <h2 id="quotations">2. Quotations</h2>
+          <p>All quotations are provided free of charge following a site visit. Quotations are valid for 30 days from
+            the date of issue. After this period, we reserve the right to revise pricing to reflect changes in materials
+            costs or availability.</p>
+          <p>Quotations are based on the scope of work as understood at the time of the site visit. Any changes to scope
+            requested by the Client after quotation will be subject to a written change order and may affect the price
+            and timeline.</p>
+          <p>Quotations include all labour, standard primer, and the agreed paint or wallpaper materials unless
+            explicitly stated otherwise. Client-supplied materials are not included in our quality guarantee.</p>
+
+          <h2 id="acceptance">3. Acceptance of Quotation</h2>
+          <p>A project is formally accepted when the Client provides written or email confirmation. A deposit invoice
+            will then be raised. Work will not be scheduled until the deposit is received.</p>
+
+          <h2 id="payment">4. Payment Terms</h2>
+          <ul>
+            <li><strong>Deposit:</strong> 30% of the project total, due upon acceptance, non-refundable after the
+              project start date.</li>
+            <li><strong>Interim payment:</strong> 40% due at project mid-point (for projects exceeding 5 working days).
+            </li>
+            <li><strong>Final payment:</strong> 30% due within 7 days of project completion.</li>
+          </ul>
+          <p>Payment is accepted by bank transfer (preferred) or by credit/debit card via our secure payment portal. All
+            prices are exclusive of VAT at the prevailing rate unless stated otherwise. Late payments (beyond 14 days)
+            accrue interest at 8% per annum above the Bank of England base rate.</p>
+
+          <h2 id="our-obligations">5. Our Obligations</h2>
+          <p>Evora commits to:</p>
+          <ul>
+            <li>Completing all work to the highest professional standard using skilled, experienced craftspeople</li>
+            <li>Using only the materials agreed in the Quotation, or equivalent or superior alternatives with Client
+              approval</li>
+            <li>Protecting all furniture, flooring and fixtures with dust sheets and appropriate coverings</li>
+            <li>Arriving and working within agreed hours, causing minimum disruption</li>
+            <li>Leaving the property clean and tidy at the end of each working day and upon project completion</li>
+            <li>Disposing of all waste materials responsibly and in accordance with applicable regulations</li>
+          </ul>
+
+          <h2 id="client-obligations">6. Client Obligations</h2>
+          <p>The Client agrees to:</p>
+          <ul>
+            <li>Provide safe and unobstructed access to all areas within the agreed scope at the agreed times</li>
+            <li>Remove or securely protect any items of particular value prior to works commencing</li>
+            <li>Ensure surfaces to be painted are free from existing defects beyond normal wear (e.g. damp, structural
+              cracks) unless remediation is included in the scope</li>
+            <li>Make all agreed payments on time</li>
+            <li>Notify Evora promptly of any concerns arising during the works</li>
+          </ul>
+
+          <h2 id="liability">7. Limitation of Liability</h2>
+          <p>Evora's total liability for any claim arising from a project shall not exceed the total project value paid
+            by the Client. We are not liable for indirect, consequential or special damages including loss of enjoyment
+            or rental income.</p>
+          <p>We hold Public Liability Insurance to £5,000,000 and Employer's Liability Insurance to £10,000,000.
+            Evidence of insurance is available upon request.</p>
+
+          <h2 id="warranty">8. Craftsmanship Warranty</h2>
+          <p>All Evora projects are covered by a 2-year craftsmanship warranty (3 years for Estate package clients).
+            Under this warranty, we will return and rectify — at no cost to the Client — any defect in the paintwork or
+            wallpaper installation that is attributable to our workmanship.</p>
+          <p>The warranty does not cover: damage caused by the Client or third parties; normal wear and tear; changes in
+            humidity causing wallpaper to lift at edges in rooms with inadequate ventilation; fading of paint or
+            wallpaper due to sunlight; or defects in client-supplied materials.</p>
+
+          <h2 id="cancellation">9. Cancellation Policy</h2>
+          <ul>
+            <li>More than 14 days before start date: full deposit refunded less a £50 administration fee</li>
+            <li>7–14 days before start date: 50% of deposit refunded</li>
+            <li>Less than 7 days before start date: deposit non-refundable</li>
+            <li>After project commencement: Client is liable for all work completed to date plus reasonable notice costs
+            </li>
+          </ul>
+          <p>Evora may suspend or cancel a project if site conditions are unsafe, if Client obligations are not met, or
+            in circumstances of Force Majeure. In such cases, the Client will be charged only for work completed.</p>
+
+          <h2 id="disputes">10. Dispute Resolution</h2>
+          <p>In the event of a dispute, the parties agree to attempt resolution informally within 14 days. If
+            unresolved, disputes may be referred to the Chartered Institute of Arbitrators for binding arbitration
+            before any court proceedings are commenced.</p>
+
+          <h2 id="governing-law">11. Governing Law</h2>
+          <p>These Terms are governed by the laws of England and Wales. Any dispute not resolved by arbitration shall be
+            subject to the exclusive jurisdiction of the English courts.</p>
+          <p>These Terms were last reviewed in August 2025. Evora reserves the right to amend these Terms. The version
+            in force at the time of your Quotation acceptance shall apply to your project.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><svg class="nav-logo-icon" viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+              <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+              <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+              <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+            </svg><span class="nav-logo-text"><span class="nav-logo-mark">Evora</span><span
+                class="nav-logo-sub">Interiors Studio</span></span></a>
+          <p class="footer-tagline">Transforming London homes with bespoke painting, premium wallpaper and artisan
+            finishes since 2009.</p>
+          <div class="footer-socials"><a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"
+                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a><a href="#" class="social-link" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="currentColor">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z">
+                </path>
+              </svg></a><a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="currentColor">
+                <path
+                  d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 23.953 4.57z">
+                </path>
+              </svg></a><a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2.5"></path>
+                <path d="M2 21h4V8H2z"></path>
+                <path d="M4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
+              </svg></a></div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5><a href="services.html#painting">Interior Painting</a><a
+            href="services.html#wallpaper">Wallpaper Installation</a><a href="services.html#feature">Feature Walls</a><a
+            href="services.html#texture">Texture Finishes</a><a href="services.html#colour">Colour Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h5>Studio</h5><a href="index.html">Home</a><a href="home2.html">Home 2</a><a
+            href="services.html">Services</a><a href="about.html">About</a><a href="blog.html">Journal</a><a
+            href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get in Touch</h5><a href="tel:+442071234567">+44 207 123 4567</a><a
+            href="mailto:hello@evorainteriors.com">hello@evorainteriors.com</a><a href="#">14 Portobello
+            Studios<br>London W11 2DX</a><a href="contact.html#quote" style="margin-top:var(--space-md)"><svg
+              viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg> Free Quote</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Evora Interiors Studio. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a
+            href="sitemap.html">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
+      aria-hidden="true">
+      <path d="M12 19V5" />
+      <path d="M5 12l7-7 7 7" />
+    </svg></button>
+  <script src="js/theme.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

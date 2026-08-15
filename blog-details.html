@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>The Definitive Guide to Venetian Plaster — Evora Interiors Journal</title>
+  <meta name="description"
+    content="Everything you need to know about Venetian plaster in the modern home — application, cost, maintenance and how to choose the right specialist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css?v=2" />
+  <link rel="stylesheet" href="css/base.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <link rel="stylesheet" href="css/layout.css?v=2" />
+  <link rel="stylesheet" href="css/components.css?v=2" />
+  <style>
+    /* Reading progress bar */
+    .reading-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent);
+      z-index: 2000;
+      transition: width 0.1s;
+      width: 0;
+    }
+
+    /* § 1 Article Hero */
+    .article-hero {
+      position: relative;
+      height: 80svh;
+      min-height: 520px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background-color: var(--charcoal);
+    }
+
+    .article-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .article-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(20, 19, 17, 0.92) 40%, rgba(20, 19, 17, 0.25) 100%);
+    }
+
+    .article-hero-content {
+      position: relative;
+      z-index: 2;
+      padding-bottom: clamp(3rem, 6vw, 6rem);
+    }
+
+    .article-hero-content .breadcrumb {
+      margin-bottom: var(--space-xl);
+    }
+
+    .article-hero-content .breadcrumb a,
+    .article-hero-content .breadcrumb span,
+    .article-hero-content .breadcrumb-sep {
+      color: rgba(247, 243, 236, 0.85);
+      font-weight: 600;
+    }
+
+    /* § 2 Article Body */
+    .article-layout {
+      padding-block: var(--section-py);
+    }
+
+    .article-inner {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: clamp(3rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    .article-body {
+      max-width: 72ch;
+    }
+
+    .article-body h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--text-primary);
+      margin-top: var(--space-3xl);
+      margin-bottom: var(--space-lg);
+    }
+
+    .article-body h3 {
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      color: var(--text-primary);
+      margin-top: var(--space-2xl);
+      margin-bottom: var(--space-md);
+    }
+
+    .article-body p {
+      margin-bottom: var(--space-xl);
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-body ul {
+      list-style: disc;
+      padding-left: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .article-body ul li {
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-sm);
+    }
+
+    .article-pullquote {
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-xl);
+      margin-block: var(--space-3xl);
+    }
+
+    [dir="rtl"] .article-pullquote {
+      border-left: none;
+      border-right: 3px solid var(--accent);
+      padding-left: 0;
+      padding-right: var(--space-xl);
+    }
+
+    .article-pullquote p {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+
+    .article-img {
+      width: 100%;
+      border-radius: var(--r-lg);
+      margin-block: var(--space-2xl);
+    }
+
+    .article-img img {
+      width: 100%;
+      border-radius: var(--r-lg);
+    }
+
+    .article-img figcaption {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-align: center;
+      margin-top: var(--space-sm);
+    }
+
+    /* Sidebar */
+    .article-sidebar {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+    }
+
+    .sidebar-widget {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-xl);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .sidebar-widget h4 {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-lg);
+    }
+
+    .sidebar-toc-link {
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-strong);
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      transition: color var(--dur-fast), padding-left var(--dur-fast);
+    }
+
+    [dir="rtl"] .sidebar-toc-link:hover {
+      padding-left: 0;
+      padding-right: 8px;
+    }
+
+    .sidebar-toc-link:hover {
+      color: var(--accent);
+      padding-left: 6px;
+    }
+
+    .sidebar-toc-link:last-child {
+      border-bottom: none;
+    }
+
+    .sidebar-related-item {
+      display: flex;
+      gap: var(--space-md);
+      align-items: flex-start;
+      padding-block: var(--space-md);
+      border-bottom: 1px solid var(--border-strong);
+    }
+
+    .sidebar-related-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .sidebar-related-img {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--r-md);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .sidebar-related-title {
+      font-family: var(--font-display);
+      font-size: 0.9375rem;
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+
+    .sidebar-related-title:hover {
+      color: var(--accent);
+    }
+
+    /* § 3 Before/After in article */
+    .article-ba {
+      padding-block: var(--section-py);
+      background: var(--bg-alt);
+    }
+
+    .article-ba-wrap {
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
+    .ba-container {
+      aspect-ratio: 16/9;
+    }
+
+    /* § 4 Author + Share */
+    .author-section {
+      padding-block: clamp(3rem, 5vw, 5rem);
+      border-top: 1px solid var(--border-strong);
+    }
+
+    .author-card {
+      display: flex;
+      gap: var(--space-2xl);
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-xl);
+      padding: var(--space-2xl);
+    }
+
+    .author-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: var(--r-full);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .author-bio {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .share-bar {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin-top: var(--space-2xl);
+      flex-wrap: wrap;
+    }
+
+    .share-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .share-link {
+      padding: 8px 20px;
+      border-radius: var(--r-full);
+      border: 1.5px solid var(--border-strong);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      transition: all var(--dur-fast);
+    }
+
+    .share-link:hover {
+      background: var(--text-primary);
+      color: var(--bg);
+      border-color: var(--text-primary);
+    }
+
+    /* § 5 Related Articles */
+    .related-section {
+      padding-block: var(--section-py);
+      background: var(--bg-alt);
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--col-gap);
+      margin-top: clamp(2rem, 4vw, 4rem);
+    }
+
+    /* § 6 Comments/CTA */
+    .article-cta {
+      background: var(--charcoal);
+      padding-block: clamp(4rem, 7vw, 7rem);
+      text-align: center;
+    }
+
+    @media (max-width:1024px) {
+      .article-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .article-sidebar {
+        position: static;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width:768px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-card {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="reading-progress-bar" id="readingProgress"></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Evora Interiors Home"><svg class="nav-logo-icon"
+          viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+          <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+          <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+          <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+        </svg><span class="nav-logo-text"><span class="nav-logo-mark">Evora</span><span class="nav-logo-sub">Interiors
+            Studio</span></span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home2.html">Home 2</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" class="active">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
+            viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg></button>
+        <button class="icon-btn" data-toggle-dir data-dir-icon aria-label="Toggle RTL">RTL</button>
+        <a href="contact.html#quote" class="nav-btn">Free Quote</a>
+        <button class="hamburger" aria-label="Open menu"
+          aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation"><a href="index.html">Home</a><a
+      href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Services</a><a
+      href="blog.html" class="active">Journal</a><a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <!-- § 1 Article Hero -->
+    <section class="article-hero" aria-label="Article hero">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=85&auto=format&fit=crop"
+        alt="Venetian plaster being applied to a warm terracotta dining room wall" class="article-hero-bg"
+        loading="eager" fetchpriority="high" id="articleHeroImg" />
+      <div class="article-hero-overlay"></div>
+      <div class="container article-hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <a href="blog.html">Journal</a>
+          <span class="breadcrumb-sep">›</span>
+          <span id="articleBreadcrumbTitle">Venetian Plaster Guide</span>
+        </nav>
+        <div class="flex gap-md" style="margin-bottom:var(--space-lg);flex-wrap:wrap">
+          <span class="badge badge-accent" id="articleBadge">Textures</span>
+          <span id="articleDate" style="font-size:0.8125rem;font-weight:600;color:rgba(247,243,236,0.85)">August 2025</span>
+          <span id="articleReadTime" style="font-size:0.8125rem;font-weight:600;color:rgba(247,243,236,0.85)">12 min read</span>
+        </div>
+        <h1 id="articleTitle"
+          style="font-family:var(--font-display);font-size:clamp(2rem,5vw,4.5rem);line-height:1.05;color:#FFFFFF;max-width:22ch;letter-spacing:-0.02em;margin-bottom:var(--space-xl)">
+          The Definitive Guide to Venetian Plaster in the Modern Home</h1>
+        <p id="articleDescription" style="color:rgba(247,243,236,0.9);max-width:50ch;font-size:1.05rem;line-height:1.7">Everything you need to
+          know — from what it is and how it's applied, to costs, maintenance and how to find a specialist you can trust.
+        </p>
+      </div>
+    </section>
+
+    <!-- § 2 Article Body + Sidebar -->
+    <section class="article-layout" aria-label="Article content">
+      <div class="container">
+        <div class="article-inner">
+          <article class="article-body" id="articleBody">
+            <h2>What Is Venetian Plaster?</h2>
+            <p>Venetian plaster — also known as <em>stucco veneziano</em> — is a wall finish made from slaked lime putty
+              mixed with marble dust. It originated in Venice during the Renaissance period and has been used by the
+              world's finest craftspeople ever since. When applied by a skilled hand, it produces a surface of
+              extraordinary luminosity, depth and texture that no paint or wallpaper can replicate.</p>
+            <p>Unlike paint, which sits on the surface, Venetian plaster becomes the wall. It creates a finish that
+              appears to have depth — as though you are looking into rather than at the surface. In direct or indirect
+              light, it has an almost mineral quality.</p>
+
+            <div class="article-pullquote">
+              <p>"Venetian plaster is not a finish — it is a transformation. Applied well, it turns a wall into
+                something that feels like it belongs to the building itself."</p>
+              <p
+                style="font-size:0.875rem;color:var(--text-secondary);font-weight:600;font-family:var(--font-body);margin-top:var(--space-md)">
+                — Dmitri Volkov, Evora's Venetian Plaster Specialist</p>
+            </div>
+
+            <h2>The Application Process: What to Expect</h2>
+            <p>A true Venetian plaster finish typically requires three to four coats, each applied and burnished by
+              hand. The process cannot be rushed — each coat must be fully dry before the next is applied, and the final
+              burnishing determines the level of sheen.</p>
+            <ul>
+              <li><strong>Preparation:</strong> All surfaces must be perfectly smooth and primed. Any imperfections in
+                the wall will be visible in the final finish, so we always skim-coat walls before beginning.</li>
+              <li><strong>First coat:</strong> A base layer is applied and left to dry. This typically takes 4–8 hours
+                depending on temperature and humidity.</li>
+              <li><strong>Second and third coats:</strong> Progressively thinner coats are applied at different angles
+                to build depth and variation.</li>
+              <li><strong>Burnishing:</strong> The final coat is burnished with a Venetian steel trowel while the
+                plaster is still slightly wet, creating the characteristic polished, marble-like surface.</li>
+              <li><strong>Waxing (optional):</strong> A natural beeswax or carnauba wax can be applied to increase the
+                sheen and provide additional protection.</li>
+            </ul>
+
+            <figure class="article-img">
+              <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=80&auto=format&fit=crop"
+                alt="The burnishing process — creating the lustrous Venetian plaster finish" loading="lazy" />
+              <figcaption>The burnishing stage is where the magic happens — creating that characteristic lustrous depth.
+              </figcaption>
+            </figure>
+
+            <h2>Is Venetian Plaster Right for Your Home?</h2>
+            <p>Venetian plaster is suitable for almost any room, but it works best in spaces where you spend time
+              appreciating the walls — dining rooms, sitting rooms, bedrooms and entrance halls. It is particularly
+              beautiful in rooms with natural light that moves across the surface through the day.</p>
+            <p>It is not generally recommended for bathrooms or kitchens unless waxed or sealed properly, as moisture
+              can affect the finish over time. For wet areas, a silicone or acrylic-based Venetian plaster is available.
+            </p>
+
+            <h2>The Cost of Venetian Plaster</h2>
+            <p>Venetian plaster is a premium finish, and pricing reflects the skill and time required. At Evora, our
+              Venetian plaster typically costs between £45–£85 per square metre, depending on the complexity of the
+              finish, the colour and the level of burnishing required.</p>
+            <p>A typical dining room feature wall of approximately 12–14m² would cost between £540 and £1,190. A full
+              four-wall dining room would range from £1,800 to £3,400. We provide fully itemised, fixed-price quotes
+              after an in-home consultation.</p>
+
+            <h2>How to Choose a Venetian Plaster Specialist</h2>
+            <p>The quality of Venetian plaster varies enormously depending on the skill of the applicator. A poorly
+              applied Venetian plaster will look flat, patchy and unremarkable. A master-applied finish is breathtaking.
+              When choosing a specialist:</p>
+            <ul>
+              <li>Ask to see completed project photography — ideally in multiple lighting conditions</li>
+              <li>Request references from recent clients</li>
+              <li>Ask about their training and how long they have been applying Venetian plaster specifically</li>
+              <li>Request a small sample panel in your chosen colour before committing</li>
+            </ul>
+          </article>
+
+          <!-- Sidebar -->
+          <aside class="article-sidebar">
+            <div class="sidebar-widget">
+              <h4>Contents</h4>
+              <a href="#" class="sidebar-toc-link">What Is Venetian Plaster?</a>
+              <a href="#" class="sidebar-toc-link">The Application Process</a>
+              <a href="#" class="sidebar-toc-link">Is It Right for Your Home?</a>
+              <a href="#" class="sidebar-toc-link">The Cost</a>
+              <a href="#" class="sidebar-toc-link">Choosing a Specialist</a>
+              <a href="#" class="sidebar-toc-link">Maintenance Guide</a>
+            </div>
+            <div class="sidebar-widget">
+              <h4>Related Articles</h4>
+              <div class="sidebar-related-item">
+                <img src="https://images.unsplash.com/photo-1615529162924-f8605388461d?w=100&q=80&auto=format&fit=crop"
+                  alt="" class="sidebar-related-img" loading="lazy" />
+                <a href="blog-details.html" class="sidebar-related-title">How to Hang Wallpaper Like a Professional</a>
+              </div>
+              <div class="sidebar-related-item">
+                <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=100&q=80&auto=format&fit=crop"
+                  alt="" class="sidebar-related-img" loading="lazy" />
+                <a href="blog-details.html" class="sidebar-related-title">Seven Feature Wall Ideas That Elevate Any
+                  Room</a>
+              </div>
+              <div class="sidebar-related-item">
+                <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=100&q=80&auto=format&fit=crop"
+                  alt="" class="sidebar-related-img" loading="lazy" />
+                <a href="blog-details.html" class="sidebar-related-title">2025's Most Wanted Interior Colours</a>
+              </div>
+            </div>
+            <div class="sidebar-widget" style="background:var(--charcoal);border:1px solid var(--border-strong)">
+              <h4 style="color:var(--accent);font-weight:700">Interested in Venetian Plaster?</h4>
+              <p style="font-size:0.875rem;color:rgba(247,243,236,0.9);margin-bottom:var(--space-lg);line-height:1.65">
+                Book a free in-home consultation and sample session with our Venetian plaster specialist.</p>
+              <a href="contact.html" class="btn btn-accent" style="width:100%;justify-content:center">Book a
+                Consultation</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 3 Before/After in Article -->
+    <section class="article-ba" aria-labelledby="article-ba-heading">
+      <div class="container article-ba-wrap">
+        <span class="t-label reveal" style="display:block;margin-bottom:var(--space-xl)">Project Transformation</span>
+        <h2 id="article-ba-heading" class="t-heading reveal delay-1"
+          style="margin-bottom:var(--space-2xl);max-width:22ch">Dining Room: Plain Plasterboard to Venetian Plaster</h2>
+        <div class="ba-container reveal-scale">
+          <div class="ba-before">
+            <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1200&q=80&auto=format&fit=crop"
+              alt="Before: plain painted walls in an ordinary dining room" loading="lazy" />
+          </div>
+          <div class="ba-clip">
+            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=80&auto=format&fit=crop"
+              alt="After: luxurious polished Venetian plaster in warm terracotta" loading="lazy" />
+          </div>
+          <div class="ba-handle"></div>
+          <span class="ba-label before">Before</span>
+          <span class="ba-label after">After</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 4 Author Card & Share -->
+    <section class="article-footer" aria-label="Author and sharing">
+      <div class="container" style="max-width:800px">
+        <div class="author-card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&q=80&auto=format&fit=crop"
+            alt="Dmitri Volkov, Venetian Plaster Specialist" class="author-avatar" loading="lazy" />
+          <div>
+            <div class="author-name">Dmitri Volkov</div>
+            <p style="font-size:0.75rem;font-weight:600;color:var(--text-secondary);margin-bottom:var(--space-md)">
+              Venetian Plaster Specialist, Evora Interiors</p>
+            <p class="author-bio">Dmitri trained in Moscow under master plasterer Aleksei Kuznetsov before moving to
+              London in 2012. He has applied Venetian plaster in over 180 homes across London and is considered one of
+              the finest practitioners in the UK.</p>
+            <div class="share-bar">
+              <span class="share-label">Share:</span>
+              <a href="#" class="share-link">Twitter</a>
+              <a href="#" class="share-link">Pinterest</a>
+              <a href="#" class="share-link">Houzz</a>
+              <a href="#" class="share-link">Copy Link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 5 Related Articles -->
+    <section class="related-section" aria-labelledby="related-heading">
+      <div class="container">
+        <h2 id="related-heading" class="t-heading reveal" style="max-width:20ch">Continue Reading</h2>
+        <div class="related-grid">
+          <article class="card reveal delay-1">
+            <a href="blog-details.html"><img
+                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&auto=format&fit=crop"
+                alt="Limewash paint guide" class="card-img" loading="lazy" /></a>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-tag">Textures</span><span class="card-date">July 2025</span>
+              </div>
+              <h3 style="font-family:var(--font-display);font-size:1.2rem"><a href="blog-details.html">Limewash Paint:
+                  Everything You Need to Know Before You Commit</a></h3>
+            </div>
+          </article>
+          <article class="card reveal delay-2">
+            <a href="blog-details.html"><img
+                src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80&auto=format&fit=crop"
+                alt="Feature wall ideas" class="card-img" loading="lazy" /></a>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-tag">Feature Walls</span><span class="card-date">June 2025</span>
+              </div>
+              <h3 style="font-family:var(--font-display);font-size:1.2rem"><a href="blog-details.html">Seven Feature
+                  Wall Ideas That Elevate Any Room</a></h3>
+            </div>
+          </article>
+          <article class="card reveal delay-3">
+            <a href="blog-details.html"><img
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80&auto=format&fit=crop"
+                alt="The art of dark rooms" class="card-img" loading="lazy" /></a>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-tag">Colour</span><span class="card-date">May 2025</span></div>
+              <h3 style="font-family:var(--font-display);font-size:1.2rem"><a href="blog-details.html">The Art of Going
+                  Dark: When to Embrace Deep Interior Colours</a></h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 6 Article CTA -->
+    <section class="article-cta" aria-label="Call to action">
+      <div class="container" style="display:flex;flex-direction:column;align-items:center;gap:var(--space-xl)">
+        <span class="t-label" style="color:var(--accent)">Ready for Venetian Plaster?</span>
+        <h2 class="t-title" style="color:#F7F3EC;max-width:20ch;text-align:center">Book a Free In-Home Sample Session
+        </h2>
+        <p style="color:rgba(247,243,236,0.9);max-width:44ch;text-align:center;line-height:1.75;font-size:1.05rem">
+          Dmitri will visit your home, bring physical colour samples and apply a test panel so you can see exactly how
+          the finish will look in your specific light — completely free of charge.</p>
+        <div class="flex gap-lg" style="flex-wrap:wrap">
+          <a href="contact.html" class="btn btn-accent btn-xl">Book a Free Session</a>
+          <a href="services.html#texture" class="btn btn-outline btn-xl"
+            style="color:#F7F3EC;border-color:rgba(247,243,236,0.4)">View All Textures</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="nav-logo"><svg class="nav-logo-icon" viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#B83926"></rect>
+              <rect x="5" y="7" width="22" height="6" rx="3" fill="#F7F3EC"></rect>
+              <rect x="18" y="13" width="4" height="4" fill="#F7F3EC"></rect>
+              <path d="M20 17 L27 25" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round" fill="none"></path>
+            </svg><span class="nav-logo-text"><span class="nav-logo-mark">Evora</span><span
+                class="nav-logo-sub">Interiors Studio</span></span></a>
+          <p class="footer-tagline">Transforming London homes with bespoke painting, premium wallpaper and artisan
+            finishes since 2009.</p>
+          <div class="footer-socials"><a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"
+                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a><a href="#" class="social-link" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="currentColor">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z">
+                </path>
+              </svg></a><a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="currentColor">
+                <path
+                  d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 23.953 4.57z">
+                </path>
+              </svg></a><a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18"
+                height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2.5"></path>
+                <path d="M2 21h4V8H2z"></path>
+                <path d="M4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path>
+              </svg></a></div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5><a href="services.html#painting">Interior Painting</a><a
+            href="services.html#wallpaper">Wallpaper Installation</a><a href="services.html#feature">Feature Walls</a><a
+            href="services.html#texture">Texture Finishes</a><a href="services.html#colour">Colour Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h5>Studio</h5><a href="index.html">Home</a><a href="home2.html">Home 2</a><a
+            href="services.html">Services</a><a href="about.html">About</a><a href="blog.html">Journal</a><a
+            href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get in Touch</h5><a href="tel:+442071234567">+44 207 123 4567</a><a
+            href="mailto:hello@evorainteriors.com">hello@evorainteriors.com</a><a href="#">14 Portobello
+            Studios<br>London W11 2DX</a><a href="contact.html#quote" style="margin-top:var(--space-md)"><svg
+              viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg> Free Quote</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Evora Interiors Studio. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a
+            href="sitemap.html">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
+      aria-hidden="true">
+      <path d="M12 19V5" />
+      <path d="M5 12l7-7 7 7" />
+    </svg></button>
+  <script src="js/theme.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/before-after.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Dynamic article render from blog card data
+    (function () {
+      'use strict';
+
+      var article = null;
+      var qs = new URLSearchParams(window.location.search);
+      if (qs.get('title')) {
+        article = {
+          title: qs.get('title') || '',
+          image: qs.get('image') || '',
+          alt: qs.get('alt') || '',
+          category: qs.get('category') || '',
+          date: qs.get('date') || '',
+          readTime: qs.get('readTime') || '',
+          excerpt: qs.get('excerpt') || '',
+          tags: (qs.get('tags') || '').split('|').filter(Boolean),
+          author: qs.get('author') || '',
+          authorImg: qs.get('authorImg') || ''
+        };
+      } else {
+        try {
+          article = JSON.parse(sessionStorage.getItem('evora_article') || 'null');
+        } catch (err) { article = null; }
+      }
+
+      if (!article || !article.title) return;
+
+      document.title = article.title + ' — Evora Interiors Journal';
+
+      var heroImg = document.getElementById('articleHeroImg');
+      if (heroImg && article.image) {
+        heroImg.src = article.image.replace(/\?w=700&q=80/, '?w=1800&q=85');
+        if (article.alt) heroImg.alt = article.alt;
+      }
+
+      var breadcrumb = document.getElementById('articleBreadcrumbTitle');
+      if (breadcrumb) breadcrumb.textContent = article.title.replace(/:.*$/, '');
+
+      var badge = document.getElementById('articleBadge');
+      if (badge && article.category) badge.textContent = article.category;
+
+      var dateEl = document.getElementById('articleDate');
+      if (dateEl && article.date) dateEl.textContent = article.date;
+
+      var readTimeEl = document.getElementById('articleReadTime');
+      if (readTimeEl && article.readTime) readTimeEl.textContent = article.readTime;
+
+      var titleEl = document.getElementById('articleTitle');
+      if (titleEl) titleEl.textContent = article.title;
+
+      var descEl = document.getElementById('articleDescription');
+      if (descEl && article.excerpt) descEl.textContent = article.excerpt;
+
+      // Build article body content from card data
+      var bodyEl = document.getElementById('articleBody');
+      if (bodyEl) {
+        var topic = (article.title.split(':')[0] || article.title).trim();
+        var tagLinks = (article.tags || []).map(function (t) {
+          return '<li><strong>' + t.replace(/^#/, '') + ':</strong> how this shapes the finish, the material and the final look of your space.</li>';
+        }).join('');
+
+        bodyEl.innerHTML = [
+          '<h2>Why ' + topic + ' Matters</h2>',
+          '<p>' + (article.excerpt || '') + '</p>',
+          '<p>At Evora Interiors, we are asked about this again and again. The short answer: it comes down to light, texture and how a finish behaves in a real room. The longer answer is what this guide covers — so you can make an informed decision with confidence.</p>',
+          '<div class="article-pullquote"><p>"' + (article.excerpt || '') + '"</p><p style="font-size:0.875rem;color:var(--text-secondary);font-weight:600;font-family:var(--font-body);margin-top:var(--space-md)">— ' + (article.author || 'The Evora Team') + ', Evora Interiors</p></div>',
+          '<h2>What to Consider First</h2>',
+          '<p>Before any work begins, the biggest factor is preparation. Surfaces must be sound, dry and properly primed, and the finish must suit the light and traffic of the room. We always start with an in-home consultation so nothing is left to guesswork.</p>',
+          tagLinks ? '<h2>Key Points From This Guide</h2><ul>' + tagLinks + '</ul>' : '',
+          '<h2>How We Can Help</h2>',
+          '<p>Book a free consultation and we will talk through the best approach for your space, provide a fixed-price quote and walk you through every stage of the process before a brush is lifted.</p>'
+        ].join('');
+      }
+
+      // Author card
+      var authorName = document.querySelector('.author-name');
+      if (authorName && article.author) {
+        authorName.textContent = article.author;
+      }
+      var authorRole = document.querySelector('.author-card p');
+      if (authorRole && article.author) {
+        authorRole.textContent = 'Contributing Writer, Evora Interiors';
+      }
+      var authorBio = document.querySelector('.author-bio');
+      if (authorBio) {
+        authorBio.textContent = article.author + ' writes regularly for The Evora Edit, translating studio experience into practical, jargon-free guidance for homeowners across London.';
+      }
+      var authorImg = document.querySelector('.author-avatar');
+      if (authorImg && article.authorImg) {
+        authorImg.src = article.authorImg.replace(/\?w=80&q=80/, '?w=160&q=80');
+      }
+
+      // CTA label
+      var ctaLabel = document.querySelector('.article-cta .t-label');
+      if (ctaLabel) {
+        var cat = (article.category || 'this finish').toLowerCase();
+        ctaLabel.textContent = 'Ready to explore ' + cat + '?';
+      }
+      var ctaTitle = document.querySelector('.article-cta .t-title');
+      if (ctaTitle) ctaTitle.textContent = 'Book a Free In-Home Consultation';
+    })();
+  </script>
+  <script>
+    // Reading progress
+    const bar = document.getElementById('readingProgress');
+    if (bar) {
+      window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const pct = (window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100;
+        bar.style.width = Math.min(100, pct) + '%';
+      }, { passive: true });
+    }
+  </script>
+</body>
+
+</html>
