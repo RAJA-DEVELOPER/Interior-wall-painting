@@ -39,9 +39,13 @@
 
 .navbar.hero-overlay-nav:not(.scrolled) .nav-logo-mark,
 .navbar.hero-overlay-nav:not(.scrolled) .nav-links a,
-.navbar.hero-overlay-nav:not(.scrolled) .icon-btn,
+.navbar.hero-overlay-nav:not(.scrolled) .icon-btn {
+  color: var(--on-dark);
+}
+
 .navbar.hero-overlay-nav:not(.scrolled) .hamburger span {
   color: var(--on-dark);
+  background: var(--on-dark);
 }
 
 .navbar.hero-overlay-nav:not(.scrolled) .nav-logo-sub {
