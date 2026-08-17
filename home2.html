@@ -82,14 +82,15 @@
       align-self: flex-start;
       padding: 9px 18px;
       border-radius: var(--r-full);
-      border: 1px solid rgba(247, 243, 236, 0.22);
-      background: rgba(247, 243, 236, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       font-size: 0.6875rem;
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--terracotta);
+      color: var(--on-dark-accent);
       margin-bottom: var(--space-2xl);
     }
 
@@ -99,6 +100,11 @@
       border-radius: 50%;
       background: var(--terracotta);
       animation: pulse-dot 2.4s var(--ease-in-out) infinite;
+    }
+
+    [data-theme="dark"] .h2-hero-eyebrow {
+      color: #FF9A88;
+      border-color: rgba(226, 139, 124, 0.35);
     }
 
     @keyframes pulse-dot {
