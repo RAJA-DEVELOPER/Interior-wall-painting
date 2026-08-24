@@ -118,6 +118,7 @@
     .team-img-wrap {
       border-radius: var(--r-xl);
       overflow: hidden;
+      clip-path: inset(0 round var(--r-xl));
       margin-bottom: var(--space-lg);
       aspect-ratio: 3/4;
     }
@@ -271,6 +272,16 @@
     @media (max-width: 1024px) {
       .team-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+      }
+
+      .team-img-wrap {
+        max-width: 280px;
+        margin-inline: auto;
+      }
+
+      .team-name {
+        font-size: 1.05rem;
       }
 
       .stats-band-grid {
@@ -384,7 +395,7 @@
 
   <main>
     <!-- § 1 About Hero -->
-    <section class="page-hero" aria-label="About Evora hero">
+    <section class="page-hero grain-overlay" aria-label="About Evora hero">
       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=85&auto=format&fit=crop"
         alt="Evora artisan team preparing a beautifully lit period room for painting" class="page-hero-bg"
         loading="eager" fetchpriority="high" />
@@ -394,7 +405,7 @@
           <span class="hero-pulse"></span>
           <span>Our Story · Est. 2009</span>
         </div>
-        <h1 class="page-hero-title reveal delay-1">Fifteen Years of Painting with Purpose</h1>
+        <h1 class="page-hero-title reveal delay-1">Fifteen Years of Painting with <em>Purpose</em></h1>
         <p class="page-hero-desc reveal delay-2">Evora began in 2009 as an artisan studio in West London. Today we are a
           collective of 12 master craftspeople, united by an obsession with surface, colour and the invisible craft that
           transforms living spaces into timeless homes.</p>
@@ -406,6 +417,20 @@
               <path d="M5 12h14" />
               <path d="M12 5l7 7-7 7" />
             </svg></a>
+        </div>
+        <div class="page-hero-meta reveal delay-4">
+          <div class="hero-meta-item">
+            <span class="hero-meta-value">2009</span>
+            <span class="hero-meta-label">Established · West London</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-value">850+</span>
+            <span class="hero-meta-label">Homes Transformed</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-value">12</span>
+            <span class="hero-meta-label">Master Craftspeople</span>
+          </div>
         </div>
       </div>
       <div class="page-hero-watermark" aria-hidden="true">2009</div>
