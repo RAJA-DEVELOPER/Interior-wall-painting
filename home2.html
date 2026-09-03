@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <title>Home 2 — Evora Interiors | Interior Painting & Wallpaper</title>
+  <title>Home 2 â€” Evora Interiors | Interior Painting & Wallpaper</title>
   <meta name="description"
-    content="Discover Evora's alternative home experience — featuring project gallery, colour palette collections, wallpaper showcases and a direct quote form." />
+    content="Discover Evora's alternative home experience â€” featuring project gallery, colour palette collections, wallpaper showcases and a direct quote form." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -19,9 +19,9 @@
   <link rel="stylesheet" href="css/layout.css?v=2" />
   <link rel="stylesheet" href="css/components.css?v=2" />
   <style>
-    /* HOME 2 — Unique Sections */
+    /* HOME 2 â€” Unique Sections */
 
-    /* § 1 Fullscreen Background Hero — Premium Editorial */
+    /* Â§ 1 Fullscreen Background Hero â€” Premium Editorial */
     .h2-hero {
       position: relative;
       min-height: 100svh;
@@ -171,27 +171,41 @@
     .h2-hero-ctas {
       display: flex;
       align-items: center;
-      gap: var(--space-lg);
+      gap: var(--space-md);
       flex-wrap: wrap;
     }
 
+    .h2-hero-ctas .btn {
+      min-width: 172px;
+      height: 52px;
+      padding: 0 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-sizing: border-box;
+      flex: 0 0 auto;
+    }
+
     .hero-cta-primary {
-      padding-right: 10px;
+      padding-right: 20px;
+      padding-left: 28px;
     }
 
     .btn-icon-inner {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      min-width: 40px;
-      margin-left: 14px;
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      margin-left: 8px;
       border-radius: var(--r-full);
       background: rgba(20, 19, 17, 0.20);
       color: #fff;
-      font-size: 1rem;
+      font-size: 0.9rem;
       transition: transform var(--dur-base) var(--ease-out), background var(--dur-base);
+      flex-shrink: 0;
     }
 
     [data-theme="dark"] .btn-icon-inner {
@@ -266,7 +280,7 @@
       }
     }
 
-    /* Right — single cohesive glass card */
+    /* Right â€” single cohesive glass card */
     .h2-hero-aside {
       min-width: 0;
     }
@@ -352,7 +366,7 @@
       color: #F7F3EC;
     }
 
-    /* § 2 Staggered Project Grid */
+    /* Â§ 2 Staggered Project Grid */
     .projects-grid-section {
       padding-block: var(--section-py);
     }
@@ -405,7 +419,7 @@
       font-size: 1.1rem;
     }
 
-    /* § 3 Colour Palette Collections */
+    /* Â§ 3 Colour Palette Collections */
     .palette-section {
       background: var(--bg-alt);
       padding-block: var(--section-py);
@@ -426,7 +440,7 @@
       margin-top: clamp(2rem, 4vw, 4rem);
     }
 
-    /* § 4 Wallpaper Showcase – slider */
+    /* Â§ 4 Wallpaper Showcase â€“ slider */
     .wallpaper-showcase {
       padding-block: var(--section-py);
     }
@@ -542,7 +556,7 @@
       color: var(--text-primary);
     }
 
-    /* § 5 FAQ + inline form */
+    /* Â§ 5 FAQ + inline form */
     .faq-form-section {
       background: var(--charcoal);
       padding-block: var(--section-py);
@@ -584,7 +598,7 @@
       gap: var(--space-md);
     }
 
-    /* § 6 Brands / Trust Bar */
+    /* Â§ 6 Brands / Trust Bar */
     .brands-section {
       padding-block: clamp(3rem, 5vw, 5rem);
       border-top: 1px solid var(--border-strong);
@@ -715,7 +729,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="blog.html">Journal</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" style="border-bottom:none !important; box-shadow:none !important; text-decoration:none !important;">Contact</a></li>
       </ul>
       <div class="nav-controls">
         <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
@@ -732,18 +746,19 @@
   </nav>
   <div class="mobile-nav" role="dialog" aria-label="Mobile navigation">
     <a href="index.html">Home</a><a href="home2.html" class="active">Home 2</a><a href="about.html">About</a><a
-      href="services.html">Services</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a>
+      href="services.html">Services</a><a href="blog.html">Journal</a><a href="contact.html" style="border-bottom:none !important; box-shadow:none !important; text-decoration:none !important;">Contact</a>
+    
   </div>
 
   <main>
-    <!-- § 1 Split Fullscreen Hero -->
+    <!-- Â§ 1 Split Fullscreen Hero -->
     <section class="h2-hero" aria-label="Hero">
       <div class="h2-hero-inner">
         <div class="h2-hero-content">
           <span class="h2-hero-eyebrow reveal"><span class="dot"></span>London's Premier Painting Studio</span>
           <h1 class="h2-hero-title reveal delay-1">The Art of the <span class="accent-word">Painted</span> Interior</h1>
           <p class="h2-hero-copy reveal delay-2">
-            Every wall tells a story. We write it in colour, texture and light — with a craft refined over fifteen
+            Every wall tells a story. We write it in colour, texture and light â€” with a craft refined over fifteen
             years.
           </p>
           <div class="h2-hero-ctas reveal delay-3">
@@ -817,7 +832,7 @@
       <div class="hero-scroll-indicator" aria-hidden="true"><span class="hero-scroll-line"></span>Scroll</div>
     </section>
 
-    <!-- § 2 Staggered Project Gallery -->
+    <!-- Â§ 2 Staggered Project Gallery -->
     <section class="projects-grid-section" aria-labelledby="projects-h2">
       <div class="container">
         <div
@@ -875,7 +890,7 @@
       </div>
     </section>
 
-    <!-- § 3 Colour Palette Collections -->
+    <!-- Â§ 3 Colour Palette Collections -->
     <section class="palette-section" aria-labelledby="palette-heading">
       <div class="container">
         <div class="palette-header-grid">
@@ -884,7 +899,7 @@
             <h2 id="palette-heading" class="t-title reveal delay-1" style="margin-top:var(--space-md);max-width:18ch">
               Our Curated Palette Collections</h2>
           </div>
-          <p class="t-lead reveal" style="max-width:40ch">Curated tonal stories for every interior mood — from serene
+          <p class="t-lead reveal" style="max-width:40ch">Curated tonal stories for every interior mood â€” from serene
             neutrals to dramatic darks and warm earths.</p>
         </div>
         <div class="palette-collections">
@@ -899,7 +914,7 @@
             <div class="palette-info">
               <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:4px">Warm Editorial</h3>
               <p style="font-size:0.8125rem;font-weight:600;color:var(--text-secondary)">Linen, Taupe, Brass, Sage &
-                Terracotta — our signature collection.</p>
+                Terracotta â€” our signature collection.</p>
             </div>
           </div>
           <div class="palette-card reveal delay-2">
@@ -937,7 +952,7 @@
       </div>
     </section>
 
-    <!-- § 4 Wallpaper Showcase — Horizontal Scroll -->
+    <!-- Â§ 4 Wallpaper Showcase â€” Horizontal Scroll -->
     <section class="wallpaper-showcase" aria-labelledby="wallpaper-heading">
       <div class="container" style="margin-bottom:clamp(1.5rem,3vw,3rem)">
         <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:var(--space-xl)">
@@ -1024,7 +1039,7 @@
       </div>
     </section>
 
-    <!-- § 5 FAQ + Quote Form -->
+    <!-- Â§ 5 FAQ + Quote Form -->
     <section class="faq-form-section" aria-labelledby="faq-h2-heading">
       <div class="container faq-form-grid">
 
@@ -1037,7 +1052,7 @@
             <div class="faq-item">
               <button class="faq-question">Do you offer a free colour consultation?</button>
               <div class="faq-answer">
-                <div class="faq-answer-inner">Yes — every project begins with a complimentary in-home colour
+                <div class="faq-answer-inner">Yes â€” every project begins with a complimentary in-home colour
                   consultation, where our specialist will assess your light, existing furniture and your vision to
                   create a bespoke palette.</div>
               </div>
@@ -1045,7 +1060,7 @@
             <div class="faq-item">
               <button class="faq-question">How long does a typical project take?<span class="faq-icon">+</span></button>
               <div class="faq-answer">
-                <div class="faq-answer-inner">A single room typically takes 2–3 days. A full apartment 5–10 days. We
+                <div class="faq-answer-inner">A single room typically takes 2â€“3 days. A full apartment 5â€“10 days. We
                   always provide a precise timeline at quote stage and stick to it.</div>
               </div>
             </div>
@@ -1061,7 +1076,7 @@
                   class="faq-icon">+</span></button>
               <div class="faq-answer">
                 <div class="faq-answer-inner">All Evora projects come with a 2-year craftsmanship guarantee. If anything
-                  doesn't look perfect, we'll return and fix it — at no cost to you.</div>
+                  doesn't look perfect, we'll return and fix it â€” at no cost to you.</div>
               </div>
             </div>
             <div class="faq-item">
@@ -1101,7 +1116,7 @@
               <div class="form-group">
                 <label class="form-label" for="h2-service">Service Required</label>
                 <select id="h2-service" class="form-select" data-validate="required">
-                  <option value="">Select a service…</option>
+                  <option value="">Select a serviceâ€¦</option>
                   <option>Interior Painting</option>
                   <option>Wallpaper Installation</option>
                   <option>Feature Wall</option>
@@ -1112,7 +1127,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label" for="h2-msg">Tell Us About Your Project</label>
-                <textarea id="h2-msg" class="form-textarea" placeholder="Describe your space, vision and any questions…"
+                <textarea id="h2-msg" class="form-textarea" placeholder="Describe your space, vision and any questionsâ€¦"
                   data-validate="required|minlen:20" style="min-height:110px"></textarea>
                 <span class="form-error-msg"></span>
               </div>
@@ -1138,7 +1153,7 @@
       </div>
     </section>
 
-    <!-- § 6 Trusted Brands -->
+    <!-- Â§ 6 Trusted Brands -->
     <section class="brands-section" aria-label="Partner brands">
       <div class="container">
         <p class="t-label text-center reveal" style="margin-bottom:var(--space-2xl)">Paint & Wallpaper Partners</p>
@@ -1218,7 +1233,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Evora Interiors Studio. All rights reserved.</p>
+        <p>Â© 2025 Evora Interiors Studio. All rights reserved.</p>
         <div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a
             href="sitemap.html">Sitemap</a></div>
       </div>

@@ -73,7 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 .nav-logo {
@@ -207,11 +207,11 @@
   display: none;
 }
 
-/* Nav Controls */
+/* Nav Controls — generous spacing for icons */
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 12px;
   flex-shrink: 0;
 }
 
@@ -351,6 +351,35 @@
 
 .mobile-nav a.active {
   color: var(--accent);
+}
+
+/* Contact link in hamburger — no orange line below */
+.mobile-nav a:not(.btn)[href="contact.html"],
+.mobile-nav a:not(.btn)[href*="contact.html"],
+.mobile-nav a:nth-child(6),
+.mobile-nav a:nth-last-child(2) {
+  border-bottom: none !important;
+  border-top: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  background-image: none !important;
+}
+
+.mobile-nav a:not(.btn)[href="contact.html"]::after,
+.mobile-nav a:not(.btn)[href="contact.html"]::before,
+.mobile-nav a[href*="contact.html"]::after,
+.mobile-nav a[href*="contact.html"]::before,
+.mobile-nav a:nth-child(6)::after,
+.mobile-nav a:nth-child(6)::before,
+.mobile-nav a:nth-last-child(2)::after,
+.mobile-nav a:nth-last-child(2)::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: 0 !important;
 }
 
 [dir="rtl"] .mobile-nav a:hover {
@@ -853,6 +882,15 @@
 
 .page-hero-meta {
   gap: var(--space-lg) clamp(2rem, 4vw, 3.5rem);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  white-space: nowrap;
+}
+
+.page-hero-meta::-webkit-scrollbar {
+  display: none;
 }
 
 .hero-chips {
@@ -863,6 +901,8 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .hero-meta-value {
@@ -870,6 +910,7 @@
   font-size: clamp(1.25rem, 2vw, 1.55rem);
   line-height: 1;
   color: #FFFFFF;
+  white-space: nowrap;
 }
 
 .hero-meta-label {
@@ -930,11 +971,23 @@
 
 @media (max-width: 640px) {
   .nav-btn {
-    display: none;
+    display: inline-flex;
+    padding: 8px 16px;
+    font-size: 0.75rem;
   }
 
   .nav-inner {
-    gap: var(--space-xs);
+    gap: var(--space-lg);
+  }
+
+  .nav-controls {
+    margin-left: 12px;
+    padding-left: 8px;
+  }
+
+  .nav-logo {
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   .footer-grid {
@@ -965,18 +1018,109 @@
   }
 
   .nav-logo-sub {
-    font-size: 0.5rem;
-    letter-spacing: 0.12em;
+    display: none;
+  }
+
+  .nav-inner {
+    gap: 14px;
   }
 
   .icon-btn {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-    font-size: 0.8125rem;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    font-size: 0.75rem;
+  }
+
+  .nav-btn {
+    display: inline-flex;
+    padding: 7px 12px;
+    font-size: 0.7rem;
+  }
+
+  .nav-controls {
+    gap: 8px;
   }
 
   :root {
     --container-px: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .nav-inner {
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+
+  .nav-logo {
+    gap: 0.5rem;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .nav-logo-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-mark {
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+
+  .nav-logo-sub {
+    display: none;
+  }
+
+  .nav-logo-text {
+    min-width: 0;
+  }
+
+  .nav-controls {
+    gap: 8px;
+    flex-shrink: 0;
+    align-items: center;
+    margin-left: 12px;
+    padding-left: 8px;
+    border-left: 1px solid transparent;
+  }
+
+  .icon-btn {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    font-size: 0.68rem;
+  }
+
+  .nav-btn {
+    padding: 6px 10px;
+    font-size: 0.64rem;
+    white-space: nowrap;
+  }
+
+  .hamburger {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    gap: 4px;
+    padding: 6px;
+  }
+
+  .hamburger span {
+    width: 16px;
+  }
+
+  :root {
+    --container-px: 0.75rem;
+    --nav-h: 60px;
   }
 }

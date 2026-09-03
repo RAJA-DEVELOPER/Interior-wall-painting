@@ -30,11 +30,22 @@
     });
   }
 
-  /* ── MARQUEE CLONE ── */
+  /* ── MARQUEE — single line seamless loop ── */
   function initMarquee() {
     document.querySelectorAll('.marquee-track').forEach(track => {
-      const clone = track.cloneNode(true);
-      track.parentElement.appendChild(clone);
+      // Duplicate items inside same track for seamless -50% loop, keep single line
+      if (!track.dataset.cloned) {
+        track.innerHTML += track.innerHTML;
+        track.dataset.cloned = 'true';
+      }
+      // Ensure single line, no wrap
+      track.style.flexWrap = 'nowrap';
+    });
+    // Ensure parent doesn't stack clones vertically
+    document.querySelectorAll('.marquee-section > div').forEach(wrap => {
+      wrap.style.display = 'flex';
+      wrap.style.flexWrap = 'nowrap';
+      wrap.style.overflow = 'hidden';
     });
   }
 

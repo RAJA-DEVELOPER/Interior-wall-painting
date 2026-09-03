@@ -8,10 +8,20 @@
   function initBA(container) {
     const clip    = container.querySelector('.ba-clip');
     const handle  = container.querySelector('.ba-handle');
+    const clipImg = clip ? clip.querySelector('img') : null;
     if (!clip || !handle) return;
 
     let dragging = false;
     let percent  = 50;
+
+    function syncClipImageSize() {
+      if (clipImg) {
+        // Ensure clip image renders at full container width (not clipped width)
+        // 100cqw handles this in CSS, but set explicit px fallback for older browsers
+        clipImg.style.width = container.getBoundingClientRect().width + 'px';
+        clipImg.style.maxWidth = 'none';
+      }
+    }
 
     function setPosition(x) {
       const rect = container.getBoundingClientRect();
@@ -21,6 +31,7 @@
 
       clip.style.width        = pos + '%';
       handle.style.left       = pos + '%';
+      syncClipImageSize();
     }
 
     // Mouse
@@ -47,8 +58,13 @@
       if (!dragging) setPosition(e.clientX);
     });
 
+    // Keep full image visible on resize (clip image must stay container-width)
+    window.addEventListener('resize', syncClipImageSize);
+
     // Init at center
     setPosition(container.getBoundingClientRect().left + container.offsetWidth / 2);
+    // Ensure image sized correctly after layout
+    requestAnimationFrame(syncClipImageSize);
   }
 
   document.addEventListener('DOMContentLoaded', () => {

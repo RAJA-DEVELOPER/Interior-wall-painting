@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <title>About — Evora Interiors | Our Story, Team & Philosophy</title>
+  <title>About â€” Evora Interiors | Our Story, Team & Philosophy</title>
   <meta name="description"
-    content="Discover the story behind Evora Interiors — 15 years of bespoke craftsmanship, a team of 12 master painters, and a philosophy rooted in the art of applied colour." />
+    content="Discover the story behind Evora Interiors â€” 15 years of bespoke craftsmanship, a team of 12 master painters, and a philosophy rooted in the art of applied colour." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="css/layout.css?v=2" />
   <link rel="stylesheet" href="css/components.css?v=2" />
   <style>
-    /* § 1 Cinematic About Hero */
+    /* Â§ 1 Cinematic About Hero */
     .about-hero {
       height: 90svh;
       min-height: 560px;
@@ -52,7 +52,7 @@
     }
 
     .about-hero-year {
-      font-size: 8rem;
+      font-size: clamp(5rem, 10vw, 8rem);
       font-family: var(--font-display);
       color: rgba(247, 243, 236, 0.08);
       position: absolute;
@@ -63,7 +63,7 @@
       user-select: none;
     }
 
-    /* § 2 Philosophy — alternating layout */
+    /* Â§ 2 Philosophy â€” alternating layout â€” consistent sizing & alignment */
     .philosophy-section {
       padding-block: var(--section-py);
     }
@@ -71,9 +71,9 @@
     .philosophy-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: clamp(3rem, 6vw, 7rem);
+      gap: var(--col-gap);
       align-items: center;
-      padding-block: clamp(2rem, 4vw, 4rem);
+      padding-block: clamp(2.5rem, 4vw, 4rem);
       border-top: 1px solid var(--border-strong);
     }
 
@@ -92,13 +92,13 @@
 
     .philosophy-num {
       font-family: var(--font-display);
-      font-size: 5rem;
+      font-size: clamp(2.8rem, 4vw, 3.75rem);
       color: var(--border-strong);
       line-height: 1;
       margin-bottom: var(--space-md);
     }
 
-    /* § 3 Team Grid */
+    /* Â§ 3 Team Grid */
     .team-section {
       background: var(--bg-alt);
       padding-block: var(--section-py);
@@ -147,10 +147,10 @@
       color: var(--text-secondary);
     }
 
-    /* § 4 Stats Band */
+    /* Â§ 4 Stats Band â€” consistent section sizing */
     .stats-band {
       background: var(--charcoal);
-      padding-block: clamp(3rem, 6vw, 6rem);
+      padding-block: var(--section-py);
     }
 
     .stats-band-grid {
@@ -158,6 +158,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: var(--col-gap);
       text-align: center;
+      align-items: center;
     }
 
     .stats-band .stat-number {
@@ -176,17 +177,18 @@
       align-self: stretch;
     }
 
-    /* § 5 Awards & Recognition */
+    /* Â§ 5 Awards & Recognition â€” consistent alignment */
     .awards-section {
       padding-block: var(--section-py);
     }
 
     .awards-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--col-gap);
-      align-items: end;
-      margin-bottom: clamp(2rem, 4vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      align-items: flex-start;
+      margin-bottom: clamp(2.5rem, 4vw, 4rem);
+      max-width: 720px;
     }
 
     .awards-list {
@@ -198,7 +200,7 @@
     .award-item {
       display: grid;
       grid-template-columns: 80px 1fr 1fr;
-      gap: var(--space-2xl);
+      gap: var(--col-gap);
       align-items: center;
       padding-block: var(--space-xl);
       border-bottom: 1px solid var(--border-strong);
@@ -234,7 +236,7 @@
       text-align: end;
     }
 
-    /* § 6 Project Gallery Mosaic */
+    /* Â§ 6 Project Gallery Mosaic */
     .project-mosaic {
       background: var(--bg-alt);
       padding-block: var(--section-py);
@@ -244,7 +246,7 @@
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      gap: var(--space-md);
+      gap: var(--col-gap);
       aspect-ratio: 3/2;
     }
 
@@ -373,7 +375,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="blog.html">Journal</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" style="border-bottom:none !important; box-shadow:none !important; text-decoration:none !important;">Contact</a></li>
       </ul>
       <div class="nav-controls">
         <button class="icon-btn" data-toggle-theme data-theme-icon aria-label="Toggle dark mode"><svg
@@ -390,11 +392,11 @@
   </nav>
   <div class="mobile-nav" role="dialog" aria-label="Mobile navigation"><a href="index.html">Home</a><a
       href="home2.html">Home 2</a><a href="about.html" class="active">About</a><a href="services.html">Services</a><a
-      href="blog.html">Journal</a><a href="contact.html">Contact</a>
+      href="blog.html">Journal</a><a href="contact.html" style="border-bottom:none !important; box-shadow:none !important; text-decoration:none !important;">Contact</a>
   </div>
 
   <main>
-    <!-- § 1 About Hero -->
+    <!-- Â§ 1 About Hero -->
     <section class="page-hero grain-overlay" aria-label="About Evora hero">
       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=85&auto=format&fit=crop"
         alt="Evora artisan team preparing a beautifully lit period room for painting" class="page-hero-bg"
@@ -403,7 +405,7 @@
       <div class="container page-hero-content">
         <div class="page-hero-badge reveal">
           <span class="hero-pulse"></span>
-          <span>Our Story · Est. 2009</span>
+          <span>Our Story Â· Est. 2009</span>
         </div>
         <h1 class="page-hero-title reveal delay-1">Fifteen Years of Painting with <em>Purpose</em></h1>
         <p class="page-hero-desc reveal delay-2">Evora began in 2009 as an artisan studio in West London. Today we are a
@@ -421,7 +423,7 @@
         <div class="page-hero-meta reveal delay-4">
           <div class="hero-meta-item">
             <span class="hero-meta-value">2009</span>
-            <span class="hero-meta-label">Established · West London</span>
+            <span class="hero-meta-label">Established Â· West London</span>
           </div>
           <div class="hero-meta-item">
             <span class="hero-meta-value">850+</span>
@@ -436,7 +438,7 @@
       <div class="page-hero-watermark" aria-hidden="true">2009</div>
     </section>
 
-    <!-- § 2 Philosophy -->
+    <!-- Â§ 2 Philosophy -->
     <section class="philosophy-section" id="philosophy" aria-labelledby="philosophy-heading">
       <div class="container">
         <span class="t-label reveal" style="margin-bottom:var(--space-xl);display:block">Philosophy</span>
@@ -453,7 +455,7 @@
             <h3 class="t-subheading" style="margin-bottom:var(--space-md)">Colour as Emotion</h3>
             <p class="t-lead" style="margin-bottom:var(--space-xl)">We believe colour is the single most powerful design
               tool in any interior. The right shade can enlarge a room, calm a mind or energise a morning. We treat
-              colour selection as a deeply considered, personal process — never prescriptive.</p><a
+              colour selection as a deeply considered, personal process â€” never prescriptive.</p><a
               href="services.html#colour" class="btn-arrow">Colour Consulting <span class="arrow"><svg
                   viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px" aria-hidden="true">
@@ -490,7 +492,7 @@
             <div class="philosophy-num">03</div>
             <h3 class="t-subheading" style="margin-bottom:var(--space-md)">Care That Goes Beyond Paint</h3>
             <p class="t-lead" style="margin-bottom:var(--space-xl)">We treat your home with the same respect we'd treat
-              our own. Every surface protected. Every piece of furniture moved with care. Every project left spotless —
+              our own. Every surface protected. Every piece of furniture moved with care. Every project left spotless â€”
               and backed by a two-year guarantee.</p><a href="contact.html" class="btn-arrow">Get in Touch <span
                 class="arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"
@@ -503,7 +505,7 @@
       </div>
     </section>
 
-    <!-- § 3 Team -->
+    <!-- Â§ 3 Team -->
     <section class="team-section" id="team" aria-labelledby="team-heading">
       <div class="container">
         <div
@@ -512,7 +514,7 @@
             <h2 id="team-heading" class="t-title reveal delay-1" style="margin-top:var(--space-md);max-width:18ch">The
               Twelve Behind the Magic</h2>
           </div>
-          <p class="t-lead reveal" style="max-width:36ch">Each member of the Evora team is a specialist — trained in
+          <p class="t-lead reveal" style="max-width:36ch">Each member of the Evora team is a specialist â€” trained in
             specific finishes, techniques and materials.</p>
         </div>
         <div class="team-grid">
@@ -548,7 +550,7 @@
       </div>
     </section>
 
-    <!-- § 4 Stats -->
+    <!-- Â§ 4 Stats -->
     <section class="stats-band" aria-label="Key statistics">
       <div class="container stats-band-grid">
         <div class="stat-block reveal delay-1" style="align-items:center">
@@ -570,7 +572,7 @@
       </div>
     </section>
 
-    <!-- § 5 Awards -->
+    <!-- Â§ 5 Awards -->
     <section class="awards-section" aria-labelledby="awards-heading">
       <div class="container">
         <div class="awards-header">
@@ -587,7 +589,7 @@
           <div class="award-item reveal"><span class="award-year">2023</span><span class="award-name">Houzz Best of
               Service Award</span><span class="award-org">Houzz UK</span></div>
           <div class="award-item reveal"><span class="award-year">2022</span><span class="award-name">London Interiors
-              Award — Craft Excellence</span><span class="award-org">London Design Festival</span></div>
+              Award â€” Craft Excellence</span><span class="award-org">London Design Festival</span></div>
           <div class="award-item reveal"><span class="award-year">2021</span><span class="award-name">Platinum
               Contractor Status</span><span class="award-org">Farrow & Ball Trade Network</span></div>
           <div class="award-item reveal"><span class="award-year">2019</span><span class="award-name">Top Wallpaper
@@ -596,14 +598,14 @@
       </div>
     </section>
 
-    <!-- § 6 Project Mosaic -->
+    <!-- Â§ 6 Project Mosaic -->
     <section class="project-mosaic" id="projects" aria-labelledby="mosaic-heading">
       <div class="container">
         <div
           style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:var(--space-xl);margin-bottom:clamp(2rem,4vw,4rem)">
           <div><span class="t-label reveal">Portfolio</span>
             <h2 id="mosaic-heading" class="t-title reveal delay-1" style="margin-top:var(--space-md);max-width:20ch">
-              Selected Projects from 2020–2025</h2>
+              Selected Projects from 2020â€“2025</h2>
           </div>
           <a href="contact.html" class="btn btn-outline reveal">Commission Your Project</a>
         </div>
@@ -692,7 +694,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Evora Interiors Studio. All rights reserved.</p>
+        <p>Â© 2025 Evora Interiors Studio. All rights reserved.</p>
         <div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a
             href="sitemap.html">Sitemap</a></div>
       </div>

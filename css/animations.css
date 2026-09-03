@@ -200,7 +200,9 @@
 
 .marquee-track {
   display: flex;
+  flex-wrap: nowrap;
   width: max-content;
+  flex-shrink: 0;
   animation: marquee 25s linear infinite;
 }
 
