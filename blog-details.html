@@ -38,7 +38,9 @@
       min-height: 520px;
       overflow: hidden;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       background-color: var(--charcoal);
     }
 
@@ -59,11 +61,29 @@
     .article-hero-content {
       position: relative;
       z-index: 2;
+      padding-top: calc(var(--nav-h) + 1rem);
       padding-bottom: clamp(3rem, 6vw, 6rem);
+      max-width: 1100px;
+      width: 100%;
+      margin-inline: auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .article-hero-content .breadcrumb {
       margin-bottom: var(--space-xl);
+      justify-content: center;
+    }
+
+    .article-hero-content .flex {
+      justify-content: center;
+    }
+
+    #articleDescription {
+      margin-inline: auto;
+      text-align: center;
     }
 
     .article-hero-content .breadcrumb a,
@@ -435,7 +455,7 @@
           <span id="articleReadTime" style="font-size:0.8125rem;font-weight:600;color:rgba(247,243,236,0.85)">12 min read</span>
         </div>
         <h1 id="articleTitle"
-          style="font-family:var(--font-display);font-size:clamp(2rem,5vw,4.5rem);line-height:1.05;color:#FFFFFF;max-width:22ch;letter-spacing:-0.02em;margin-bottom:var(--space-xl)">
+          style="font-family:var(--font-display);line-height:1.05;color:#FFFFFF;max-width:none;letter-spacing:-0.02em;margin-bottom:var(--space-xl)">
           The Definitive Guide to Venetian Plaster in the Modern Home</h1>
         <p id="articleDescription" style="color:rgba(247,243,236,0.9);max-width:50ch;font-size:1.05rem;line-height:1.7">Everything you need to
           know — from what it is and how it's applied, to costs, maintenance and how to find a specialist you can trust.

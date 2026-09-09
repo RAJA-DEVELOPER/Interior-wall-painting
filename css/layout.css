@@ -705,6 +705,8 @@
   min-height: clamp(480px, 68svh, 640px);
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
   padding-top: calc(var(--nav-h) + clamp(2rem, 4vw, 4rem));
   padding-bottom: clamp(3rem, 6vw, 5rem);
@@ -762,8 +764,14 @@
 .page-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 68ch;
+  max-width: 1100px;
+  width: 100%;
   color: #FFFFFF;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-hero-badge {
@@ -817,11 +825,58 @@
 
 .page-hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+  font-size: clamp(2rem, 3.2vw, 3.1rem);
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: #FFFFFF;
   margin-bottom: 1.25rem;
+  max-width: none;
+  white-space: nowrap;
+  text-align: center;
+  margin-inline: auto;
+}
+
+@media (max-width: 1200px) {
+  .page-hero-title {
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    white-space: normal;
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero-title {
+    white-space: normal;
+  }
+}
+
+/* Blog article hero — also try single line on desktop (except home pages) */
+#articleTitle {
+  max-width: none !important;
+  white-space: nowrap;
+  font-size: clamp(1.7rem, 2.6vw, 2.35rem) !important;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-inline: auto;
+}
+
+@media (max-width: 1280px) {
+  #articleTitle {
+    font-size: clamp(1.6rem, 2.4vw, 2.2rem) !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  #articleTitle {
+    white-space: normal;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #articleTitle {
+    white-space: normal;
+  }
 }
 
 .page-hero-title em {
@@ -835,11 +890,14 @@
   color: rgba(247, 243, 236, 0.9);
   max-width: 48ch;
   margin-bottom: 2rem;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .page-hero-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -875,9 +933,16 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   margin-top: clamp(2rem, 4vw, 2.75rem);
   padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
   border-top: 1px solid rgba(247, 243, 236, 0.18);
+  text-align: center;
+}
+
+.page-hero-content .breadcrumb,
+.article-hero-content .breadcrumb {
+  justify-content: center;
 }
 
 .page-hero-meta {
