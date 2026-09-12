@@ -89,7 +89,6 @@ option {
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
@@ -100,6 +99,18 @@ h6 {
   font-weight: 400;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+
+h2 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  color: var(--text-primary);
+  font-weight: 400;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: center;
+  margin-inline: auto;
+  text-wrap: balance;
 }
 
 p {
@@ -532,4 +543,247 @@ p {
 [data-theme="dark"] ::selection {
   background: var(--accent);
   color: #161513;
+}
+
+/* =============================================
+   H2 CENTERING — Remaining sections only
+   Split / two-column sections are excluded and keep left-aligned h2
+   "split aagara section thavira remaining section la h2 center"
+   ============================================= */
+h2,
+h2.t-title,
+h2.t-heading,
+h2.t-display,
+h2.t-hero {
+  text-align: center;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+/* Split sections — keep h2 left-aligned (thavira) — NOTE: .services-header excluded as What We Do is centerable */
+.editorial-grid h2,
+.ba-layout h2,
+.ba-info h2,
+.philosophy-row h2,
+.srv-detail-grid h2,
+.colour-guide-grid h2,
+.quote-layout h2,
+.map-layout h2,
+.contact-faq-layout h2,
+.faq-form-grid h2,
+.spotlight-grid h2,
+.concierge-grid h2,
+.swatch-display-box h2,
+.palette-header-grid h2,
+.legal-body h2,
+.article-body h2,
+.sitemap-category h2 {
+  text-align: start;
+  margin-inline: 0;
+  text-wrap: wrap;
+}
+
+/* What We Do — possible to center, so force center for title + h2 */
+.services-header {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+.services-header > div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.services-header .t-label,
+#services-heading {
+  text-align: center !important;
+  margin-inline: auto !important;
+  display: block;
+  width: 100%;
+}
+
+/* =============================================
+   REQUESTED 7 SECTIONS — center h2 + red title
+   Selected Projects, Wallpaper Collections, The Craftspeople,
+   Recognition, Portfolio, Interactive Palette Studio, Reader Favorites
+   ============================================= */
+
+/* 1. Selected Projects — home2 */
+.projects-grid-section .container > div:first-child {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+.projects-grid-section .container > div:first-child > div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+.projects-grid-section .t-label,
+#projects-h2 {
+  text-align: center !important;
+  margin-inline: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* 2. Wallpaper Collections — home2 */
+.wallpaper-showcase .container[style] > div {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+.wallpaper-showcase .container[style] > div > div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+.wallpaper-showcase .t-label,
+#wallpaper-heading {
+  text-align: center !important;
+  margin-inline: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* 3. The Craftspeople — about */
+.team-section .container > div:first-child {
+  margin-inline: auto !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  max-width: 720px !important;
+}
+.team-section .t-label,
+#team-heading {
+  text-align: center !important;
+  margin-inline: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+.team-section .container > div:first-child .t-lead {
+  text-align: center !important;
+  margin-inline: auto !important;
+}
+
+/* 4. Recognition — about */
+.awards-header {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+  margin-inline: auto !important;
+}
+.awards-header > div,
+.awards-header > p {
+  text-align: center !important;
+  margin-inline: auto !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.awards-header .t-label,
+#awards-heading {
+  text-align: center !important;
+  margin-inline: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* 5. Portfolio — about */
+.project-mosaic .container > div:first-child {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+.project-mosaic .container > div:first-child > div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+.project-mosaic .t-label,
+#mosaic-heading {
+  text-align: center !important;
+  margin-inline: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* 6. Interactive Palette Studio — blog */
+.palette-header-row {
+  align-items: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+  margin-inline: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.palette-header-row .palette-tag,
+#palette-section-title {
+  text-align: center !important;
+  margin-inline: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+.palette-header-row .palette-intro {
+  text-align: center !important;
+  margin-inline: auto !important;
+}
+
+/* 7. Reader Favorites — blog */
+.trending-digest-section .container > div:first-child {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+.trending-digest-section .container > div:first-child > div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+.trending-digest-section .t-label,
+#digest-heading {
+  text-align: center !important;
+  margin-inline: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* 8. Philosophy — about (red t-label center) */
+.philosophy-section .t-label {
+  text-align: center !important;
+  margin-inline: auto !important;
+  display: block !important;
+  width: 100% !important;
+}
+.philosophy-section .container > span.t-label {
+  text-align: center !important;
+  margin-inline: auto !important;
+}
+
+/* Ensure split headers that are flex space-between keep h2 left but allow centered fallback on mobile */
+@media (max-width: 768px) {
+  .palette-header-grid h2 {
+    text-align: center;
+    margin-inline: auto;
+  }
 }
